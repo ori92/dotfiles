@@ -1,6 +1,5 @@
 #!/bin/zsh
 neofetch
-
 setopt noclobber
 
 # Autoload zsh modules when they are referenced
@@ -9,20 +8,7 @@ zmodload -a zsh/zpty zpty
 zmodload -a zsh/zprof zprof
 zmodload -a zsh/mapfile mapfile
 
-#Set PATH
-export PATH=/bin:/home/ori/.local/bin:/opt/idea/bin:/home/ori/bin
-
-#LANG
-export LC_ALL=en_US.UTF-8
-export LC_MESSAGES="C"
-# Path to your oh-my-zsh installation.
-export ZSH="/home/ori/.config/.oh-my-zsh"
-
-#node repl history location.
-export NODE_REPL_HISTORY=/home/ori/.config/.node_repl_history
-
-
-# Uncomment the following line to display red dots whilst waiting for completion.
+# Display red dots whilst waiting for completion.
  COMPLETION_WAITING_DOTS="true"
 
 #Plugins
@@ -34,50 +20,38 @@ zsh-completions
 #tmux
 colored-man-pages
 colorize
-#command-not-found
 zsh-autosuggestions
 extract
 sudo
 z
 #fasd
 you-should-use
-#zsh-notes
 zsh-syntax-highlighting
 fzf
 zsh_reload
-#pip
 )
 
 #autoload -U zmv
 autoload -U compinit
-compinit -d /home/ori/.config/zsh/zcompdump-$ZSH_VERSION
-
-#source /home/ori/.oh-my-zsh/custom/plugins/zsh-autopair/autopair.zsh
+compinit -d ~/.config/zsh/zcompdump-$ZSH_VERSION
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+ZSH_AUTOSUGGEST_USE_ASYNC="true"
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="100"
 
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-export EDITOR=nvim
-
-
-
-
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
-export FZF_DEFAULT_COMMAND="fd --type file --color=always -H --exclude .git --exclude .cache --exclude cache --exclude .nuget"
-export FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}' --ansi -m --layout=reverse"
-
 #Auto Compile sources
-    if [[  "/home/ori/.zshrc" -nt "/home/ori/.zshrc.zwc" ]]; then
-         zcompile /home/ori/.zshrc
+    if [[  "~/.config/zsh/.zshrc" -nt "~/.config/zsh/.zshrc.zwc" ]]; then
+         zcompile ~/.config/zsh/.zshrc
     fi
-
 
 eval $(thefuck --alias)
 
-export _Z_DATA=~/.config/.z
 source $ZSH/oh-my-zsh.sh
 
 # Funky
@@ -94,10 +68,9 @@ bindkey ^x expand-alias
 
 # HSTR configuration
 alias hh=hstr                    # hh to be alias for hstr
-export HISTFILE="/home/ori/.config/zsh/.zsh_history"
+export HISTFILE="~/.config/zsh/.zsh_history"
 export HSTR_CONFIG=hicolor        # get more colors
 bindkey -s "\C-r" "\eqhh\n"     # bind hstr to Ctrl-r (for Vi mode check doc)
-
 
 #==============================================================
 #================           Functions          ================
@@ -228,4 +201,4 @@ alias -g A,5="|awk -F, '{print \$5}'"
 #start Starship
 eval "$(starship init zsh)"
 
-source /home/ori/.config/broot/launcher/bash/br
+source ~/.config/broot/launcher/bash/br

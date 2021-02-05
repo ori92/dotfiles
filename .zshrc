@@ -1,5 +1,4 @@
 #!/bin/zsh
-
 neofetch
 
 setopt noclobber
@@ -10,49 +9,18 @@ zmodload -a zsh/zpty zpty
 zmodload -a zsh/zprof zprof
 zmodload -a zsh/mapfile mapfile
 
-
 #Set PATH
 export PATH=/bin:/home/ori/.local/bin:/opt/idea/bin:/home/ori/bin
 
 #LANG
 export LC_ALL=en_US.UTF-8
 export LC_MESSAGES="C"
-
-#Auto ZCompile Sources
-source () {
-    if [[ ! "$1.zwc" -nt "$1" ]]; then
-        if [[ ! $1 =~ "/proc/self" ]]; then
-            zcompile "$1"
-        fi
-    fi
-    builtin source $@
-}
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ori/.config/.oh-my-zsh"
 
 #node repl history location.
 export NODE_REPL_HISTORY=/home/ori/.config/.node_repl_history
 
-#ZSH_THEME="powerlevel9k/powerlevel9k"
-
-
-#Start Withou tmux
-#case $- in (*i*) echo interactive; esac
-#case $- in (*l*) export NO_TMUX=true; esac
-
-#if ! [ "$NO_TMUX" = true ] ; then
-#	ZSH_TMUX_UNICODE=true
-#	ZSH_TMUX_AUTOSTART=true
-#	ZSH_TMUX_AUTOCONNEC=true
-#else
-#	ZSH_TMUX_AUTOSTART=false
-#	ZSH_TMUX_AUTOCONNEC=false
-#fi
-
-
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs)
-#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs history time)
-#DEFAULT_USER=ori
 
 # Uncomment the following line to display red dots whilst waiting for completion.
  COMPLETION_WAITING_DOTS="true"
@@ -88,60 +56,12 @@ compinit -d /home/ori/.config/zsh/zcompdump-$ZSH_VERSION
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-# You may need to manually set your language environment
-#export LANG=en_US.UTF-8
-
-inst(){
-    if [[ -z "$1" ]]; then
-    pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")' | xargs -ro sudo pacman -S
-    else
-    sudo pacman -S $@
-    fi
-}
-
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-#open multiple files in new tabs instead of windows
-alias vi='nvim'
 export EDITOR=nvim
 
-alias serv='sudo python -m http.server'
 
-#Get VPN IP
-#alias vip='ifconfig | grep 10.10 |python3 -c "import sys;print(sys.stdin.read().split()[1])"'
-
-# Pipe Highlight to less
-#export LESSOPEN="| highlight %s --out-format xterm256 -l --force -s moria --no-trailing-nl"
-#export LESS=" -R"
-#alias less='less -m -N -g -i -J --line-numbers --underline-special'
-
-# alias :q=exit
-# alias :wq=exit
-
-function expand-alias() {
-        zle _expand_alias
-        zle autosuggest-clear
-}
-zle -N expand-alias
-
-#Permanent Alias with palias
-palias()(read  "answer?Are You Sure?[Y/N]"
-
-if [[ $answer =~ ^[Yy]$ ]]
-then
-echo alias "$*" >> ~/.zshrc
-alias -g "$*"
-echo Alias Created in .zshrc!
-tmux send-keys "alias $*" Enter
-fi)
-
-fpath=(~/.zsh.d/ $fpath)
-
-bak()(mv $1 $1.bak)
-
-#Replace String in text file
-repl()(cat $1 | sed "s/$2/$3/g" > $1.new; rm -rf $1; mv $1.new $1)
 
 
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
@@ -153,13 +73,6 @@ export FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-ra
     if [[  "/home/ori/.zshrc" -nt "/home/ori/.zshrc.zwc" ]]; then
          zcompile /home/ori/.zshrc
     fi
-
-timer() (
-seconds=$(($1)); date1=$((`date +%s` + $seconds))
-while [ "$date1" -ge `date +%s` ]; do
-  echo -ne "$(date -u --date @$(($date1 - `date +%s` )) +%H:%M:%S)\r";
-done
-)
 
 
 eval $(thefuck --alias)
@@ -179,18 +92,24 @@ source $ZSH/oh-my-zsh.sh
 bindkey -s "\C-r" "\C-a hh -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
 bindkey ^x expand-alias
 
-# HSTR configuration - add this to ~/.bashrc
+# HSTR configuration
 alias hh=hstr                    # hh to be alias for hstr
 export HISTFILE="/home/ori/.config/zsh/.zsh_history"
 export HSTR_CONFIG=hicolor        # get more colors
 bindkey -s "\C-r" "\eqhh\n"     # bind hstr to Ctrl-r (for Vi mode check doc)
 
-#systemctl fix
-_systemctl_unit_state() {
-  typeset -gA _sys_unit_state
-  _sys_unit_state=( $(__systemctl list-unit-files "$PREFIX*" | awk '{print $1, $2}') ) }
 
-# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+#==============================================================
+#================           Functions          ================
+#==============================================================
+vim-edit-output() {
+  file=`mktemp`.sh
+  tmux capture-pane -pS -32768 > $file
+  tmux new-window -n:mywindow "nvim '+ normal G $' $file"
+}
+
+math(){printf "%'.f\n" `echo "$1" |bc`}
+
 pasteinit() {
   OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
   zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
@@ -203,19 +122,59 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 
-math(){printf "%'.f\n" `echo "$1" |bc`}
+timer() (
+seconds=$(($1)); date1=$((`date +%s` + $seconds))
+while [ "$date1" -ge `date +%s` ]; do
+  echo -ne "$(date -u --date @$(($date1 - `date +%s` )) +%H:%M:%S)\r";
+done
+)
 
+#Permanent Alias with palias
+palias()(read  "answer?Are You Sure?[Y/N]"
+  if [[ $answer =~ ^[Yy]$ ]]
+    then
+    echo alias "$*" >> ~/.zshrc
+    alias -g "$*"
+    echo Alias Created in .zshrc!
+    tmux send-keys "alias $*" Enter
+  fi)
 
-vim-edit-output() {
-  file=`mktemp`.sh
-  tmux capture-pane -pS -32768 > $file
-  tmux new-window -n:mywindow "nvim '+ normal G $' $file"
+bak()(mv $1 $1.bak)
+
+#Replace String in text file
+repl()(cat $1 | sed "s/$2/$3/g" > $1.new; rm -rf $1; mv $1.new $1)
+
+function expand-alias() {
+        zle _expand_alias
+        zle autosuggest-clear
 }
+zle -N expand-alias
+
+inst(){
+    if [[ -z "$1" ]]; then
+    pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")' | xargs -ro sudo pacman -S
+    else
+    sudo pacman -S $@
+    fi
+}
+
+#Auto ZCompile Sources
+source () {
+    if [[ ! "$1.zwc" -nt "$1" ]]; then
+        if [[ ! $1 =~ "/proc/self" ]]; then
+            zcompile "$1"
+        fi
+    fi
+    builtin source $@
+}
+
 
 #mv and cp using rsyng with progress
 alias rcp='rsync -aP'
 alias rmv='rsync -aP --remove-source-files'
 
+alias vi='nvim'
+alias serv='sudo python -m http.server'
 alias rpac='sudo rm /var/lib/pacman/db.lck'
 alias ls='lsd --group-dirs first --date relative -A'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
@@ -247,7 +206,7 @@ alias -g J='|jq'
 alias -g GV='|rg -v'
 alias udb='sudo updatedb'
 alias send_to_phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg '
-alias comp='compdef _gnu_generic '
+alias comp='compdef _gnu_generic ' # Generate completions for command
 
 alias -g A='|awk'
 alias -g A1="|awk '{print \$1}'"

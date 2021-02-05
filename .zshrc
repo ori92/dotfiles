@@ -1,1 +1,0 @@
-/home/ori/.config/zsh/.zshrc

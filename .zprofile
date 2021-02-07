@@ -1,6 +1,8 @@
 
 # Set EDITOR
 export EDITOR=nvim
+export XIVIEWER="gwenview"
+export BROWSER="brave"
   
 # Set PATH and LOCAL
 export PATH=/bin:/home/ori/.local/bin:/opt/idea/bin:/home/ori/bin

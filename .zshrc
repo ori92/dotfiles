@@ -13,7 +13,7 @@ zmodload -a zsh/mapfile mapfile
 
 #Plugins
 plugins=(
-common-aliases
+#common-aliases
 copyfile
 zsh-completions
 colored-man-pages
@@ -105,7 +105,7 @@ inst(){
     if [[ -z "$1" ]]; then
     pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")' | xargs -ro sudo pacman -S
     else
-    sudo pacman -S $@
+    sudo pacman -S $@ || pamac install $@
     fi
 }
 
@@ -118,7 +118,6 @@ source () {
     fi
     builtin source $@
 }
-
 
 
 # Fix paste being slow because of the color plugin

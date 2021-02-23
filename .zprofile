@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Set EDITOR
-export PATH="/bin:/home/ori/.local/bin:/opt/idea/bin:/home/ori/bin"
+export PATH="/bin:/home/ori/.local/bin:/opt/idea/bin:/home/ori/bin:/home/ori/.cargo/bin/"
 export EDITOR="nvim"
 export XIVIEWER="gwenview"
 export BROWSER="brave"
@@ -18,13 +18,15 @@ export NODE_REPL_HISTORY="/home/ori/.config/.node_repl_history"
 export _Z_DATA="/home/ori/.config/.z"
 
 # FZF
-export FZF_DEFAULT_COMMAND='fd --type file --color=always -H -E ".git" -E ".cache" -E "cache" -E ".nuget" -E "Brave-Browser" -E "CachedData" -E "Cache" -E "site-packages"  -E "icons" -E ".cargo" -E ".oh-my-zsh/lib" -E "node_modules" -E "sublime-text-3" -E ".npm" -E "linux-ck" -E "themes" -E ".themes" -E ".vscode" -E ".rustup" -E "golang.org" -E "google.golang.org" -E "nvim/bundle" -E ".icons" -E ".dotnet"'
-export FZF_DEFAULT_OPTS="--preview 'preview_dir_or_file {}' --ansi -m --layout=reverse"
+export FZF_KEY_BINDS="--bind 'f1:execute(nvim {}),ctrl-e:execute-silent(open_dir {}),ctrl-k:execute-silent(echo -n \" \" |xclip -sel clip),ctrl-a:execute-silent(append_clip {}),ctrl-y:execute-silent(echo -n {} | xclip -sel clip)+abort' --bind '?:preview:cat {}' --preview-window hidden"
+export FZF_DEFAULT_COMMAND='fd --color=always -H -E ".git" -E ".cache" -E "cache" -E ".nuget" -E "Brave-Browser" -E "CachedData" -E "Cache" -E "site-packages"  -E "icons" -E ".cargo" -E ".oh-my-zsh/lib" -E "node_modules" -E "sublime-text-3" -E ".npm" -E "linux-ck" -E "themes" -E ".themes" -E ".vscode" -E ".rustup" -E "golang.org" -E "google.golang.org" -E "nvim/bundle" -E ".icons" -E ".dotnet"'
+export FZF_DEFAULT_OPTS="--ansi --multi --layout=reverse $FZF_KEY_BINDS"
 export FZF_COMPLETION_TRIGGER='``'
-export FZF_ALT_C_COMMAND="fd --type d --color=always --full-path . / /d"
-export FZF_ALT_C_OPTS="--preview 'lsd --color=always -l --total-size --blocks=name,size {}'"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
+#export FZF_COMPLETION_OPTS='+c -x'
+export FZF_ALT_C_COMMAND="fd -H --type d --color=always --full-path . / /d"
+export FZF_ALT_C_OPTS="$FZF_KEY_BINDS --preview 'lsd --color=always -l --total-size --blocks=name,size {}'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND "
+export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS --preview 'preview_dir_or_file {}'"
 #export FZF_CTRL_R_OPTS=""
 
 # Auto-Suggest

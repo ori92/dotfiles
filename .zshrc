@@ -1,10 +1,12 @@
 #!/bin/zsh
+
 setopt noclobber
 
 plugins=(
     zsh-syntax-highlighting zsh-autosuggestions you-should-use zsh_reload
     copyfile colorize extract
     sudo fzf z
+    fzf-tab colored-man-pages
 )
 
 #Loading order does matter.
@@ -20,4 +22,4 @@ bindkey '^x' expand-alias
 eval $(thefuck --alias)
 eval "$(starship init zsh)" # start Starship
 
-paleofetch
+#paleofetch

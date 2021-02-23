@@ -84,8 +84,3 @@ pastefinish()
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
-
-preview_dir_or_file() {
-[[ -d $1 ]] && lsd --color=always -l --total-size --blocks=name,size $1 ||
-bat --style=numbers --color=always --line-range :500 $1
-}

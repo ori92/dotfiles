@@ -4,17 +4,17 @@
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
 
 # ls, the common ones I use a lot shortened for rapid fire usage
-alias l='lsd --date=relative --group-dirs first --date relative -A' #size,show type,human readable
-alias la='lsd --date=relative --group-dirs=first -lAFh'             #long list,show almost all,show type,human readable
+alias l='lsd -A'                                                    #size,show type,human readable
+alias la='lsd -lAFh'                                                #long list,show almost all,show type,human readable
 alias lr='ls -tRFh'                                                 #sorted by date,recursive,show type,human readable
 alias lt='ls -ltFh'                                                 #long list,sorted by date,show type,human readable
-alias ll='lsd --date=relative --group-dirs=first -lA'               #long list
-alias ldot='lsd --date=relative --group-dirs=first -ld .*'
-alias lS='lsd --date=relative --group-dirs=first --total-size -l --sort=size'
+alias ll='lsd -lA'                                                  #long list
+alias ldot='lsd -ld .*'
+alias lS='lsd --total-size -l --sort=size'
 #alias lart='ls -1Fcart'
 #alias lrt='ls -1Fcrt'
 
-alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
+alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc'                   # Quick access to the .zshrc file
 
 #alias grep='grep --color'
 #alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
@@ -55,6 +55,8 @@ alias rmv='rsync -aP --remove-source-files'
 alias vi='nvim'
 alias vim='nvim'
 alias v='nvim'
+alias edit='nvim'
+alias gedit='subl'
 
 alias updt='sudo pacman -Syu'
 alias rem='sudo pacman -R'
@@ -84,6 +86,9 @@ alias comp='compdef _gnu_generic ' # Generate completions for command
 alias fu='funky'
 alias gfu='gfunky'
 
+alias performance='sudo sh -c "echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
+alias powersave='sudo sh -c "echo powersave | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
+
 alias -g W='|wc -l'
 alias -g S='|sed'
 alias -g C='|tee >( clip )'
@@ -111,7 +116,7 @@ _browser_fts=(htm html de org net com at cx nl se dk)
 for ft in $_browser_fts; do alias -s $ft='$BROWSER'; done
 
 # open text files in editor
-_editor_fts=(sh py js md cpp cxx cc c hh h inl asc txt TXT tex)
+_editor_fts=(js md MD cpp cxx cc c hh h inl asc txt TXT tex)
 for ft in $_editor_fts; do alias -s $ft='$EDITOR'; done
 
 # open images in viewer
@@ -138,3 +143,13 @@ alias -s gz='gunzip -l'
 # Make zsh know about hosts already accessed by SSH
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 alias -s ace='unace l'
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'

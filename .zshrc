@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 setopt noclobber
+setopt appendcreate
 
 plugins=(
     zsh-syntax-highlighting zsh-autosuggestions you-should-use zsh_reload

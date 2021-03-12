@@ -58,7 +58,7 @@ alias v='nvim'
 alias edit='nvim'
 alias gedit='subl'
 
-alias updt='sudo pacman -Syu'
+alias updt='sudo pacman -Syu && pamac upgrade'
 alias rem='sudo pacman -R'
 alias rpac='sudo rm /var/lib/pacman/db.lck'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'

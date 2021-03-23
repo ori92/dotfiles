@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+export SSH_ASKPASS='/usr/bin/ksshaskpass'
+
 export ZSH_COMPDUMP="/home/ori/.config/zsh/.zcompdump"
 # Execute code in the background to not affect the current session
 {

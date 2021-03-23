@@ -6,7 +6,7 @@ setopt appendcreate
 plugins=(
     zsh-syntax-highlighting zsh-autosuggestions you-should-use zsh_reload
     copyfile colorize extract
-    sudo fzf z
+    sudo fzf z tmux
     fzf-tab colored-man-pages
 )
 

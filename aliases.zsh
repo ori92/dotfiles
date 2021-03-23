@@ -58,7 +58,7 @@ alias v='nvim'
 alias edit='nvim'
 alias gedit='subl'
 
-alias updt='sudo pacman -Syu && pamac upgrade'
+alias updt='pamac upgrade'
 alias rem='sudo pacman -R'
 alias rpac='sudo rm /var/lib/pacman/db.lck'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
@@ -140,7 +140,27 @@ alias -s rar='unrar l'
 alias -s tar='tar tf'
 alias -s gz='gunzip -l'
 
-# Make zsh know about hosts already accessed by SSH
+#systemd 
+alias s='systemctl status '
+alias status='sudo systemctl status'
+
+alias start='sudo systemctl start '
+alias stop='sudo systemctl stop '
+alias restart='sudo systemctl restart '
+
+alias enable='sudo systemctl enable '
+alias disable='sudo systemctl disable '
+
+alias nenable='sudo systemctl enable --now '
+alias ndisable='sudo systemctl disable --now '
+
+alias U='start '
+alias D='stop '
+alias R='restart '
+alias E='enable '
+alias DI='disable '
+alias ST='status '
+#Make zsh know about hosts already accessed by SSH
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 alias -s ace='unace l'
 # disable sort when completing `git checkout`

@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Set EDITOR
-export PATH="/bin:/home/ori/.local/bin:/opt/idea/bin:/home/ori/bin:/home/ori/.cargo/bin/"
+export PATH="/home/ori/.local/bin:/opt/idea/bin:/home/ori/bin:/home/ori/.cargo/bin/:/bin"
 export EDITOR="nvim"
 export XIVIEWER="gwenview"
 export BROWSER="brave"
@@ -40,3 +40,10 @@ export CCACHE_DIR="/home/ori/.ccache"
 export CC="ccache gcc"
 export CXX="ccache g++"
 export PATH="/usr/lib/ccache/bin:$PATH"
+
+# tell gtk to use qt folder\file dialog
+export GTK_USE_PORTAL=1
+
+# gtk config files location
+export GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/ori/.config/.gtkrc-2.0
+export GTK_RC_FILES=/etc/gtk/gtkrc:/home/ori/.gtkrc:/home/ori/.config/gtkr

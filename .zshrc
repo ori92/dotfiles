@@ -3,6 +3,10 @@
 setopt noclobber
 setopt appendcreate
 
+#Set TTY font and auto start tmux on tty (very handy!)
+ [ "$TERM" = "linux" ] && setfont ter-u32n \
+                       && tmux new-session -s `basename $(tty)`
+
 plugins=(
     zsh-syntax-highlighting zsh-autosuggestions you-should-use zsh_reload
     copyfile colorize extract
@@ -22,5 +26,3 @@ bindkey '^x' expand-alias
 
 eval $(thefuck --alias)
 eval "$(starship init zsh)" # start Starship
-
-#paleofetch

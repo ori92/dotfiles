@@ -1,17 +1,23 @@
 #!/bin/zsh
 
 # Set EDITOR
-export PATH="/home/ori/.local/bin:/opt/idea/bin:/home/ori/bin:/home/ori/.cargo/bin/:/bin"
+export PATH="/bin/:/home/ori/.local/bin:/home/ori/bin:/home/ori/.cargo/bin/"
 export EDITOR="nvim"
 export XIVIEWER="gwenview"
 export BROWSER="brave"
 export HISTFILE="/home/ori/.config/zsh/.zsh_history"
+export SYSTEMD_EDITOR="nvim"
 
 # Set PATH and LOCAL
 export LC_ALL="en_US.UTF-8"
 export LC_MESSAGES="C"
 export ZSH="/home/ori/.config/.oh-my-zsh"
 export COMPLETION_WAITING_DOTS="true"
+# oh-my-zsh: Underscores (_) and hyphens (-) will be interchangeable
+export HYPHEN_INSENSITIVE=true
+# oh-my-zsh: Use this setting if you want to disable marking untracked files under VCS as dirty. This makes repository status checks for large repositories much, much faster.
+export DISABLE_UNTRACKED_FILES_DIRTY=true
+export HIST_STAMPS="%d/%m/%y %T"
 
 # node repl history location.
 export NODE_REPL_HISTORY="/home/ori/.config/.node_repl_history"

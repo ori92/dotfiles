@@ -66,6 +66,7 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias e='echo'
 alias c='cat'
 alias cc='ccat'
+alias edot='code /home/ori/Projects/dotfiles'
 
 alias serv='sudo python -m http.server'
 alias ex='chmod +x'
@@ -153,6 +154,10 @@ alias disable='sudo systemctl disable '
 
 alias nenable='sudo systemctl enable --now '
 alias ndisable='sudo systemctl disable --now '
+
+alias mask='sudo systemctl mask '
+alias umask='sudo systemctl unmask '
+
 
 alias U='start '
 alias D='stop '

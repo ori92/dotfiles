@@ -10,7 +10,7 @@ setopt appendcreate
 plugins=(
     zsh-syntax-highlighting zsh-autosuggestions you-should-use zsh_reload
     copyfile colorize extract
-    sudo fzf z tmux
+    sudo fzf tmux
     fzf-tab colored-man-pages
 )
 
@@ -25,4 +25,5 @@ bindkey '^s' fzf-file-widget
 bindkey '^x' expand-alias
 
 eval $(thefuck --alias)
+eval "$(zoxide init zsh)" #start zoxide
 eval "$(starship init zsh)" # start Starship

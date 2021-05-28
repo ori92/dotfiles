@@ -24,6 +24,7 @@ seconds=$(($1)); date1=$((`date +%s` + $seconds))
 while [ "$date1" -ge `date +%s` ]; do
   echo -ne "$(date -u --date @$(($date1 - `date +%s` )) +%H:%M:%S)\r";
 done
+kdialog --msgbox "$2"
 )
 
 # Permanent Alias with palias
@@ -57,7 +58,7 @@ inst(){
     if [[ -z "$1" ]]; then
     pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")' | xargs -ro sudo pacman -S
     else
-    sudo pacman -S $@ || pamac install $@ || echo "Install Failed."
+    pamac install $@ || echo "Install Failed."
     fi
 }
 
@@ -84,3 +85,6 @@ pastefinish()
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
+
+fan1() { echo $1 | sudo tee /sys/devices/virtual/hwmon/hwmon1/pwm1}
+fan2() { echo $1 | sudo tee /sys/devices/virtual/hwmon/hwmon1/pwm3}

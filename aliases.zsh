@@ -33,14 +33,15 @@ alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
 
-alias dud='du -d 1 -h'
-alias duf='du -sh *'
+alias du='dust -r'
+#alias dud='du -d 1 -h'
+#alias duf='du -sh *'
 #alias ff='find . -type f -name'
 
 alias h='history'
 alias hgrep="fc -El 0 | grep"
 #alias help='man'
-alias p='ps -f'
+alias p='procs --sortd=cpu --watch-interval=1'
 alias sortnr='sort -n -r'
 #alias unexport='unset'
 
@@ -59,6 +60,7 @@ alias edit='nvim'
 alias gedit='subl'
 
 alias updt='pamac upgrade'
+alias u='updt'
 alias rem='sudo pacman -R'
 alias rpac='sudo rm /var/lib/pacman/db.lck'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
@@ -66,7 +68,13 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias e='echo'
 alias c='cat'
 alias cc='ccat'
+alias less='cless'
 alias edot='code /home/ori/Projects/dotfiles'
+alias locate='plocate'
+alias r='ranger'
+alias f='locate'
+alias sens='watch -d -n.5 sensors' #Sensors
+alias core='sudo i7z' #CPU info
 
 alias serv='sudo python -m http.server'
 alias ex='chmod +x'
@@ -79,7 +87,7 @@ alias m='math'
 alias srm="sudo rm -rf "
 alias q='fuck'
 alias fz='z `z| fzf`'
-alias lf='fd -d 1 -a -H' # Show full path of files in directory.
+alias lfp='fd -d 1 -a -H' # Show full path of files in directory.
 alias udb='sudo updatedb'
 alias send_to_phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg '
 alias comp='compdef _gnu_generic ' # Generate completions for command

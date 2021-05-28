@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Set EDITOR
-export PATH="/bin/:/home/ori/.local/bin:/home/ori/bin:/home/ori/.cargo/bin/"
+export PATH="/home/ori/.local/bin:/usr/local/bin:/bin:/home/ori/bin:/home/ori/.cargo/bin"
 export EDITOR="nvim"
 export XIVIEWER="gwenview"
 export BROWSER="brave"
@@ -18,10 +18,12 @@ export HYPHEN_INSENSITIVE=true
 # oh-my-zsh: Use this setting if you want to disable marking untracked files under VCS as dirty. This makes repository status checks for large repositories much, much faster.
 export DISABLE_UNTRACKED_FILES_DIRTY=true
 export HIST_STAMPS="%d/%m/%y %T"
+#stop ranger from loading both the default and your custom rc.conf
+export RANGER_LOAD_DEFAULT_RC='FALSE'
 
 # node repl history location.
 export NODE_REPL_HISTORY="/home/ori/.config/.node_repl_history"
-export _Z_DATA="/home/ori/.config/.z"
+#export _Z_DATA="/home/ori/.config/.z"
 
 # FZF
 export FZF_KEY_BINDS="--bind 'f1:execute(nvim {}),ctrl-e:execute-silent(open_dir {}),ctrl-k:execute-silent(echo -n \" \" |xclip -sel clip),ctrl-a:execute-silent(append_clip {}),ctrl-y:execute-silent(echo -n {} | xclip -sel clip)+abort' --bind '?:preview:cat {}' --preview-window hidden"

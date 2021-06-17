@@ -65,6 +65,9 @@ alias rem='sudo pacman -R'
 alias rpac='sudo rm /var/lib/pacman/db.lck'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
+alias cf='copyfile'
+alias st='sudo touch'
+alias gc='git clone'
 alias e='echo'
 alias c='cat'
 alias cc='ccat'
@@ -157,8 +160,15 @@ alias start='sudo systemctl start '
 alias stop='sudo systemctl stop '
 alias restart='sudo systemctl restart '
 
+alias ustart='systemctl --user start '
+alias ustop='systemctl --user stop '
+alias urestart='systemctl --user restart '
+
 alias enable='sudo systemctl enable '
 alias disable='sudo systemctl disable '
+
+alias uenable='systemctl --user enable '
+alias udisable='systemctl --user disable '
 
 alias nenable='sudo systemctl enable --now '
 alias ndisable='sudo systemctl disable --now '
@@ -173,6 +183,8 @@ alias R='restart '
 alias E='enable '
 alias DI='disable '
 alias ST='status '
+
+
 #Make zsh know about hosts already accessed by SSH
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 alias -s ace='unace l'

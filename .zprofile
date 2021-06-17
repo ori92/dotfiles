@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Set EDITOR
-export PATH="/home/ori/.local/bin:/usr/local/bin:/bin:/home/ori/bin:/home/ori/.cargo/bin"
+export PATH="/bin:/home/ori/.local/bin:/home/ori/bin:/home/ori/.cargo/bin"
 export EDITOR="nvim"
 export XIVIEWER="gwenview"
 export BROWSER="brave"
@@ -55,3 +55,5 @@ export GTK_USE_PORTAL=1
 # gtk config files location
 export GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/ori/.config/.gtkrc-2.0
 export GTK_RC_FILES=/etc/gtk/gtkrc:/home/ori/.gtkrc:/home/ori/.config/gtkr
+
+ulimit -S -c 0 > /dev/null 2>&1 #disable coredump for all users https://www.cyberciti.biz/faq/linux-disable-core-dumps/

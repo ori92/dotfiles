@@ -79,6 +79,7 @@ alias f='locate'
 alias sens='watch -d -n.5 sensors' #Sensors
 alias core='sudo i7z' #CPU info
 
+alias mp='sudo modprobe '
 alias serv='sudo python -m http.server'
 alias ex='chmod +x'
 alias ctl='sudo systemctl'
@@ -135,9 +136,9 @@ for ft in $_editor_fts; do alias -s $ft='$EDITOR'; done
 _image_fts=(jpg jpeg png gif mng tiff tif xpm)
 for ft in $_image_fts; do alias -s $ft='$XIVIEWER'; done
 
-# open video on vlc
+# open video on smplayer
 _media_fts=(ape avi flv m4a mkv mov mp3 mpeg mpg ogg ogm rm wav webm)
-for ft in $_media_fts; do alias -s $ft=vlc; done
+for ft in $_media_fts; do alias -s $ft=smplayer; done
 
 #read documents
 alias -s pdf='okular'
@@ -154,6 +155,7 @@ alias -s gz='gunzip -l'
 
 #systemd 
 alias s='systemctl status '
+alias us='systemctl --user status '
 alias status='sudo systemctl status'
 
 alias start='sudo systemctl start '
@@ -167,6 +169,8 @@ alias urestart='systemctl --user restart '
 alias enable='sudo systemctl enable '
 alias disable='sudo systemctl disable '
 
+alias nuenable='systemctl --user enable --now '
+alias nudisable='systemctl --user disable --now '
 alias uenable='systemctl --user enable '
 alias udisable='systemctl --user disable '
 
@@ -182,8 +186,6 @@ alias D='stop '
 alias R='restart '
 alias E='enable '
 alias DI='disable '
-alias ST='status '
-
 
 #Make zsh know about hosts already accessed by SSH
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
@@ -198,3 +200,25 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
+
+
+#Colors
+export black='\033[0;30m'
+export dgray='\033[1;30m'
+export red='\033[0;31m'
+export lred='\033[1;31m'
+export green='\033[0;32m'
+export lgreen='\033[1;32m'
+export orange='\033[0;33m'
+export yellow='\033[1;33m'
+export blue='\033[0;34m'
+export lblue='\033[1;34m'
+export purple='\033[0;35m'
+export lpurple='\033[1;35m'
+export cyan='\033[0;36m'
+export lcyan='\033[1;36m'
+export lgray='\033[0;37m'
+export white='\033[1;37m'
+export no_color='\033[0m'
+#list of colors for easy echo
+export colors='no_color,black,dgray,red,lred,green,lgreen,orange,yellow,blue,lblue,purple,lpurple,cyan,lcyan,lgray,white'

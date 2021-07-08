@@ -57,3 +57,9 @@ export GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/ori/.config/.gtkrc-2.0
 export GTK_RC_FILES=/etc/gtk/gtkrc:/home/ori/.gtkrc:/home/ori/.config/gtkr
 
 ulimit -S -c 0 > /dev/null 2>&1 #disable coredump for all users https://www.cyberciti.biz/faq/linux-disable-core-dumps/
+
+#removes naga's mouse keys input.
+xinput set-int-prop `xinput | 'grep' -v 'Keyboard' |'grep' "Naga" |tail -n1 |awk '{print $6}'| tr -d 'id='` "Device Enabled" 8 0
+
+##enable hwp for pstate - increase powersave on idle cpu.
+#sudo x86_energy_perf_policy --hwp-enable

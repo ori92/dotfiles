@@ -27,3 +27,5 @@ bindkey '^x' expand-alias
 eval $(thefuck --alias)
 eval "$(zoxide init zsh)" #start zoxide
 eval "$(starship init zsh)" # start Starship
+
+macchina --no-box --no-ascii --no-separator --bar --theme boron --palette --hide Machine --hide ProcessorUsage --hide Memory

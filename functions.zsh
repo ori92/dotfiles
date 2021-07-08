@@ -19,13 +19,20 @@ math() {
 	printf "%'.f\n" `echo "$1" |bc`
 }
 
-timer() (
+#Timer
+
+stimer() (
 seconds=$(($1)); date1=$((`date +%s` + $seconds))
 while [ "$date1" -ge `date +%s` ]; do
   echo -ne "$(date -u --date @$(($date1 - `date +%s` )) +%H:%M:%S)\r";
 done
 kdialog --msgbox "$2"
 )
+
+timer() (
+stimer $((60*$1)) $2
+)
+
 
 # Permanent Alias with palias
 palias()(read  "answer?Are You Sure?[y/N]"

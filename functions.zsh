@@ -69,6 +69,10 @@ inst(){
     fi
 }
 
+reinst(){
+  pamac reinstall $1
+}
+
 # Auto ZCompile Sources
 source () {
     if [[ ! "$1.zwc" -nt "$1" ]]; then

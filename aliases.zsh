@@ -16,11 +16,6 @@ alias lS='lsd --total-size -l --sort=size'
 
 alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc'                   # Quick access to the .zshrc file
 
-#alias grep='grep --color'
-#alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
-
-alias t='tail -f'
-
 # Command line head / tail shortcuts
 alias -g H='| head'
 alias -g T='| tail'
@@ -65,6 +60,8 @@ alias rem='sudo pacman -R'
 alias rpac='sudo rm /var/lib/pacman/db.lck'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
+alias t='tail -f'
+alias w='watch -n 0.5 '
 alias cf='copyfile'
 alias st='sudo touch'
 alias gc='git clone'

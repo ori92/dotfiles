@@ -177,7 +177,6 @@ alias ndisable='sudo systemctl disable --now '
 alias mask='sudo systemctl mask '
 alias umask='sudo systemctl unmask '
 
-
 alias U='start '
 alias D='stop '
 alias R='restart '

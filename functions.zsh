@@ -20,7 +20,6 @@ math() {
 }
 
 #Timer
-
 stimer() (
 seconds=$(($1)); date1=$((`date +%s` + $seconds))
 while [ "$date1" -ge `date +%s` ]; do
@@ -32,7 +31,6 @@ kdialog --msgbox "$2"
 timer() (
 stimer $((60*$1)) $2
 )
-
 
 # Permanent Alias with palias
 palias()(read  "answer?Are You Sure?[y/N]"
@@ -59,7 +57,6 @@ function expand-alias() {
         zle autosuggest-clear
 }
 zle -N expand-alias
-
 
 inst(){
     if [[ -z "$1" ]]; then

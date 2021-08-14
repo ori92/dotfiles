@@ -4,17 +4,28 @@ setopt noclobber
 setopt appendcreate
 
 #Set TTY font and auto start tmux on tty (very handy!)
- [ "$TERM" = "linux" ] && setfont ter-u32n \
-                       && tmux new-session -s `basename $(tty)`
+[ "$TERM" = "linux" ] && setfont ter-u32n &&
+    tmux new-session -s $(basename $(tty))
 
 plugins=(
     zsh-syntax-highlighting zsh-autosuggestions you-should-use zsh_reload
     copyfile colorize extract
     sudo fzf tmux
     fzf-tab colored-man-pages
+    autoupdate
 )
 
-#Loading order does matter.
+# Auto ZCompile Sources
+source() {
+    if [[ ! "$1.zwc" -nt "$1" ]]; then
+        if [[ ! $1 =~ "/proc/self" ]]; then
+            zcompile "$1"
+        fi
+    fi
+    builtin source $@
+}
+
+# Loading source files, order does matter.
 source /usr/share/fzf/key-bindings.zsh
 source ~/.local/lib/python3.9/site-packages/scripts/shell/funky.sh # Funky ### NEET TO TEST ###
 source ~/.config/zsh/functions.zsh
@@ -24,8 +35,7 @@ source ~/.config/zsh/aliases.zsh
 bindkey '^s' fzf-file-widget
 bindkey '^x' expand-alias
 
-eval $(thefuck --alias)
-eval "$(zoxide init zsh)" #start zoxide
+eval "$(zoxide init zsh)"   #start zoxide
 eval "$(starship init zsh)" # start Starship
 
 macchina --no-box --no-ascii --no-separator --bar --theme boron --palette --hide Machine --hide ProcessorUsage --hide Memory

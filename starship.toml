@@ -1,0 +1,139 @@
+add_newline = false
+
+format = """
+[┌$character$cmd_duration─────────────────────────────────>](bold green)<>
+[|](bold green)$username$hostname<$directory> $rust$package$git_branch$git_commit$git_state$git_status$dotnet$golang$nodejs$php$python$ruby$rust$nix_shell$aws$env_var
+[└─$time─── ](bold green)$jobs"""
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 60
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+
+[character]
+success_symbol = "✅"
+error_symbol = "❌"
+vicmd_symbol = "[❮](bold green)"
+#use_symbol_for_status = true
+format = "$symbol"
+
+[cmd_duration]
+# $duration – The command duration (e.g. "15s")
+# $style – The default style of the module (e.g. "bold yellow")
+format = "[‼️took $duration... ](bold red)"
+
+[directory]
+truncation_length = 6
+truncate_to_repo = true
+format = "[$path]($style)[$read_only]($read_only_style)"
+style = "bold underline blue"
+disabled = false
+
+# [env_var]
+# variable = "STARSHIP_SHELL"
+# default = "Zsh"
+# format = "<[$env_value]($style)>"
+# style = "bold cyan"
+
+[git_branch]
+symbol = " 🌱 "
+truncation_length = 12
+truncation_symbol = "..."
+style = "bold purple"
+disabled = false
+format = "[\\($branch\\)]($style)"
+
+[git_state]
+cherry_pick = "CHERRY PICKING"
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+#progress_divider = " of "
+style = "bold yellow"
+disabled = false
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷 "
+stashed = "📦"
+modified = "📝"
+staged= "🔮"
+renamed = "👅"
+deleted = "🗑 "
+
+[hostname]
+ssh_only = false
+format = "@[$hostname]($style)\\] "
+# suffix = "⟫"
+trim_at = "."
+disabled = false
+
+[jobs]
+symbol = "🔷"
+threshold = 1
+
+[line_break]
+disabled = false
+
+[memory_usage]
+disabled = true
+show_percentage = true
+show_swap = false
+threshold = -1
+#symbol = " "
+separator = "/"
+style = "bold dimmed white"
+format = "$symbol[${ram}( | )]($style) "
+
+[nodejs]
+symbol = "⬢"
+#symbol = ""
+style = "bold green"
+disabled = false
+format = " \\[$symbol $version\\]"
+
+
+[package]
+symbol = "📦 "
+style = "bold red"
+disabled = false
+format = " [\\[🎁 $version\\]](208 bold) "
+
+
+[python]
+symbol = "🐍 "
+pyenv_version_name = false
+pyenv_prefix = "pyenv"
+style = "bold yellow"
+disabled = false
+format = " [\\[$symbol$version\\]](120 bold) "
+
+[time]
+format = "🕙[$time](209 bold)"
+time_format = "%H:%M"
+disabled = false
+
+[username]
+style_root = "bold red"
+style_user = "bold yellow"
+show_always = true
+disabled = false
+format = "\\[👽[$user]($style)"

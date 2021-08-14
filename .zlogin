@@ -1,13 +1,16 @@
 #!/bin/zsh
 
+#Disable less history file
+export LESSHISTFILE=-
+
 export SSH_ASKPASS='/usr/bin/ksshaskpass'
 
 export ZSH_COMPDUMP="/home/ori/.config/zsh/.zcompdump"
-# Execute code in the background to not affect the current session
-{
+
+zcd_compile() {
   # Compile zcompdump, if modified, to increase startup speed.
-  zcompdump="$ZSH_COMPDUMP"
-  if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
-    zcompile "$zcompdump"
+  if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
+    zcompile "$ZSH_COMPDUMP"
   fi
-} &!
+}
+zcd_compile

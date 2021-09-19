@@ -11,6 +11,7 @@ alias ll='exa -la --icons --links --group-directories-first'                    
 alias ldot='exa -la --icons .* --links --group-directories-first'                       #show only dot files
 alias lS='lsd --total-size -l --sort=size'                                              #show folder total size
 
+alias nvim=lvim
 alias zshrc="${EDITOR} ${ZDOTDIR:-$HOME}/.zshrc" # Quick access to the .zshrc file
 # Command line head / tail shortcuts
 alias -g H='| head'
@@ -55,6 +56,7 @@ alias st='sudo touch'
 alias e='echo'
 alias c='cat'
 alias cc='ccat'
+alias j='sudo journalctl -b -p3'
 alias less='cless'
 alias edot='code /home/ori/Projects/dotfiles'
 alias vdot='tmux new-window -c /home/ori/Projects/dotfiles lvim'

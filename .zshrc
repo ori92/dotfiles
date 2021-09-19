@@ -2,6 +2,7 @@
 
 setopt noclobber
 setopt appendcreate
+setopt extendedglob
 
 #Set TTY font and auto start tmux on tty (very handy!)
 [ "$TERM" = "linux" ] && setfont ter-u32n &&
@@ -25,7 +26,7 @@ source() {
     builtin source $@
 }
 
-# Loading source files, order does matter.
+# Loading order does matter.
 source /usr/share/fzf/key-bindings.zsh
 source ~/.local/lib/python3.9/site-packages/scripts/shell/funky.sh # Funky ### NEET TO TEST ###
 source ~/.config/zsh/functions.zsh

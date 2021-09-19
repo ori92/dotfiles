@@ -105,3 +105,7 @@ v() {
     lvim $@
   fi
 }
+
+rand() {
+  echo $(( ($RANDOM % $1 ) + 1 ))
+}

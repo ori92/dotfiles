@@ -1,9 +1,9 @@
 add_newline = false
 
 format = """
-[┌$character$cmd_duration─────────────────────────────────>](bold green)<>
+[┌$character$cmd_duration─────────────────────────────────>](bold green) <♟️>
 [|](bold green)$username$hostname<$directory> $rust$package$git_branch$git_commit$git_state$git_status$dotnet$golang$nodejs$php$python$ruby$rust$nix_shell$aws$env_var
-[└─$time─── ](bold green)$jobs"""
+[└─$time===> ](bold green)$jobs"""
 
 [battery]
 full_symbol = "🔋"

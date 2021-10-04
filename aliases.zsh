@@ -202,3 +202,5 @@ export white='\033[1;37m'
 
 #list of colors for easy echo
 export colors='no_color black dgray red lred green lgreen orange yellow blue lblue purple lpurple cyan lcyan lgray white'
+
+export bold=$(tput bold)

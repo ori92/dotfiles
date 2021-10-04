@@ -27,6 +27,8 @@ stimer() (
     echo -ne "$(date -u --date @$(($date1 - $(date +%s))) +%H:%M:%S)\r"
     sleep .5
   done
+  notify-send "$2"
+  paplay ~/bin/notification.wav
   kdialog --msgbox "$2"
 )
 

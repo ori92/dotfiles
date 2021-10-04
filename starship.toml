@@ -1,9 +1,30 @@
 add_newline = false
 
 format = """
-[┌$character$cmd_duration─────────────────────────────────>](bold green) <♟️>
-[|](bold green)$username$hostname<$directory> $rust$package$git_branch$git_commit$git_state$git_status$dotnet$golang$nodejs$php$python$ruby$rust$nix_shell$aws$env_var
-[└─$time===> ](bold green)$jobs"""
+[┌-$character$cmd_duration─────────────────────────────────>](bold green) 
+[|](bold green)$username\
+$hostname\
+{$directory} \
+$rust\
+$package\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$dotnet\
+$golang\
+$nodejs\
+$php\
+$python\
+$ruby\
+$rust\
+$nix_shell\
+$env_var\
+<♟️>
+[└─$time==> ](bold green)$jobs"""
+
+right_format = "[<<--](bold 33)"
+scan_timeout = 30
 
 [battery]
 full_symbol = "🔋"
@@ -32,13 +53,14 @@ format = "$symbol"
 [cmd_duration]
 # $duration – The command duration (e.g. "15s")
 # $style – The default style of the module (e.g. "bold yellow")
-format = "[‼️took $duration... ](bold red)"
+show_notifications = true
+format = "[⬆ $duration ⌛](bold red)"
 
 [directory]
 truncation_length = 6
 truncate_to_repo = true
-format = "[$path]($style)[$read_only]($read_only_style)"
-style = "bold underline blue"
+format = "📂 [$path]($style)[$read_only]($read_only_style)"
+style = "bold underline purple"
 disabled = false
 
 # [env_var]
@@ -51,9 +73,9 @@ disabled = false
 symbol = " 🌱 "
 truncation_length = 12
 truncation_symbol = "..."
-style = "bold purple"
+style = "bold blue"
 disabled = false
-format = "[\\($branch\\)]($style)"
+format = "[\\($branch\\)]($style) "
 
 [git_state]
 cherry_pick = "CHERRY PICKING"

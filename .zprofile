@@ -25,7 +25,13 @@ export RANGER_LOAD_DEFAULT_RC='FALSE'
 export NODE_REPL_HISTORY="/home/ori/.config/.node_repl_history"
 
 # FZF
-export FZF_KEY_BINDS="--bind 'f1:execute(lvim {}),ctrl-e:execute-silent(open_dir {}),ctrl-k:execute-silent(echo -n \" \" |xclip -sel clip),ctrl-a:execute-silent(append_clip {}),ctrl-y:execute-silent(echo -n {} | xclip -sel clip)+abort' --bind '?:preview:preview_dir_or_file {}' --preview-window hidden"
+export FZF_KEY_BINDS="\
+  --bind 'ctrl-e:execute-silent(tmux new-window lvim -f {})' 
+  --bind 'ctrl-d:execute-silent(open_dir {})' 
+  --bind 'ctrl-k:execute-silent(echo -n \" \" |xclip -sel clip)' 
+  --bind 'ctrl-a:execute-silent(append_clip {})' 
+  --bind 'ctrl-y:execute-silent(echo -n {} | xclip -sel clip)' 
+  --bind '?:preview:preview_dir_or_file {}' --preview-window hidden"
 export FZF_DEFAULT_COMMAND='fd --color=always -H -E ".git" -E ".cache" -E "cache" -E ".nuget" -E "Brave-Browser" -E "CachedData" -E "Cache" -E "site-packages"  -E "icons" -E ".cargo" -E ".oh-my-zsh/lib" -E "node_modules" -E "sublime-text-3" -E ".npm" -E "linux-ck" -E "themes" -E ".themes" -E ".vscode" -E ".rustup" -E "golang.org" -E "google.golang.org" -E "nvim/bundle" -E ".icons" -E ".dotnet"'
 export FZF_DEFAULT_OPTS="--ansi --multi --layout=reverse $FZF_KEY_BINDS"
 export FZF_COMPLETION_TRIGGER='``'
@@ -50,8 +56,3 @@ export PATH="/usr/lib/ccache/bin:$PATH"
 
 # gtk config files location
 export GTK_RC_FILES=/etc/gtk/gtkrc:/home/ori/.config/gtkrc
-
-ulimit -S -c 0 >/dev/null 2>&1 #disable coredump for all users https://www.cyberciti.biz/faq/linux-disable-core-dumps/
-
-#removes naga's mouse keys input.
-xinput set-int-prop $(xinput | 'grep' -v 'Keyboard' | 'grep' "Naga" | tail -n1 | awk '{print $6}' | tr -d 'id=') "Device Enabled" 8 0

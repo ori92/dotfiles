@@ -3,7 +3,11 @@
 # Modified aliases from common-aliases plugin.
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
 
+#enabaling alias after sude i.e. 'sudo ll'
+alias sudo='sudo '
+
 # ls - the common ones I use a lot, shortened for rapid fire usage
+alias ls='exa'
 alias l='exa -a --icons --group-directories-first'                                      #size,show type,human readable
 alias lr='exa -laR --icons --links --sort=date --color-scale --group-directories-first' #sorted by date,recursive,show type,human readable
 alias lt='exa -la --icons --links --sort=date --color-scale --group-directories-first'  #long list,sorted by date,show type,human readable
@@ -203,4 +207,6 @@ export white='\033[1;37m'
 #list of colors for easy echo
 export colors='no_color black dgray red lred green lgreen orange yellow blue lblue purple lpurple cyan lcyan lgray white'
 
-export bold=$(tput bold)
+if [[ $- == *i* ]]; then
+  export bold=$(tput bold)
+fi

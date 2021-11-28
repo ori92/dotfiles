@@ -1,7 +1,7 @@
 add_newline = false
 
 format = """
-[┌-$character$cmd_duration─────────────────────────────────>](bold green) 
+[┌─────────────────────────────────>](bold green)$cmd_duration $character$status
 [|](bold green)$username\
 $hostname\
 {$directory} \
@@ -21,9 +21,9 @@ $rust\
 $nix_shell\
 $env_var\
 <♟️>
-[└─$time==> ](bold green)$jobs"""
+[└─$time==>](bold green)$jobs """
 
-right_format = "[<<--](bold 33)"
+right_format = "[<-](bold 33)"
 scan_timeout = 30
 
 [battery]
@@ -45,8 +45,8 @@ style = "bold green"
 
 [character]
 success_symbol = "✅"
-error_symbol = "❌"
-vicmd_symbol = "[❮](bold green)"
+error_symbol = ""
+#vicmd_symbol = "[❮](bold green)"
 #use_symbol_for_status = true
 format = "$symbol"
 
@@ -54,13 +54,13 @@ format = "$symbol"
 # $duration – The command duration (e.g. "15s")
 # $style – The default style of the module (e.g. "bold yellow")
 show_notifications = true
-format = "[⬆ $duration ⌛](bold red)"
+format = "[🔔$duration⌛](bold red)"
 
 [directory]
 truncation_length = 6
 truncate_to_repo = true
-format = "📂 [$path]($style)[$read_only]($read_only_style)"
-style = "bold underline purple"
+format = "📂[$path]($style)[$read_only]($read_only_style)"
+style = "bold underline blue"
 disabled = false
 
 # [env_var]
@@ -94,12 +94,12 @@ conflicted = "🏳"
 ahead = "🏎💨"
 behind = "😰"
 diverged = "😵"
-untracked = "🤷 "
+untracked = "🤷"
 stashed = "📦"
 modified = "📝"
 staged= "🔮"
 renamed = "👅"
-deleted = "🗑 "
+deleted = "🗑  "
 
 [hostname]
 ssh_only = false
@@ -132,13 +132,11 @@ style = "bold green"
 disabled = false
 format = " \\[$symbol $version\\]"
 
-
 [package]
 symbol = "📦 "
 style = "bold red"
 disabled = false
 format = " [\\[🎁 $version\\]](208 bold) "
-
 
 [python]
 symbol = "🐍 "
@@ -151,6 +149,18 @@ format = " [\\[$symbol$version\\]](120 bold) "
 [time]
 format = "🕙[$time](209 bold)"
 time_format = "%H:%M"
+disabled = false
+
+[status]
+style = ""
+symbol = "❌"
+success_symbol = "✅"
+not_executable_symbol = "🚫"
+not_found_symbol = "🔍"
+sigint_symbol	= "🧱"
+signal_symbol	= "⚡"
+format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+#map_symbol = true
 disabled = false
 
 [username]

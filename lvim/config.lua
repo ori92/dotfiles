@@ -70,9 +70,16 @@ lvim.builtin.nvimtree.width = 20
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+lvim.builtin.treesitter.matchup.enable = true
+lvim.builtin.treesitter.context_commentstring.enable = true
+lvim.builtin.treesitter.rainbow.enable = true
 
 lvim.builtin.telescope.defaults = { vimgrep_arguments = { 'rg', '--hidden', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--iglob', '!.git' }}
-lvim.builtin.which_key.mappings.s.f = { "<cmd>Telescope find_files find_command=rg,--hidden,--files,--iglob,!.git prompt_prefix=🔍<CR>", "Find File" }
+lvim.builtin.which_key.mappings.s.f = { "<cmd>Telescope find_files find_command=fd,--hidden,--exclude,.git prompt_prefix=🔍<CR>", "Find File" }
+
+-- show hidden files when running a find command in telescope
+lvim.builtin.telescope.pickers = { find_files = { hidden = true } }
+lvim.builtin.telescope.defaults.file_ignore_patterns = { ".git", "node_modules" }
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>

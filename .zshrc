@@ -41,4 +41,4 @@ bindkey '^x' expand-alias
 eval "$(zoxide init zsh)"   # start zoxide
 eval "$(starship init zsh)" # start Starship
 
-macchina
+neofetch

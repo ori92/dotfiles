@@ -10,10 +10,10 @@ kn["<esc><esc>"] = "<cmd>nohlsearch<cr>"
 kn["Y"] = "y$"
 kv["p"] = [["_dP]]
 
-kn["<Up>"] = "<nop>"
-kn["<Down>"] = "<nop>"
-kn["<Left>"] = "<nop>"
-kn["<Right>"] = "<nop>"
+-- kn["<Up>"] = "<nop>"
+-- kn["<Down>"] = "<nop>"
+-- kn["<Left>"] = "<nop>"
+-- kn["<Right>"] = "<nop>"
 
 -- Move Cursor in insert mode
 ki["<C-l>"] = "<Right>"

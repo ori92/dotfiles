@@ -21,7 +21,7 @@ vim.opt.timeoutlen = 200
 
 -- LSP
 lvim.lsp.diagnostics.text = false
-
+lvim.lsp.automatic_servers_installation = true
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"

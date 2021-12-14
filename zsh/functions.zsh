@@ -9,6 +9,7 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --color=always -H -E ".ccache" -E ".git" -E ".cache" -E "cache" -E ".nuget" -E "Brave-Browser" -E "CachedData" -E "Cache" -E "site-packages" -E "icons" -E ".cargo" -E ".oh-my-zsh/lib" -E "node_modules" -E "sublime-text-3" -E ".npm" -E "linux-ck" -E "themes" -E ".themes" -E ".vscode" -E ".rustup" -E "golang.org" -E "google.golang.org" -E "nvim/bundle" -E ".icons" -E ".dotnet" --full-path / "$1"
 }
 
+# edit tmux output with vim
 vim-edit-output() {
   file=$(mktemp).sh
   tmux capture-pane -pS -32768 >$file
@@ -64,17 +65,17 @@ bak() {
 
 # Replace String in text file
 repl() {
-  cat $1 | sed "s/$2/$3/g" >$1.new
-  rm -rf $1
-  mv $1.new $1
+  sed -i "s/$2/$3/g" $1
 }
 
-function expand-alias() {
+# expand alias on prompt
+expand-alias() {
   zle _expand_alias
   zle autosuggest-clear
 }
 zle -N expand-alias
 
+# install package with pamac
 inst() {
   if [[ -z "$1" ]]; then
     pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")' | xargs -ro sudo pacman -S
@@ -83,6 +84,7 @@ inst() {
   fi
 }
 
+# reinstall package with pamac
 reinst() {
   pamac reinstall $1
 }
@@ -90,6 +92,7 @@ reinst() {
 # Fix paste being slow because of the highlight plugin
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
+# set fan speed manually
 fan1() {
   echo $1 | sudo tee /sys/devices/virtual/hwmon/hwmon1/pwm1
 }
@@ -108,6 +111,7 @@ v() {
   fi
 }
 
+# get random number
 rand() {
   echo $(( ($RANDOM % $1 ) + 1 ))
 }

@@ -33,8 +33,6 @@ source ~/.config/.oh-my-zsh/oh-my-zsh.sh
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/pentest.zsh
 
-source /usr/share/nvm/init-nvm.sh #nvm
-
 bindkey '^s' fzf-file-widget
 bindkey '^x' expand-alias
 

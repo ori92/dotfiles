@@ -13,7 +13,7 @@ plugins=(
     zsh-autosuggestions you-should-use 
     copyfile colorize extract copybuffer
     sudo fzf fzf-tab colored-man-pages
-    autoupdate zsh-autopair zsh-syntax-highlighting calc
+    autoupdate zsh-autopair zsh-syntax-highlighting 
 )
 
 # Auto ZCompile Sources

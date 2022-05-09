@@ -1,17 +1,17 @@
 #!/bin/zsh
 
 # Set EDITOR
-export PATH="/home/ori/.local/bin:/home/ori/bin:/home/ori/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export PATH="/.local/bin:/bin:/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export EDITOR="lvim"
 export XIVIEWER="gwenview"
 export BROWSER="brave"
-export HISTFILE="/home/ori/.config/zsh/.zsh_history"
+export HISTFILE="$HOME/.config/zsh/.zsh_history"
 export SYSTEMD_EDITOR="lvim"
 
 # Set PATH and LOCAL
 export LC_ALL="en_US.UTF-8"
 export LC_MESSAGES="C"
-export ZSH="/home/ori/.config/.oh-my-zsh"
+export ZSH="$HOME/.config/.oh-my-zsh"
 export COMPLETION_WAITING_DOTS="true"
 # oh-my-zsh: Underscores (_) and hyphens (-) will be interchangeable
 export HYPHEN_INSENSITIVE=true
@@ -22,7 +22,7 @@ export HIST_STAMPS="%d/%m/%y %T"
 export RANGER_LOAD_DEFAULT_RC='FALSE'
 
 # node repl history location.
-export NODE_REPL_HISTORY="/home/ori/.config/.node_repl_history"
+export NODE_REPL_HISTORY="$HOME/.config/.node_repl_history"
 
 # FZF
 export FZF_KEY_BINDS="\
@@ -49,10 +49,10 @@ export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
 
 # # ccache
-# export CCACHE_DIR="/home/ori/.ccache"
+# export CCACHE_DIR="/.ccache"
 # export CC="ccache gcc"
 # export CXX="ccache g++"
 # export PATH="/usr/lib/ccache/bin:$PATH"
 
 # gtk config files location
-export GTK_RC_FILES=/etc/gtk/gtkrc:/home/ori/.config/gtkrc
+export GTK_RC_FILES=/etc/gtk/gtkrc:$HOME/.config/gtkrc

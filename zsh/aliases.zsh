@@ -53,6 +53,9 @@ alias rem='sudo pacman -R'
 alias rpac='sudo rm /var/lib/pacman/db.lck'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
+#otp
+alias otp="cat $HOME/creds/otp| base32 -d | totp set test/totp |tee >( clip )"
+
 alias t='tail -f'
 alias w='watch -n 0.5 '
 alias cf='copyfile'

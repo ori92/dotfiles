@@ -75,7 +75,7 @@ kn["<C-d>"] = "daw"
 wk["C"] = { "Ypk:CommentToggle<CR>j", "Duplicate comment" }
 kv["<Leader>C"] = "gcgvyPgvgc"
 
--- Typing gcc is too much
+-- Typing gcc is too much (comments toggle)
 kn["<C-c>"] = ":CommentToggle<CR>"
 ki["<C-c>"] = "<cmd>CommentToggle<CR>"
 kv["<C-c>"] = ":CommentToggle<CR>gv"

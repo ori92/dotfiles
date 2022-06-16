@@ -11,13 +11,24 @@ an executable
 -- add lvim config folder to path
 package.path = package.path .. ";" .. os.getenv("HOME") .. "/.config/lvim/?.lua"
 
-
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "nord"
 vim.opt.wrap = false
 vim.opt.timeoutlen = 200
+vim.opt.cmdheight = 1
+vim.opt.list = true -- Show trailing hidden characters.
+vim.opt.listchars = {
+	eol = "-",
+	tab = "--",
+	trail = "!",
+	extends = ">",
+	precedes = "<",
+}
+
+-- rainbow
+lvim.builtin.treesitter.rainbow.enable = true
 
 -- LSP
 lvim.lsp.diagnostics.text = false
@@ -62,7 +73,6 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 --lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.nvimtree.width = 20
 
 -- if you don't want all the parsers change this to a table of the ones you want
@@ -70,8 +80,23 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.matchup.enable = true
 lvim.builtin.treesitter.context_commentstring.enable = true
 
-lvim.builtin.telescope.defaults = { vimgrep_arguments = { 'rg', '--hidden', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--iglob', '!.git' } }
-lvim.builtin.which_key.mappings.s.f = { "<cmd>Telescope find_files find_command=fd,--hidden,--exclude,.git prompt_prefix=🔍<CR>", "Find File" }
+lvim.builtin.telescope.defaults = {
+	vimgrep_arguments = {
+		"rg",
+		"--hidden",
+		"--no-heading",
+		"--with-filename",
+		"--line-number",
+		"--column",
+		"--smart-case",
+		"--iglob",
+		"!.git",
+	},
+}
+lvim.builtin.which_key.mappings.s.f = {
+	"<cmd>Telescope find_files find_command=fd,--hidden,--exclude,.git prompt_prefix=🔍<CR>",
+	"Find File",
+}
 
 -- show hidden files when running a find command in telescope
 lvim.builtin.telescope.pickers = { find_files = { hidden = true } }

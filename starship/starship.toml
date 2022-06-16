@@ -1,8 +1,8 @@
 add_newline = false
 
 format = """
-[┌─────────────────────────────────>](bold green)$cmd_duration $character$status
-[|](bold green)$username\
+[┌─────────────────────────────────>](bold fg:4)$cmd_duration $status
+[|](bold 4)$username\
 $hostname\
 {$directory} \
 $rust\
@@ -21,46 +21,46 @@ $rust\
 $nix_shell\
 $env_var\
 <♟️>
-[└─$time==>](bold green)$jobs """
+[└─$time==>](bold 4)$jobs """
 
 right_format = "[<-](bold 33)"
 scan_timeout = 30
 
-[battery]
-full_symbol = "🔋"
-charging_symbol = "⚡️"
-discharging_symbol = "💀"
+# [battery]
+# full_symbol = "🔋"
+# charging_symbol = "⚡️"
+# discharging_symbol = "💀"
 
-[[battery.display]]
-threshold = 10
-style = "bold red"
+# [[battery.display]]
+# threshold = 10
+# style = "bold 1"
 
-[[battery.display]]
-threshold = 60
-style = "bold yellow"
+# [[battery.display]]
+# threshold = 60
+# style = "bold 3"
 
-[[battery.display]]
-threshold = 100
-style = "bold green"
+# [[battery.display]]
+# threshold = 100
+# style = "bold 2"
 
-[character]
-success_symbol = "✅"
-error_symbol = ""
-#vicmd_symbol = "[❮](bold green)"
-#use_symbol_for_status = true
-format = "$symbol"
+# [character]
+# success_symbol = "✅"
+# error_symbol = ""
+# #vicmd_symbol = "[❮](bold 2)"
+# #use_symbol_for_status = true
+# format = "$symbol"
 
 [cmd_duration]
 # $duration – The command duration (e.g. "15s")
-# $style – The default style of the module (e.g. "bold yellow")
+# $style – The default style of the module (e.g. "bold 3")
 show_notifications = true
-format = "[🔔$duration⌛](bold red)"
+format = "[🔔$duration⌛](bold 1)"
 
 [directory]
 truncation_length = 6
 truncate_to_repo = true
 format = "📂[$path]($style)[$read_only]($read_only_style)"
-style = "bold underline blue"
+style = "bold underline 4"
 disabled = false
 
 # [env_var]
@@ -73,7 +73,7 @@ disabled = false
 symbol = " 🌱 "
 truncation_length = 12
 truncation_symbol = "..."
-style = "bold blue"
+style = "bold 4"
 disabled = false
 format = "[\\($branch\\)]($style) "
 
@@ -86,7 +86,7 @@ bisect = "BISECTING"
 am = "AM"
 am_or_rebase = "AM/REBASE"
 #progress_divider = " of "
-style = "bold yellow"
+style = "bold 3"
 disabled = false
 
 [git_status]
@@ -103,7 +103,7 @@ deleted = "🗑  "
 
 [hostname]
 ssh_only = false
-format = "@[$hostname]($style)\\] "
+format = "@[$hostname](bold 3)\\] "
 # suffix = "⟫"
 trim_at = "."
 disabled = false
@@ -122,19 +122,19 @@ show_swap = false
 threshold = -1
 #symbol = " "
 separator = "/"
-style = "bold dimmed white"
+style = "bold dimmed 7"
 format = "$symbol[${ram}( | )]($style) "
 
 [nodejs]
 symbol = "⬢"
 #symbol = ""
-style = "bold green"
+style = "bold 2"
 disabled = false
 format = " \\[$symbol $version\\]"
 
 [package]
 symbol = "📦 "
-style = "bold red"
+style = "bold 1"
 disabled = false
 format = " [\\[🎁 $version\\]](208 bold) "
 
@@ -142,7 +142,7 @@ format = " [\\[🎁 $version\\]](208 bold) "
 symbol = "🐍 "
 pyenv_version_name = false
 pyenv_prefix = "pyenv"
-style = "bold yellow"
+style = "bold 3"
 disabled = false
 format = " [\\[$symbol$version\\]](120 bold) "
 
@@ -159,13 +159,13 @@ not_executable_symbol = "🚫"
 not_found_symbol = "🔍"
 sigint_symbol	= "🧱"
 signal_symbol	= "⚡"
-format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+format = '[$symbol$common_meaning$signal_name$maybe_int]($style) '
 #map_symbol = true
 disabled = false
 
 [username]
-style_root = "bold red"
-style_user = "bold yellow"
+style_root = "bold 1"
+style_user = "bold 33"
 show_always = true
 disabled = false
 format = "\\[👽[$user]($style)"

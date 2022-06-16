@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-#Disable less history file
+# Disable less history file
 export LESSHISTFILE=-
 
 export SSH_ASKPASS='/usr/bin/ksshaskpass'

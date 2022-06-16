@@ -13,14 +13,14 @@ _fzf_compgen_dir() {
 vim-edit-output() {
   file=$(mktemp).sh
   tmux capture-pane -pS -32768 >$file
-  tmux new-window -n:mywindow "lvim '+ normal G $' $file"
+  tmux new-window -n:mywindow "nvim '+ normal G $' $file"
 }
 
 math() {
   printf "%'.f\n" $(echo "$1" | bc)
 }
 
-#Timer
+# Timer
 stimer() (
   seconds=$(($1))
   date1=$(($(date +%s) + $seconds))
@@ -38,7 +38,7 @@ timer() (
   stimer $((60 * $1)) $2
 )
 
-#Counter
+# Counter
 count() (
   SECONDS=0
   while [ true ]; do
@@ -78,7 +78,7 @@ zle -N expand-alias
 # install package with pamac
 inst() {
   if [[ -z "$1" ]]; then
-    pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")' | xargs -ro sudo pacman -S
+    pacseek
   else
     pamac install $@ || echo "Failed."
   fi
@@ -100,18 +100,7 @@ fan2() {
   echo $1 | sudo tee /sys/devices/virtual/hwmon/hwmon1/pwm3
 }
 
-# execute neovim with vertical splits by default if multiple files are opend.
-v() {
-  if [ $# -eq 2 ]; then
-    lvim -O2 $@
-  elif [ $# -gt 2 ]; then
-    lvim -O3 $@
-  else
-    lvim $@
-  fi
-}
-
 # get random number
 rand() {
-  echo $(( ($RANDOM % $1 ) + 1 ))
+  echo $((1 + ($RANDOM % $1)))
 }

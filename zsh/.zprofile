@@ -1,12 +1,12 @@
 #!/bin/zsh
 
 # Set EDITOR
-export PATH="/.local/bin:/bin:/.local/share/gem/ruby/3.0.0/bin:$PATH"
-export EDITOR="lvim"
+export PATH="$HOME/.local/bin:/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export EDITOR="nvim"
 export XIVIEWER="gwenview"
 export BROWSER="brave"
 export HISTFILE="$HOME/.config/zsh/.zsh_history"
-export SYSTEMD_EDITOR="lvim"
+export SYSTEMD_EDITOR="nvim"
 
 # Set PATH and LOCAL
 export LC_ALL="en_US.UTF-8"
@@ -18,7 +18,7 @@ export HYPHEN_INSENSITIVE=true
 # oh-my-zsh: Use this setting if you want to disable marking untracked files under VCS as dirty. This makes repository status checks for large repositories much, much faster.
 export DISABLE_UNTRACKED_FILES_DIRTY=true
 export HIST_STAMPS="%d/%m/%y %T"
-#stop ranger from loading both the default and your custom rc.conf
+# stop ranger from loading both the default and your custom rc.conf
 export RANGER_LOAD_DEFAULT_RC='FALSE'
 
 # node repl history location.
@@ -26,7 +26,7 @@ export NODE_REPL_HISTORY="$HOME/.config/.node_repl_history"
 
 # FZF
 export FZF_KEY_BINDS="\
-  --bind 'ctrl-e:execute-silent(tmux new-window lvim -f {})'
+  --bind 'ctrl-e:execute-silent(tmux new-window nvim -f {})'
   --bind 'ctrl-d:execute-silent(open_dir {})'
   --bind 'ctrl-k:execute-silent(echo -n \" \" |xclip -sel clip)'
   --bind 'ctrl-a:execute-silent(append_clip {})'
@@ -36,7 +36,7 @@ export FZF_DEFAULT_COMMAND='fd --color=always -H -E ".git" -E ".cache" -E "cache
 export FZF_DEFAULT_OPTS="--ansi --multi --layout=reverse --preview-window hidden $FZF_KEY_BINDS"
 export FZF_COMPLETION_TRIGGER='``'
 #export FZF_COMPLETION_OPTS='+c -x'
-export FZF_ALT_C_COMMAND="fd -H --type d --color=always -E /proc -E /sys -E /dev --full-path . / /d"
+export FZF_ALT_C_COMMAND="fd -H --type d --color=always -E /proc -E /sys -E /dev --full-path . / "
 export FZF_ALT_C_OPTS="$FZF_KEY_BINDS --preview 'lsd --color=always -l --total-size --blocks=name,size {}' --preview-window default"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND "
 export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS --preview 'preview_dir_or_file {}' --preview-window default"

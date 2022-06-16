@@ -5,15 +5,15 @@ setopt appendcreate
 setopt extendedglob
 setopt dotglob
 
-#Set TTY font and auto start tmux on tty (very handy!)
+# Set TTY font and auto start tmux on tty (very handy!)
 [ "$TERM" = "linux" ] && setfont ter-u32n &&
     tmux new-session -s $(basename $(tty))
 
 plugins=(
-    zsh-autosuggestions you-should-use 
+    zsh-autosuggestions you-should-use
     copyfile colorize extract copybuffer
     sudo fzf fzf-tab colored-man-pages
-    autoupdate zsh-autopair zsh-syntax-highlighting 
+    autoupdate zsh-autopair zsh-syntax-highlighting
 )
 
 # Auto ZCompile Sources
@@ -40,3 +40,5 @@ eval "$(zoxide init zsh)"   # start zoxide
 eval "$(starship init zsh)" # start Starship
 
 neofetch
+
+source /home/ori/.config/broot/launcher/bash/br

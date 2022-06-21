@@ -51,7 +51,7 @@ count() (
 palias() (
   read "answer?Are You Sure?[y/N]"
   if [[ $answer =~ ^[Yy]$ ]]; then
-    echo alias "$*" >>~/.config/zsh/aliases.zsh
+    echo alias "$*" >>$XDG_CONFIG_HOME/zsh/aliases.zsh
     alias -g "$*"
     echo Alias Created in aliases.zsh!
     tmux send-keys "alias $*" Enter

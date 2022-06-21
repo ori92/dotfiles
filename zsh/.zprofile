@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Set EDITOR
-export PATH="$HOME/.local/bin:/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:/bin:$HOME/.local/share/gem/ruby/3.0.0/bin"
 export EDITOR="nvim"
 export XIVIEWER="gwenview"
 export BROWSER="brave"

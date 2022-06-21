@@ -20,11 +20,11 @@ plugins=(
 
 # Loading, order does matters.
 source /usr/share/fzf/key-bindings.zsh
-source ~/.config/zsh/functions.zsh
-source ~/.config/.oh-my-zsh/oh-my-zsh.sh
-source ~/.config/zsh/aliases.zsh
-source ~/.config/zsh/pentest.zsh
-source ~/.config/broot/launcher/bash/br
+source $ZDOTDIR/functions.zsh
+source $ZSH/oh-my-zsh.sh
+source $ZDOTDIR/aliases.zsh
+source $ZDOTDIR/pentest.zsh
+source $XDG_CONFIG_HOME/broot/launcher/bash/br
 
 bindkey '^s' fzf-file-widget
 bindkey '^x' expand-alias

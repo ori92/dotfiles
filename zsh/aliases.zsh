@@ -3,19 +3,18 @@
 # Modified aliases from common-aliases plugin.
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
 
-#enabaling alias after sude i.e. 'sudo ll'
+# enabaling alias after sude i.e. 'sudo ll'
 alias sudo='sudo '
 
 # ls - the common ones I use a lot, shortened for rapid fire usage
 alias ls='exa'
-alias l='exa -a --icons --group-directories-first'                                      #size,show type,human readable
-alias lr='exa -laR --icons --links --sort=date --color-scale --group-directories-first' #sorted by date,recursive,show type,human readable
-alias lt='exa -la --icons --links --sort=date --color-scale --group-directories-first'  #long list,sorted by date,show type,human readable
-alias ll='exa -la --icons --links --group-directories-first'                            #long list
-alias ldot='exa -la --icons .* --links --group-directories-first'                       #show only dot files
-alias lS='lsd --total-size -l --sort=size'                                              #show folder total size
+alias l='exa -a --icons --group-directories-first'                                      # size,show type,human readable
+alias lr='exa -laR --icons --links --sort=date --color-scale --group-directories-first' # sorted by date,recursive,show type,human readable
+alias lt='exa -la --icons --links --sort=date --color-scale --group-directories-first'  # long list,sorted by date,show type,human readable
+alias ll='exa -la --icons --links --group-directories-first'                            # long list
+alias ldot='exa -la --icons .* --links --group-directories-first'                       # show only dot files
+alias lS='lsd --total-size -l --sort=size'                                              # show folder total size
 
-alias nvim=lvim
 alias zshrc="${EDITOR} ${ZDOTDIR:-$HOME}/.zshrc" # Quick access to the .zshrc file
 # Command line head / tail shortcuts
 alias -g H='| head'
@@ -41,20 +40,27 @@ alias rcp='rsync -aP'
 alias rmv='rsync -aP --remove-source-files'
 
 # vim is now a function (functions.zsh)
+alias v='nvim'
 alias vi='v'
 alias vim='v'
 alias edit='v'
 alias gedit='subl'
 
 # Package manager
-alias updt='pamac upgrade'
+alias updt='yay -Syu'
 alias u='updt'
 alias rem='sudo pacman -R'
 alias rpac='sudo rm /var/lib/pacman/db.lck'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
-#otp
+# otp
 alias otp="cat $HOME/creds/otp| base32 -d | totp set test/totp |tee >( clip )"
+
+# vpn
+alias vpn_b_ams='echo -n "Phone OTP\n$(cat ~/creds/dom_user)\n$(cat ~/creds/dom_pass)\n$(cat /home/ori/creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/creds/dom_user) --protocol=pulse  ams-remoteaccess.microfocus.net'
+alias vpn_b_emea=' echo -n "Phone OTP\n$(cat ~/creds/dom_user)\n$(cat ~/creds/dom_pass)\n$(cat /home/ori/creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/creds/dom_user) --protocol=pulse emea-remoteaccess.microfocus.net'
+alias vpn_b_apj='echo -n "Phone OTP\n$(cat ~/creds/dom_user)\n$(cat ~/creds/dom_pass)\n$(cat /home/ori/creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/creds/dom_user) --protocol=pulse apj-remoteaccess.microfocus.net'
+alias vpn_a_israel='echo -n "Phone OTP\n$(cat ~/creds/dom_user)\n$(cat ~/creds/dom_pass)\n$(cat /home/ori/creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/creds/dom_user) --protocol=pulse israel-remoteaccess.ext.softwaregrp.com'
 
 alias t='tail -f'
 alias w='watch -n 0.5 '
@@ -67,12 +73,14 @@ alias cc='ccat'
 alias j='sudo journalctl -b -p3'
 alias less='cless'
 alias edot='code $HOME/Projects/dotfiles'
-alias vdot='tmux new-window -c $HOME/Projects/dotfiles lvim'
+alias vdot='tmux new-window -c /opt/DotFiles nvim'
 alias locate='plocate'
-alias r='ranger'
 alias f='locate'
-alias sens='watch -d -n.5 sensors' #Sensors
-alias core='sudo i7z'              #CPU info
+alias r='ranger'
+alias sens='watch -d -n.5 sensors' # Sensors
+alias core='sudo i7z'              # CPU info
+alias ag='ag --hidden'
+alias vifm='vifmrun'
 
 alias mp='sudo modprobe '
 alias serv='sudo python -m http.server'
@@ -138,20 +146,20 @@ for ft in $_image_fts; do alias -s $ft="$XIVIEWER"; done
 _media_fts=(ape avi flv m4a mkv mov mp3 mpeg mpg ogg ogm rm wav webm)
 for ft in $_media_fts; do alias -s $ft=smplayer; done
 
-#read documents
+# read documents
 alias -s pdf='okular'
 alias -s ps='gv'
 alias -s dvi='xdvi'
 alias -s chm='xchm'
 alias -s djvu='djview'
 
-#list whats inside packed file
+# list whats inside packed file
 alias -s zip='unzip -l'
 alias -s rar='unrar l'
 alias -s tar='tar tf'
 alias -s gz='gunzip -l'
 
-#systemd
+# systemd
 alias s='systemctl status '
 alias us='systemctl --user status '
 alias status='sudo systemctl status'
@@ -187,9 +195,9 @@ alias DI='disable '
 alias reboot='systemctl reboot'
 alias poweroff='systemctl poweroff'
 
-alias ':q'='exit' # Force of habbit
+alias ':q'='exit' # Force of a habbit..
 
-#Colors
+# Colors
 export no_color='\033[0m'
 export black='\033[0;30m'
 export dgray='\033[1;30m'
@@ -208,7 +216,7 @@ export lcyan='\033[1;36m'
 export lgray='\033[0;37m'
 export white='\033[1;37m'
 
-#list of colors for easy echo
+# list of colors for easy echo
 export colors='no_color black dgray red lred green lgreen orange yellow blue lblue purple lpurple cyan lcyan lgray white'
 
 if [[ $- == *i* ]]; then

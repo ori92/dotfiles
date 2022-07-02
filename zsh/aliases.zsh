@@ -6,7 +6,7 @@
 # enabaling alias after sude i.e. 'sudo ll'
 alias sudo='sudo '
 
-# ls - the common ones I use a lot, shortened for rapid fire usage
+# ls - the common ones I use a lot, shortened for rapid fire
 alias ls='exa'
 alias l='exa -a --icons --group-directories-first'                                      # size,show type,human readable
 alias lr='exa -laR --icons --links --sort=date --color-scale --group-directories-first' # sorted by date,recursive,show type,human readable
@@ -27,7 +27,7 @@ alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
 
-alias du='dust -r'
+alias du='ncdu' # seems way better than 'dust -r'
 alias p='procs --sortd=cpu --watch-interval=1'
 alias sortnr='sort -n -r'
 
@@ -39,8 +39,8 @@ alias mv='mv -v'
 alias rcp='rsync -aP'
 alias rmv='rsync -aP --remove-source-files'
 
-# vim is now a function (functions.zsh)
-alias v='nvim'
+# $EDITOR (usually nvim)
+alias v="$EDITOR"
 alias vi='v'
 alias vim='v'
 alias edit='v'
@@ -54,13 +54,13 @@ alias rpac='sudo rm /var/lib/pacman/db.lck'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # otp
-alias otp="cat $HOME/creds/otp| base32 -d | totp set test/totp |tee >( clip )"
+alias otp="cat $HOME/.creds/otp| base32 -d | totp set test/totp |tee >( clip )"
 
 # vpn
-alias vpn_b_ams='echo -n "Phone OTP\n$(cat ~/creds/dom_user)\n$(cat ~/creds/dom_pass)\n$(cat /home/ori/creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/creds/dom_user) --protocol=pulse  ams-remoteaccess.microfocus.net'
-alias vpn_b_emea=' echo -n "Phone OTP\n$(cat ~/creds/dom_user)\n$(cat ~/creds/dom_pass)\n$(cat /home/ori/creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/creds/dom_user) --protocol=pulse emea-remoteaccess.microfocus.net'
-alias vpn_b_apj='echo -n "Phone OTP\n$(cat ~/creds/dom_user)\n$(cat ~/creds/dom_pass)\n$(cat /home/ori/creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/creds/dom_user) --protocol=pulse apj-remoteaccess.microfocus.net'
-alias vpn_a_israel='echo -n "Phone OTP\n$(cat ~/creds/dom_user)\n$(cat ~/creds/dom_pass)\n$(cat /home/ori/creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/creds/dom_user) --protocol=pulse israel-remoteaccess.ext.softwaregrp.com'
+alias vpn_b_ams='echo -n "Phone OTP\n$(cat ~/.creds/dom_user)\n$(cat ~/.creds/dom_pass)\n$(cat /home/ori/.creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/.creds/dom_user) --protocol=pulse  ams-remoteaccess.microfocus.net'
+alias vpn_b_emea=' echo -n "Phone OTP\n$(cat ~/.creds/dom_user)\n$(cat ~/.creds/dom_pass)\n$(cat /home/ori/.creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/.creds/dom_user) --protocol=pulse emea-remoteaccess.microfocus.net'
+alias vpn_b_apj='echo -n "Phone OTP\n$(cat ~/.creds/dom_user)\n$(cat ~/.creds/dom_pass)\n$(cat /home/ori/.creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/.creds/dom_user) --protocol=pulse apj-remoteaccess.microfocus.net'
+alias vpn_a_israel='echo -n "Phone OTP\n$(cat ~/.creds/dom_user)\n$(cat ~/.creds/dom_pass)\n$(cat /home/ori/.creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/.creds/dom_user) --protocol=pulse israel-remoteaccess.ext.softwaregrp.com'
 
 alias t='tail -f'
 alias w='watch -n 0.5 '
@@ -101,6 +101,7 @@ alias comp='compdef _gnu_generic ' # Generate completions for command
 alias gc='git clone'
 alias gp='git pull'
 alias gs='git status'
+alias gd='git diff'
 
 alias fu='funky'
 alias gfu='gfunky'

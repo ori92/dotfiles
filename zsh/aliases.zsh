@@ -1,9 +1,9 @@
 #!/bin/zsh
 
-# Modified aliases from common-aliases plugin.
+# Heavily modified aliases from common-aliases plugin.
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
 
-# enabaling alias after sude i.e. 'sudo ll'
+# Enabaling alias after sude i.e. 'sudo ll'
 alias sudo='sudo '
 
 # ls - the common ones I use a lot, shortened for rapid fire
@@ -15,7 +15,9 @@ alias ll='exa -la --icons --links --group-directories-first'                    
 alias ldot='exa -la --icons .* --links --group-directories-first'                       # show only dot files
 alias lS='lsd --total-size -l --sort=size'                                              # show folder total size
 
-alias zshrc="${EDITOR} ${ZDOTDIR:-$HOME}/.zshrc" # Quick access to the .zshrc file
+# Quick access to the .zshrc file
+alias zshrc="${EDITOR} ${ZDOTDIR:-$HOME}/.zshrc"
+
 # Command line head / tail shortcuts
 alias -g H='| head'
 alias -g T='| tail'
@@ -26,89 +28,6 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
-
-alias du='ncdu' # seems way better than 'dust -r'
-alias p='procs --sortd=cpu --watch-interval=1'
-alias sortnr='sort -n -r'
-
-alias rm='rm -iv'
-alias cp='cp -iv'
-alias mv='mv -v'
-
-# mv and cp using rsyng with progress
-alias rcp='rsync -aP'
-alias rmv='rsync -aP --remove-source-files'
-
-# $EDITOR (usually nvim)
-alias v="$EDITOR"
-alias vi='v'
-alias vim='v'
-alias edit='v'
-alias gedit='subl'
-
-# Package manager
-alias updt='yay -Syu'
-alias u='updt'
-alias rem='sudo pacman -R'
-alias rpac='sudo rm /var/lib/pacman/db.lck'
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-
-# otp
-alias otp="cat $HOME/.creds/otp| base32 -d | totp set test/totp |tee >( clip )"
-
-# vpn
-alias vpn_b_ams='echo -n "Phone OTP\n$(cat ~/.creds/dom_user)\n$(cat ~/.creds/dom_pass)\n$(cat /home/ori/.creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/.creds/dom_user) --protocol=pulse  ams-remoteaccess.microfocus.net'
-alias vpn_b_emea=' echo -n "Phone OTP\n$(cat ~/.creds/dom_user)\n$(cat ~/.creds/dom_pass)\n$(cat /home/ori/.creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/.creds/dom_user) --protocol=pulse emea-remoteaccess.microfocus.net'
-alias vpn_b_apj='echo -n "Phone OTP\n$(cat ~/.creds/dom_user)\n$(cat ~/.creds/dom_pass)\n$(cat /home/ori/.creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/.creds/dom_user) --protocol=pulse apj-remoteaccess.microfocus.net'
-alias vpn_a_israel='echo -n "Phone OTP\n$(cat ~/.creds/dom_user)\n$(cat ~/.creds/dom_pass)\n$(cat /home/ori/.creds/otp| base32 -d | totp set test/totp)\n"|sudo openconnect -u $(cat ~/.creds/dom_user) --protocol=pulse israel-remoteaccess.ext.softwaregrp.com'
-
-alias t='tail -f'
-alias w='watch -n 0.5 '
-alias cf='copyfile'
-alias st='sudo touch'
-alias e='echo'
-alias en='echo -n'
-alias c='cat'
-alias cc='ccat'
-alias j='sudo journalctl -b -p3'
-alias less='cless'
-alias edot='code $HOME/Projects/dotfiles'
-alias vdot='tmux new-window -c /opt/DotFiles nvim'
-alias locate='plocate'
-alias f='locate'
-alias r='ranger'
-alias sens='watch -d -n.5 sensors' # Sensors
-alias core='sudo i7z'              # CPU info
-alias ag='ag --hidden'
-alias vifm='vifmrun'
-
-alias mp='sudo modprobe '
-alias serv='sudo python -m http.server'
-alias ex='chmod +x'
-alias ctl='sudo systemctl'
-alias top='bpytop'
-alias clip='xargs echo -n | xclip -selection clipboard'
-alias msgbox='kdialog --msgbox '
-alias grep='rg -i'
-alias m='math'
-alias fz='z `z| fzf`'
-alias lfp='fd -d 1 -a -H' # Show full path of files in directory.
-alias udb='sudo updatedb'
-alias send_to_phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg '
-alias comp='compdef _gnu_generic ' # Generate completions for command
-
-# Git
-alias gc='git clone'
-alias gp='git pull'
-alias gs='git status'
-alias gd='git diff'
-
-alias fu='funky'
-alias gfu='gfunky'
-
-alias performance='sudo sh -c "echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
-alias powersave='sudo sh -c "echo powersave | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
-
 alias -g W='|wc -l'
 alias -g S='|sed'
 alias -g C='|tee >( clip )'
@@ -131,34 +50,76 @@ alias -g A,3="|awk -F, '{print \$3}'"
 alias -g A,4="|awk -F, '{print \$4}'"
 alias -g A,5="|awk -F, '{print \$5}'"
 
-# open browser on urls
-_browser_fts=(htm html de org net com at cx nl se dk)
-for ft in $_browser_fts; do alias -s $ft="$BROWSER"; done
+# Interactive, verbose file-system operations
+alias rm='rm -iv'
+alias cp='cp -iv'
+alias mv='mv -v'
 
-# open text files in editor
-_editor_fts=(js md MD cpp cxx cc c hh h inl asc txt TXT tex)
-for ft in $_editor_fts; do alias -s $ft="$EDITOR"; done
+# Copy and Move via rsyng with progress
+alias rcp='rsync -aP'
+alias rmv='rsync -aP --remove-source-files'
 
-# open images in viewer
-_image_fts=(jpg jpeg png gif mng tiff tif xpm)
-for ft in $_image_fts; do alias -s $ft="$XIVIEWER"; done
+# $EDITOR (usually nvim)
+alias v="$EDITOR"
+alias vi='v'
+alias vim='v'
+alias edit='v'
+alias gedit='subl'
 
-# open video on smplayer
-_media_fts=(ape avi flv m4a mkv mov mp3 mpeg mpg ogg ogm rm wav webm)
-for ft in $_media_fts; do alias -s $ft=smplayer; done
+# Package manager
+alias updt='yay -Syu'
+alias u='updt'
+alias rem='sudo pacman -R'
+alias rpac='sudo rm /var/lib/pacman/db.lck'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
-# read documents
-alias -s pdf='okular'
-alias -s ps='gv'
-alias -s dvi='xdvi'
-alias -s chm='xchm'
-alias -s djvu='djview'
+alias t='tail -f'                                                               # Read file in realtime
+alias w='watch -n 0.5 '                                                         # Run comman every 0.5 seconds
+alias cf='copyfile'                                                             # Copy file content to clipboard
+alias st='sudo touch'                                                           # Create a file as root
+alias e='echo'                                                                  # echo shortened
+alias en='echo -n'                                                              # echo without trailing new-line
+alias c='cat'                                                                   # cat shortened
+alias cc='ccat'                                                                 # cat with colors
+alias j='sudo journalctl -b -p3'                                                # View logs since last boot
+alias less='cless'                                                              # Better less
+alias edot='code $HOME/Projects/dotfiles'                                       # Edit dotfiles in code
+alias vdot='tmux new-window -c /opt/DotFiles nvim'                              # Edit dotfiles in nvim
+alias locate='plocate'                                                          # Better locate
+alias f='locate'                                                                # locate shortened
+alias r='ranger'                                                                # ranger shortened
+alias sens='watch -d -n.5 sensors'                                              # Sensors
+alias core='sudo i7z'                                                           # CPU info
+alias ag='ag --hidden'                                                          # Grep for developers, default to hidden
+alias vifm='vifmrun'                                                            # Vifm with images preview
+alias mp='sudo modprobe '                                                       # modprobe shortened
+alias serv='sudo python -m http.server'                                         # python http file-server.
+alias ex='chmod +x'                                                             # Set executable shortened
+alias ctl='sudo systemctl'                                                      # systemctl shortened
+alias top='bpytop'                                                              # Better top - proccess manager
+alias clip='xargs echo -n | xclip -selection clipboard'                         # Copy to clipboard shortened
+alias msgbox='kdialog --msgbox '                                                # Spawn a message-box
+alias grep='rg -i'                                                              # Better grep
+alias m='math'                                                                  # math shortened
+alias fz='z `z| fzf`'                                                           # List z-directory in fzf
+alias lfp='fd -d 1 -a -H'                                                       # Show full path of files in directory.
+alias udb='sudo updatedb'                                                       # Update locate database shortened
+alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
+alias comp='compdef _gnu_generic '                                              # Generate completions for command
+alias ':q'='exit'                                                               # Force of a habbit..
+alias du='ncdu'                                                                 # seems way better than 'dust -r'
+alias p='procs --sortd=cpu --watch-interval=1'                                  # Proccess monitor shortened
+alias sortnr='sort -n -r'                                                       # sort shortened
 
-# list whats inside packed file
-alias -s zip='unzip -l'
-alias -s rar='unrar l'
-alias -s tar='tar tf'
-alias -s gz='gunzip -l'
+# Performance
+alias performance='sudo sh -c "echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
+alias powersave='sudo sh -c "echo powersave | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
+
+# Git
+alias gc='git clone'
+alias gp='git pull'
+alias gs='git status'
+alias gd='git diff'
 
 # systemd
 alias s='systemctl status '
@@ -195,31 +156,3 @@ alias DI='disable '
 
 alias reboot='systemctl reboot'
 alias poweroff='systemctl poweroff'
-
-alias ':q'='exit' # Force of a habbit..
-
-# Colors
-export no_color='\033[0m'
-export black='\033[0;30m'
-export dgray='\033[1;30m'
-export red='\033[0;31m'
-export lred='\033[1;31m'
-export green='\033[0;32m'
-export lgreen='\033[1;32m'
-export orange='\033[0;33m'
-export yellow='\033[1;33m'
-export blue='\033[0;34m'
-export lblue='\033[1;34m'
-export purple='\033[0;35m'
-export lpurple='\033[1;35m'
-export cyan='\033[0;36m'
-export lcyan='\033[1;36m'
-export lgray='\033[0;37m'
-export white='\033[1;37m'
-
-# list of colors for easy echo
-export colors='no_color black dgray red lred green lgreen orange yellow blue lblue purple lpurple cyan lcyan lgray white'
-
-if [[ $- == *i* ]]; then
-  export bold=$(tput bold)
-fi

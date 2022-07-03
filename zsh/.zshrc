@@ -24,6 +24,8 @@ source $ZDOTDIR/functions.zsh
 source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/pentest.zsh
+source $ZDOTDIR/filetype.zsh
+source $ZDOTDIR/colors.zsh
 source $XDG_CONFIG_HOME/broot/launcher/bash/br
 
 bindkey '^s' fzf-file-widget

@@ -22,5 +22,5 @@ export white='\033[1;37m'
 export colors='no_color black dgray red lred green lgreen orange yellow blue lblue purple lpurple cyan lcyan lgray white'
 
 if [[ $- == *i* ]]; then
-  export bold=$(tput bold)
+    export bold=$(tput bold)
 fi

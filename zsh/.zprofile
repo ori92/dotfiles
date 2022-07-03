@@ -26,12 +26,12 @@ export NODE_REPL_HISTORY="$HOME/.config/.node_repl_history"
 
 # FZF
 export FZF_KEY_BINDS="\
-  --bind 'ctrl-e:execute-silent(tmux new-window nvim -f {})'
-  --bind 'ctrl-d:execute-silent(open_dir {})'
-  --bind 'ctrl-k:execute-silent(echo -n \" \" |xclip -sel clip)'
-  --bind 'ctrl-a:execute-silent(append_clip {})'
-  --bind 'ctrl-y:execute-silent(echo -n {} | xclip -sel clip)'
-  --bind '?:preview:preview_dir_or_file {}'"
+    --bind 'ctrl-e:execute-silent(tmux new-window nvim -f {})'
+    --bind 'ctrl-d:execute-silent(open_dir {})'
+    --bind 'ctrl-k:execute-silent(echo -n \" \" |xclip -sel clip)'
+    --bind 'ctrl-a:execute-silent(append_clip {})'
+    --bind 'ctrl-y:execute-silent(echo -n {} | xclip -sel clip)'
+    --bind '?:preview:preview_dir_or_file {}'"
 export FZF_DEFAULT_COMMAND='fd --color=always -H -E ".git" -E ".cache" -E "cache" -E ".nuget" -E "Brave-Browser" -E "CachedData" -E "Cache" -E "site-packages"  -E "icons" -E ".cargo" -E ".oh-my-zsh/lib" -E "node_modules" -E "sublime-text-3" -E ".npm" -E "linux-ck" -E "themes" -E ".themes" -E ".vscode" -E ".rustup" -E "golang.org" -E "google.golang.org" -E "nvim/bundle" -E ".icons" -E ".dotnet"'
 export FZF_DEFAULT_OPTS="--ansi --multi --layout=reverse --preview-window hidden $FZF_KEY_BINDS"
 export FZF_COMPLETION_TRIGGER='``'

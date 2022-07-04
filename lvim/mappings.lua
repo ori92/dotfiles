@@ -82,9 +82,9 @@ kv["<C-c>"] = ":CommentToggle<CR>gv"
 
 -- Add quick map('n', 'pings', 'for sideways.vim that allow shifting of arguments', opts)
 wk["S"] = {
-	name = "Sideways",
-	h = { ":SidewaysLeft<CR>", "Left" },
-	l = { ":SidewaysRight<CR>", "Right" },
+    name = "Sideways",
+    h = { ":SidewaysLeft<CR>", "Left" },
+    l = { ":SidewaysRight<CR>", "Right" },
 }
 
 -- Insert current date
@@ -97,27 +97,27 @@ wk["j"] = { ":HopChar2<CR>", "Hop to char" }
 
 -- Trouble
 wk["t"] = {
-	name = "+Trouble",
-	r = { "<cmd>Trouble lsp_references<cr>", "References" },
-	f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-	d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
-	q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-	l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-	w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
+    name = "+Trouble",
+    r = { "<cmd>Trouble lsp_references<cr>", "References" },
+    f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+    d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
+    q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+    l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+    w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
 }
 
 wk["r"] = {
-	name = "+Replace",
-	r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
-	w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-	f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+    name = "+Replace",
+    r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
+    w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
+    f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
 }
 
 wk["Q"] = {
-	name = "+Quit",
-	s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
-	l = { "<cmd>lua require('persistence').load({last=true})<cr>", "Restore last session" },
-	d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
+    name = "+Quit",
+    s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
+    l = { "<cmd>lua require('persistence').load({last=true})<cr>", "Restore last session" },
+    d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
 }
 
 --- Resize windows
@@ -126,16 +126,16 @@ wk["-"] = { ":vertical resize -10<cr>", "VResize -10" }
 
 -- Abbreviations
 local abbreviations = {
-	Wq = "wq",
-	WQ = "wq",
-	Wqa = "wqa",
-	W = "w",
-	Q = "q",
-	Qa = "qa",
-	wrap = "set wrap",
-	nowrap = "set nowrap",
+    Wq = "wq",
+    WQ = "wq",
+    Wqa = "wqa",
+    W = "w",
+    Q = "q",
+    Qa = "qa",
+    wrap = "set wrap",
+    nowrap = "set nowrap",
 }
 
 for left, right in pairs(abbreviations) do
-	vim.cmd(string.format("cnoreabbrev %s %s", left, right))
+    vim.cmd(string.format("cnoreabbrev %s %s", left, right))
 end

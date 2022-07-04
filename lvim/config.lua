@@ -20,11 +20,11 @@ vim.opt.timeoutlen = 200
 vim.opt.cmdheight = 1
 vim.opt.list = true -- Show trailing hidden characters.
 vim.opt.listchars = {
-	eol = "-",
-	tab = "--",
-	trail = "!",
-	extends = ">",
-	precedes = "<",
+    eol = "-",
+    tab = "--",
+    trail = "!",
+    extends = ">",
+    precedes = "<",
 }
 
 -- rainbow
@@ -81,21 +81,21 @@ lvim.builtin.treesitter.matchup.enable = true
 lvim.builtin.treesitter.context_commentstring.enable = true
 
 lvim.builtin.telescope.defaults = {
-	vimgrep_arguments = {
-		"rg",
-		"--hidden",
-		"--no-heading",
-		"--with-filename",
-		"--line-number",
-		"--column",
-		"--smart-case",
-		"--iglob",
-		"!.git",
-	},
+    vimgrep_arguments = {
+        "rg",
+        "--hidden",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+        "--iglob",
+        "!.git",
+    },
 }
 lvim.builtin.which_key.mappings.s.f = {
-	"<cmd>Telescope find_files find_command=fd,--hidden,--exclude,.git prompt_prefix=🔍<CR>",
-	"Find File",
+    "<cmd>Telescope find_files find_command=fd,--hidden,--exclude,.git prompt_prefix=🔍<CR>",
+    "Find File",
 }
 
 -- show hidden files when running a find command in telescope

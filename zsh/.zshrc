@@ -9,7 +9,12 @@ setopt dotglob
 
 # Set TTY font and auto start tmux on tty (very handy!)
 [ "$TERM" = "linux" ] && setfont ter-u32n &&
-    tmux new-session -s $(basename $(tty))
+    tmux new-session -A -s $(basename $(tty))
+
+# Auto start tmux over SSH
+if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+    tmux new-session -A -s SSH
+fi
 
 plugins=(
     zsh-autosuggestions you-should-use

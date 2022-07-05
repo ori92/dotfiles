@@ -32,10 +32,9 @@ source $ZDOTDIR/pentest.zsh
 source $ZDOTDIR/filetype.zsh
 source $ZDOTDIR/colors.zsh
 source $ZDOTDIR/mf.zsh
-source $XDG_CONFIG_HOME/broot/launcher/bash/br
 
 bindkey '^s' fzf-file-widget
 bindkey '^x' expand-alias
 
 eval "$(zoxide init zsh)"   # start zoxide
-eval "$(starship init zsh)" # start Starship
+eval "$(starship init zsh)" # start starship-prompt

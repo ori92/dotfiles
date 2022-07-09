@@ -5,7 +5,7 @@ export LESSHISTFILE=-
 
 export SSH_ASKPASS='/usr/bin/ksshaskpass'
 
-export ZSH_COMPDUMP="/home/ori/.config/zsh/.zcompdump"
+export ZSH_COMPDUMP="$ZDOTDIR/.zcompdump"
 
 zcd_compile() {
     # Compile zcompdump, if modified, to increase startup speed.

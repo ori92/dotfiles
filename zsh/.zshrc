@@ -12,9 +12,8 @@ setopt dotglob
     tmux new-session -A -s $(basename $(tty))
 
 # Auto start tmux over SSH
-if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+[ -n "$PS1" ] && [ -z "$TMUX" ] && [ -n "$SSH_CONNECTION" ] &&
     tmux new-session -A -s SSH
-fi
 
 plugins=(
     zsh-autosuggestions you-should-use

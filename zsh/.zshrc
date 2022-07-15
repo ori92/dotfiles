@@ -7,8 +7,8 @@ setopt appendcreate
 setopt extendedglob
 setopt dotglob
 
-# Set TTY font and auto start tmux on tty (very handy!)
-[ "$TERM" = "linux" ] && setfont ter-u32n &&
+# Auto start tmux on tty (very handy!)
+[ "$TERM" = "linux" ] &&
     tmux new-session -A -s $(basename $(tty))
 
 # Auto start tmux over SSH

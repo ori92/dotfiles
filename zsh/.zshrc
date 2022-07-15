@@ -7,7 +7,7 @@ setopt appendcreate
 setopt extendedglob
 setopt dotglob
 
-# Auto start tmux on tty (very handy!)
+# Auto start tmux on TTY
 [ "$TERM" = "linux" ] &&
     tmux new-session -A -s $(basename $(tty))
 

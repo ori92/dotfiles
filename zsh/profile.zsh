@@ -11,7 +11,7 @@ export SYSTEMD_EDITOR="nvim"
 # Set PATH and LOCAL
 export LC_ALL="en_US.UTF-8"
 export LC_MESSAGES="C"
-export ZSH="$HOME/.config/.oh-my-zsh"
+export ZSH="$XDG_CONFIG_HOME/.oh-my-zsh"
 export COMPLETION_WAITING_DOTS="true"
 # oh-my-zsh: Underscores (_) and hyphens (-) will be interchangeable
 export HYPHEN_INSENSITIVE=true

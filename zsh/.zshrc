@@ -23,6 +23,7 @@ plugins=(
 )
 
 # Loading, order does matters.
+source $ZDOTDIR/profile.zsh
 source /usr/share/fzf/key-bindings.zsh
 source $ZDOTDIR/functions.zsh
 source $ZSH/oh-my-zsh.sh

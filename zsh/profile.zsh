@@ -56,3 +56,6 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
 
 # gtk config files location
 export GTK_RC_FILES=/etc/gtk/gtkrc:$HOME/.config/gtkrc
+
+# Disable less history file
+export LESSHISTFILE=-

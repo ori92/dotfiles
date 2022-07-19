@@ -35,10 +35,10 @@ kn["<C-z>"] = "<Cmd>undo<CR>"
 ki["<C-z>"] = "<ESC>ui"
 
 -- Switch windows quicker
-wk["<Left>"] = { "<C-w><Left>", "which_key_ignore" }
-wk["<Right>"] = { "<C-w><Right>", "which_key_ignore" }
-wk["<Up>"] = { "<C-w><Up>", "which_key_ignore" }
-wk["<Down>"] = { "<C-w><Down>", "which_key_ignore" }
+wk["<Left>"] = {"<C-w><Left>", "which_key_ignore"}
+wk["<Right>"] = {"<C-w><Right>", "which_key_ignore"}
+wk["<Up>"] = {"<C-w><Up>", "which_key_ignore"}
+wk["<Down>"] = {"<C-w><Down>", "which_key_ignore"}
 
 -- Use Ctrl-s for saving
 kn["<C-S>"] = ":write<CR>"
@@ -72,7 +72,7 @@ ki["<C-d>"] = "<C-o>daw"
 kn["<C-d>"] = "daw"
 
 -- Duplicate a line / selection and comment out the first
-wk["C"] = { "Ypk:CommentToggle<CR>j", "Duplicate comment" }
+wk["C"] = {"Ypk:CommentToggle<CR>j", "Duplicate comment"}
 kv["<Leader>C"] = "gcgvyPgvgc"
 
 -- Typing gcc is too much (comments toggle)
@@ -83,46 +83,46 @@ kv["<C-c>"] = ":CommentToggle<CR>gv"
 -- Add quick map('n', 'pings', 'for sideways.vim that allow shifting of arguments', opts)
 wk["S"] = {
     name = "Sideways",
-    h = { ":SidewaysLeft<CR>", "Left" },
-    l = { ":SidewaysRight<CR>", "Right" },
+    h = {":SidewaysLeft<CR>", "Left"},
+    l = {":SidewaysRight<CR>", "Right"}
 }
 
 -- Insert current date
-wk["i"] = { '"=strftime("%b %d, %Y")<CR>p', "insert date " }
+wk["i"] = {'"=strftime("%b %d, %Y")<CR>p', "insert date "}
 
 -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
 kn["ga"] = "<Plug>(EasyAlign)"
 
-wk["j"] = { ":HopChar2<CR>", "Hop to char" }
+wk["j"] = {":HopChar2<CR>", "Hop to char"}
 
 -- Trouble
 wk["t"] = {
     name = "+Trouble",
-    r = { "<cmd>Trouble lsp_references<cr>", "References" },
-    f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-    d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
-    q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-    l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-    w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
+    r = {"<cmd>Trouble lsp_references<cr>", "References"},
+    f = {"<cmd>Trouble lsp_definitions<cr>", "Definitions"},
+    d = {"<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss"},
+    q = {"<cmd>Trouble quickfix<cr>", "QuickFix"},
+    l = {"<cmd>Trouble loclist<cr>", "LocationList"},
+    w = {"<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss"}
 }
 
 wk["r"] = {
     name = "+Replace",
-    r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
-    w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-    f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+    r = {"<cmd>lua require('spectre').open()<cr>", "Replace"},
+    w = {"<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word"},
+    f = {"<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer"}
 }
 
 wk["Q"] = {
     name = "+Quit",
-    s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
-    l = { "<cmd>lua require('persistence').load({last=true})<cr>", "Restore last session" },
-    d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
+    s = {"<cmd>lua require('persistence').load()<cr>", "Restore for current dir"},
+    l = {"<cmd>lua require('persistence').load({last=true})<cr>", "Restore last session"},
+    d = {"<cmd>lua require('persistence').stop()<cr>", "Quit without saving session"}
 }
 
 --- Resize windows
-wk["+"] = { ":vertical resize +10<cr>", "VResize +10" }
-wk["-"] = { ":vertical resize -10<cr>", "VResize -10" }
+wk["+"] = {":vertical resize +10<cr>", "VResize +10"}
+wk["-"] = {":vertical resize -10<cr>", "VResize -10"}
 
 -- Abbreviations
 local abbreviations = {
@@ -133,7 +133,7 @@ local abbreviations = {
     Q = "q",
     Qa = "qa",
     wrap = "set wrap",
-    nowrap = "set nowrap",
+    nowrap = "set nowrap"
 }
 
 for left, right in pairs(abbreviations) do

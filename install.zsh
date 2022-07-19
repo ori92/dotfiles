@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-# Installation script was tested on a vannila Manjaro linux,
-# TODO make it more readable, some more tests.. 
+# Installation script was tested on a vanilla Manjaro linux,
+# TODO make it more readable, some more tests..
 
 [ -n "$XDG_CONFIG_HOME" ] || {
     echo -e "${red}\$XDG_CONFIG_HOME is undefined, setting it to ~/.config"
@@ -76,7 +76,7 @@ if [[ $answer =~ ^[Yy]$ ]]; then
     echo -e "Installing astronvim rc files.."
     mkdir -p "$XDG_CONFIG_HOME/astronvim/lua/user"
     git clone https://github.com/ori92/astronvim_config astronvim
-    ln -sf `pwd`/astronvim "$XDG_CONFIG_HOME/astronvim/lua/user"
+    ln -sf $(pwd)/astronvim "$XDG_CONFIG_HOME/astronvim/lua/user"
     echo -e "${red}Exit vim with :q after packer has finished to install the plugins.."
     read "?Enter to continue.."
     nvim +PackerSync

@@ -74,9 +74,9 @@ if [[ $answer =~ ^[Yy]$ ]]; then
     fi
 
     echo -e "Installing astronvim rc files.."
-    mkdir -p "$XDG_CONFIG_HOME/astronvim/lua/user/"
+    mkdir -p "$XDG_CONFIG_HOME/astronvim/lua/user"
     git clone https://github.com/ori92/astronvim_config astronvim
-    ln -s astronvim "$XDG_CONFIG_HOME/astronvim/lua/user/"
+    ln -sf `pwd`/astronvim "$XDG_CONFIG_HOME/astronvim/lua/user"
     echo -e "${red}Exit vim with :q after packer has finished to install the plugins.."
     read "?Enter to continue.."
     nvim +PackerSync

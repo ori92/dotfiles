@@ -1,10 +1,18 @@
 My dot files, so i won't lose them..
 
+Installation:
+```bash
+  git clone https://github.com/ori92/dotfiles
+  cd dotfiles
+  zsh ./install.zsh
+
+```
+
 Dependencies:
 
 * tmux
 * oh-my-zsh (zsh plugins)
-* starfish (prompt)
+* starship (prompt)
 * exa (fancy ls)
 * lsd (fancy ls)
 * neovim

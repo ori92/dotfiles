@@ -1,28 +1,23 @@
 #!/bin/zsh
 
-# Set EDITOR
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.0.0/bin"
-export EDITOR="nvim"
-export XIVIEWER="gwenview"
-export BROWSER="brave"
-export HISTFILE="$HOME/.config/zsh/.zsh_history"
-export SYSTEMD_EDITOR="nvim"
-
-# Set PATH and LOCAL
-export LC_ALL="en_US.UTF-8"
-export LC_MESSAGES="C"
-export ZSH="$XDG_CONFIG_HOME/.oh-my-zsh"
-export COMPLETION_WAITING_DOTS="true"
-# oh-my-zsh: Underscores (_) and hyphens (-) will be interchangeable
-export HYPHEN_INSENSITIVE=true
-# oh-my-zsh: Use this setting if you want to disable marking untracked files under VCS as dirty. This makes repository status checks for large repositories much, much faster.
-export DISABLE_UNTRACKED_FILES_DIRTY=true
-export HIST_STAMPS="%d/%m/%y %T"
-# stop ranger from loading both the default and your custom rc.conf
-export RANGER_LOAD_DEFAULT_RC='FALSE'
-
-# node repl history location.
-export NODE_REPL_HISTORY="$HOME/.config/.node_repl_history"
+# Environment
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.0.0/bin" # PATH
+export EDITOR="nvim"                                                                 # Text-editor
+export XIVIEWER="gwenview"                                                           # Image-viewer
+export BROWSER="brave"                                                               # Browser
+export HISTFILE="$HOME/.config/zsh/.zsh_history"                                     # History-file location
+export SYSTEMD_EDITOR="nvim"                                                         # EDITOR for systemd
+export LC_ALL="en_US.UTF-8"                                                          # Locale
+export LC_MESSAGES="C"                                                               # Locale
+export ZSH="$XDG_CONFIG_HOME/.oh-my-zsh"                                             # oh-my-zsh location
+export COMPLETION_WAITING_DOTS="true"                                                # Display dots while waiting for completion
+export HIST_STAMPS="%d/%m/%y %T"                                                     # Timestamps in history
+export HYPHEN_INSENSITIVE=true                                                       # oh-my-zsh: Underscores (_) and hyphens (-) will be interchangeable
+export DISABLE_UNTRACKED_FILES_DIRTY=true                                            # oh-my-zsh: Use this setting if you want to disable marking untracked files under VCS as dirty. This makes repository status checks for large repositories much, much faster.
+export RANGER_LOAD_DEFAULT_RC='FALSE'                                                # stop ranger from loading both the default and your custom rc.conf
+export NODE_REPL_HISTORY="$HOME/.config/.node_repl_history"                          # node repl history location.
+export GTK_RC_FILES=/etc/gtk/gtkrc:$HOME/.config/gtkrc                               # gtk config files location
+export LESSHISTFILE=-                                                                # Disable less history file
 
 # FZF
 export FZF_KEY_BINDS="\
@@ -47,15 +42,3 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#49a8de,bg=#d0d7db,bold,underline"
 export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
-
-# # ccache
-# export CCACHE_DIR="/.ccache"
-# export CC="ccache gcc"
-# export CXX="ccache g++"
-# export PATH="/usr/lib/ccache/bin:$PATH"
-
-# gtk config files location
-export GTK_RC_FILES=/etc/gtk/gtkrc:$HOME/.config/gtkrc
-
-# Disable less history file
-export LESSHISTFILE=-

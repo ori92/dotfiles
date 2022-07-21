@@ -3,7 +3,7 @@
 # Heavily modified aliases from common-aliases plugin.
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
 
-# Enabaling alias after sude i.e. 'sudo ll'
+# Enabling alias after sudo i.e. 'sudo ll'
 alias sudo='sudo '
 
 # ls - the common ones I use a lot, shortened for rapid fire
@@ -55,7 +55,7 @@ alias rm='rm -iv'
 alias cp='cp -iv'
 alias mv='mv -v'
 
-# Copy and Move via rsyng with progress
+# Copy and Move via rsync with progress
 alias rcp='rsync -aP'
 alias rmv='rsync -aP --remove-source-files'
 
@@ -74,29 +74,29 @@ alias rpac='sudo rm /var/lib/pacman/db.lck'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 alias t='tail -f'                                                               # Read file in realtime
-alias w='watch -n 0.5 '                                                         # Run comman every 0.5 seconds
+alias w='watch -n 0.5 '                                                         # Run command every 0.5 seconds
 alias cf='copyfile'                                                             # Copy file content to clipboard
 alias st='sudo touch'                                                           # Create a file as root
-alias e='echo'                                                                  # echo shortened
-alias en='echo -n'                                                              # echo without trailing new-line
-alias c='cat'                                                                   # cat shortened
-alias cc='ccat'                                                                 # cat with colors
+alias e='echo'                                                                  # Echo shortened
+alias en='echo -n'                                                              # Echo without trailing new-line
+alias c='cat'                                                                   # Cat shortened
+alias cc='ccat'                                                                 # Cat with colors
 alias j='sudo journalctl -b -p3'                                                # View logs since last boot
 alias less='cless'                                                              # Better less
 alias edot='code $HOME/Projects/dotfiles'                                       # Edit dotfiles in code
 alias vdot='tmux new-window -c /opt/DotFiles nvim'                              # Edit dotfiles in nvim
 alias locate='plocate'                                                          # Better locate
-alias f='locate'                                                                # locate shortened
-alias r='ranger'                                                                # ranger shortened
+alias f='locate'                                                                # Locate shortened
+alias r='ranger'                                                                # Ranger shortened
 alias sens='watch -d -n.5 sensors'                                              # Sensors
 alias core='sudo i7z'                                                           # CPU info
 alias ag='ag --hidden'                                                          # Grep for developers, default to hidden
 alias vifm='vifmrun'                                                            # Vifm with images preview
-alias mp='sudo modprobe '                                                       # modprobe shortened
-alias serv='sudo python -m http.server'                                         # python http file-server.
+alias mp='sudo modprobe '                                                       # Modprobe shortened
+alias serv='sudo python -m http.server'                                         # Python http file-server.
 alias ex='chmod +x'                                                             # Set executable shortened
-alias ctl='sudo systemctl'                                                      # systemctl shortened
-alias top='bpytop'                                                              # Better top - proccess manager
+alias ctl='sudo systemctl'                                                      # Systemctl shortened
+alias top='bpytop'                                                              # Better top - process manager
 alias clip='xargs echo -n | xclip -selection clipboard'                         # Copy to clipboard shortened
 alias msgbox='kdialog --msgbox '                                                # Spawn a message-box
 alias grep='rg -i'                                                              # Better grep
@@ -106,10 +106,10 @@ alias lfp='fd -d 1 -a -H'                                                       
 alias udb='sudo updatedb'                                                       # Update locate database shortened
 alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
 alias comp='compdef _gnu_generic '                                              # Generate completions for command
-alias ':q'='exit'                                                               # Force of a habbit..
-alias du='ncdu'                                                                 # seems way better than 'dust -r'
-alias p='procs --sortd=cpu --watch-interval=1'                                  # Proccess monitor shortened
-alias sortnr='sort -n -r'                                                       # sort shortened
+alias ':q'='exit'                                                               # Force of a habit..
+alias du='ncdu'                                                                 # Seems way better than 'dust -r'
+alias p='procs --sortd=cpu --watch-interval=1'                                  # Process monitor shortened
+alias sortnr='sort -n -r'                                                       # Sort shortened
 
 # Performance
 alias performance='sudo sh -c "echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'

@@ -105,7 +105,7 @@ alias top='bpytop'                                                              
 alias clip='xargs echo -n | xclip -selection clipboard'                         # Copy to clipboard shortened
 alias msgbox='kdialog --msgbox '                                                # Spawn a message-box
 alias grep='rg -i'                                                              # Better grep
-alias m='math'                                                                  # math shortened
+alias m='math'                                                                  # Math shortened
 alias fz='z `z| fzf`'                                                           # List z-directory in fzf
 alias lfp='fd -d 1 -a -H'                                                       # Show full path of files in directory.
 alias udb='sudo updatedb'                                                       # Update locate database shortened
@@ -116,7 +116,7 @@ alias du='ncdu'                                                                 
 alias p='procs --sortd=cpu --watch-interval=1'                                  # Process monitor shortened
 alias sortnr='sort -n -r'                                                       # Sort shortened
 
-# Performance
+# CPU performance profiles 
 alias performance='sudo sh -c "echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
 alias powersave='sudo sh -c "echo powersave | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
 

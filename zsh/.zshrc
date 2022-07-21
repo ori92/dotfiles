@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-neofetch # For pretty startup :)
+macchina -t ori # For pretty startup :)
 
 setopt noclobber
 setopt appendcreate

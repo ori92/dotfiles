@@ -22,7 +22,7 @@ Installation:
 * xclip (clipboard)
 * ripgrep
 * fd (fast finder)
-* neofetch
+* macchina
 * fzf
   
 # Optional dependencies:

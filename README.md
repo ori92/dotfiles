@@ -25,10 +25,10 @@ Installation:
 * neofetch
 * fzf
   
-# Optional dependencies
+# Optional dependencies:
 
 * lsd (fancy ls)
-* kdialog (textboxt notifications)
+* kdialog (textbox notifications)
 * paplay  (sound notifications)
 * notify-send (notifications)
 * ncdu (fancy disk usage)
@@ -37,11 +37,11 @@ Installation:
 * bpytop (fancy top)
 * plocate
 * jq
-* okular (pdf viwer)
+* okular (pdf viewer)
 * zoxide (fast cd with z)
 
 
-# Penetration testing tools being used
+# Penetration testing tools being used:
 
 * nmap
 * gdb

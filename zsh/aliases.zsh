@@ -49,6 +49,11 @@ alias -g A,2="|awk -F, '{print \$2}'"
 alias -g A,3="|awk -F, '{print \$3}'"
 alias -g A,4="|awk -F, '{print \$4}'"
 alias -g A,5="|awk -F, '{print \$5}'"
+alias -g A-1="|awk -F- '{print \$1}'"
+alias -g A-2="|awk -F- '{print \$2}'"
+alias -g A-3="|awk -F- '{print \$3}'"
+alias -g A-4="|awk -F- '{print \$4}'"
+alias -g A-5="|awk -F- '{print \$5}'"
 
 # Interactive, verbose file-system operations
 alias rm='rm -iv'

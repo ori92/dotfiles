@@ -2,7 +2,6 @@ My dot-files.
 
 ![Pasted image 20211101171210](https://user-images.githubusercontent.com/35110056/179995707-721bf567-5871-4fce-b01a-f85c86a93811.png)
 
-
 Installation:
 ```bash
   git clone https://github.com/ori92/dotfiles
@@ -11,34 +10,38 @@ Installation:
 
 ```
 
-Dependencies:
+# Dependencies:
 
-* tmux
+* zsh
 * oh-my-zsh (zsh plugins)
+* tmux
 * starship (prompt)
 * exa (fancy ls)
-* lsd (fancy ls)
+* git
 * neovim
+* xclip (clipboard)
+* ripgrep
+* fd (fast finder)
+* neofetch
 * fzf
+  
+# Optional dependencies
+
+* lsd (fancy ls)
 * kdialog (textboxt notifications)
 * paplay  (sound notifications)
 * notify-send (notifications)
-* dust (fancy disk usage)
+* ncdu (fancy disk usage)
 * procs (fancy ps)
 * ranger (cli file-manager)
 * bpytop (fancy top)
-* xclip (clipboard)
-* fd (fast finder)
 * plocate
-* git
-* ripgrep
 * jq
 * okular (pdf viwer)
-* neofetch
 * zoxide (fast cd with z)
 
 
-# pentest
+# Penetration testing tools being used
 
 * nmap
 * gdb

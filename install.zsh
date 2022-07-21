@@ -17,7 +17,7 @@ r='\033[0;31m' # red
 g='\033[0;32m' # green
 
 echo "${g}-->Installing dependencies..${n}"
-sudo pacman -S tmux git neovim starship xclip fzf exa zoxide lsd dust procs ranger bpytop fd plocate ripgrep neofetch
+sudo pacman -S tmux git neovim starship xclip fzf exa zoxide lsd ncdu procs ranger bpytop fd plocate ripgrep neofetch
 
 echo "${g}-->Creating backups...${n}"
 files=("$HOME/.zshrc" "$HOME/.zshenv" "$X/zsh" "$X/tmux" "$X/starship.toml" "$X/astronvim/" "$X/nvim")

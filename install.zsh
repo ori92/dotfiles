@@ -50,7 +50,7 @@ ln zsh/.zlogin zsh/profile.zsh zsh/.zshrc zsh/functions.zsh zsh/pentest.zsh zsh/
 ln zsh/.zshenv $HOME/
 
 echo "${g}-->Installing tmux rc files..${n}"
-ln tmux/tmux.conf tmux/tmux.remote.conf tmux/tmux.appearance.conf "$X/tmux/"
+ln tmux/tmux.conf tmux/remote.conf tmux/theme.conf "$X/tmux/"
 ln -s $(pwd)/tmux/scripts "$X/tmux/"
 echo "${g}-->Installing tmux-plugin manager..${n}"
 echo "${r}Remember to press prefix(C-b)+I to install plugins after you first run tmux.${n}"

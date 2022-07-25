@@ -4,6 +4,7 @@ My dot-files.
 
 Installation:
 ```bash
+  # Installation script uses the `sudo` command, so you'll need to input your password when asked.. 
   git clone https://github.com/ori92/dotfiles
   cd dotfiles
   zsh ./install.zsh

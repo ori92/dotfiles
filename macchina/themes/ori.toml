@@ -1,10 +1,10 @@
 # Copied and modified from: https://gist.github.com/Lovasz-Akos/073131d75eeb133fc4e4a37fb8c8cbe9
 
 spacing         = 1
-padding         = 0
+padding         = 1
 hide_ascii      = false
 prefer_small_ascii = false
-separator       = "=>  "
+separator       = "==>  "
 key_color       = "blue"
 separator_color = "#ff831a"
 
@@ -49,7 +49,7 @@ uptime          = "Uptime"
 memory          = "Memory"
 machine         = "Machine"
 local_ip        = "Local IP"
-#backlight       = "Brightness"
+backlight       = "Brightness"
 resolution      = "Resolution"
-#cpu_load        = "CPU Load"
+cpu_load        = "CPU Load"
 cpu             = "CPU"

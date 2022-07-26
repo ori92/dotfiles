@@ -1,15 +1,9 @@
 #!/bin/zsh
 
-# * Installation script was tested on a vanilla Manjaro linux,
-# TODO make it more readable, some more tests..
-
-[ -n "$XDG_CONFIG_HOME" ] || {
-    echo "${r}XDG_CONFIG_HOME is undefined, setting it to $HOME/.config${n}"
-    export XDG_CONFIG_HOME="$HOME/.config"
-}
+# * Installation script was tested on a vanilla Manjaro linux.
 
 # for readability
-X=$XDG_CONFIG_HOME
+X=${XDG_CONFIG_HOME-$HOME/.config}
 
 # colors
 n='\033[0m'    # normal
@@ -31,16 +25,16 @@ echo "${g}Installing oh-my-zsh..${n}"
 echo "${r}-->Please exit zsh by typing 'exit' after omz installation is finished in order to complete this installation process.${n}"
 read "?ENTER to continue with installation."
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mv "$HOME/.oh-my-zsh" "$X/.oh-my-zsh"
+mv "$HOME/.oh-my-zsh" "$X/"
 
 echo "${g}-->Installing oh-my-zsh plugins..${n}"
-export ZSH_CUSTOM=$X/.oh-my-zsh/custom
-git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins $ZSH_CUSTOM/plugins/autoupdate
-git clone https://github.com/MichaelAquilina/zsh-you-should-use $ZSH_CUSTOM/plugins/you-should-use
-git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/Aloxaf/fzf-tab $ZSH_CUSTOM/plugins/fzf-tab
-git clone https://github.com/hlissner/zsh-autopair $ZSH_CUSTOM/plugins/zsh-autopair
-git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+P=$X/.oh-my-zsh/custom/plugins
+git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins $P/autoupdate
+git clone https://github.com/MichaelAquilina/zsh-you-should-use $P/you-should-use
+git clone https://github.com/zsh-users/zsh-autosuggestions $P/zsh-autosuggestions
+git clone https://github.com/Aloxaf/fzf-tab $P/fzf-tab
+git clone https://github.com/hlissner/zsh-autopair $P/zsh-autopair
+git clone https://github.com/zsh-users/zsh-syntax-highlighting $P/zsh-syntax-highlighting
 
 # remove the newly created .zshrc
 rm $HOME/.zshrc

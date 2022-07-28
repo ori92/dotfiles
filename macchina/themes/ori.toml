@@ -22,7 +22,7 @@ hide_delimiters = true
 visible         = true
 
 [box]
-title 			= ""
+title           = ""
 border          = "single"
 visible         = false
 

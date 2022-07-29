@@ -35,10 +35,10 @@ kn["<C-z>"] = "<Cmd>undo<CR>"
 ki["<C-z>"] = "<ESC>ui"
 
 -- Switch windows quicker
-wk["<Left>"] = {"<C-w><Left>", "which_key_ignore"}
-wk["<Right>"] = {"<C-w><Right>", "which_key_ignore"}
-wk["<Up>"] = {"<C-w><Up>", "which_key_ignore"}
-wk["<Down>"] = {"<C-w><Down>", "which_key_ignore"}
+wk["<Left>"] = {"<cmd>lua require('tmux').move_left()<cr>", "LEFT"}
+wk["<Right>"] = {"<cmd>lua require('tmux').move_right()<cr>", "which_key_ignore"}
+wk["<Up>"] = {"<cmd>lua require('tmux').move_top()<cr>", "which_key_ignore"}
+wk["<Down>"] = {"<cmd>lua require('tmux').move_bottom()<cr>", "which_key_ignore"}
 
 -- Use Ctrl-s for saving
 kn["<C-S>"] = ":write<CR>"

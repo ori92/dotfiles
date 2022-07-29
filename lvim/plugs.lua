@@ -1,16 +1,39 @@
 return {"arcticicestudio/nord-vim", -- Nord Color-Scheme
-"junegunn/vim-easy-align", -- EasyAlign.
-"kevinhwang91/nvim-bqf", -- bqf - better quickfix window.
-"machakann/vim-sandwich", -- vim-sandwitch - surronding.
+"junegunn/vim-easy-align", -- EasyAlign
+"kevinhwang91/nvim-bqf", -- bqf - better quickfix window
+"machakann/vim-sandwich", -- vim-sandwitch - surronding
 "mg979/vim-visual-multi", -- visual-multi
-"mhinz/vim-startify", -- Startify.
-"AndrewRadev/sideways.vim", -- sideways - shift parameters.
--- 'AndrewRadev/splitjoin.vim', -- splitjoin - needs ruby.
+-- "mhinz/vim-startify", -- Startify
+"AndrewRadev/sideways.vim", -- sideways - shift parameters
+-- 'AndrewRadev/splitjoin.vim', -- splitjoin - needs ruby
 "tpope/vim-eunuch", -- Unix command like 'Delete' and 'Mkdir'
-"tpope/vim-repeat", -- Repeat.
--- "tpope/vim-surround", -- Surround.
-"tpope/vim-unimpaired", -- Unimpaired - shortcuts.
-{ -- Suda
+"tpope/vim-repeat", -- Repeat
+-- "tpope/vim-surround", -- Surround
+"tpope/vim-unimpaired", -- Unimpaired - shortcuts
+{ -- Tmux integration
+    "aserowy/tmux.nvim",
+    config = function()
+        require("tmux").setup({
+            -- overwrite default configuration
+            -- here, e.g. to enable default bindings
+            copy_sync = {
+                -- enables copy sync and overwrites all register actions to
+                -- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
+                enable = false
+            },
+            navigation = {
+                -- cycles to opposite pane while navigating into the border
+                cycle_navigation = false,
+                -- enables default keybindings (C-hjkl) for normal mode
+                enable_default_keybindings = true
+            },
+            resize = {
+                -- enables default keybindings (A-hjkl) for normal mode
+                enable_default_keybindings = true
+            }
+        })
+    end
+}, { -- Suda
     "lambdalisue/suda.vim",
     config = vim.api.nvim_set_var("suda_smart_edit", 1)
 }, { -- Vista

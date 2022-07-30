@@ -1,4 +1,6 @@
-return {"arcticicestudio/nord-vim", -- Nord Color-Scheme
+return {
+"RRethy/nvim-align", -- Align
+"arcticicestudio/nord-vim", -- Nord Color-Scheme
 "junegunn/vim-easy-align", -- EasyAlign
 "kevinhwang91/nvim-bqf", -- bqf - better quickfix window
 "machakann/vim-sandwich", -- vim-sandwitch - surronding

@@ -2,11 +2,11 @@
 
 # Environment
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.0.0/bin" # PATH
-export EDITOR="nvim"                                                                 # Text-editor
+export EDITOR="lvim"                                                                 # Text-editor
 export XIVIEWER="gwenview"                                                           # Image-viewer
 export BROWSER="brave"                                                               # Browser
 export HISTFILE="$HOME/.config/zsh/.zsh_history"                                     # History-file location
-export SYSTEMD_EDITOR="nvim"                                                         # EDITOR for systemd
+export SYSTEMD_EDITOR="lvim"                                                         # EDITOR for systemd
 export LC_ALL="en_US.UTF-8"                                                          # Locale
 export LC_MESSAGES="C"                                                               # Locale
 export ZSH="$XDG_CONFIG_HOME/.oh-my-zsh"                                             # oh-my-zsh location
@@ -21,7 +21,7 @@ export LESSHISTFILE=-                                                           
 
 # FZF
 export FZF_KEY_BINDS="\
-    --bind 'ctrl-e:execute-silent(tmux new-window nvim -f {})'
+    --bind 'ctrl-e:execute-silent(tmux new-window lvim -f {})'
     --bind 'ctrl-d:execute-silent(open_dir {})'
     --bind 'ctrl-k:execute-silent(echo -n \" \" |xclip -sel clip)'
     --bind 'ctrl-a:execute-silent(append_clip {})'

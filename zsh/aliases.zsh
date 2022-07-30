@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-# Heavily modified aliases from common-aliases plugin.
-# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
-
 # Enabling alias after sudo i.e. 'sudo ll'
 alias sudo='sudo '
 
@@ -16,9 +13,12 @@ alias ldot='exa -la --icons .* --links --group-directories-first'               
 alias lS='lsd --total-size -l --sort=size'                                              # show folder total size
 
 # Quick access to the .zshrc file
-alias zshrc="${EDITOR} ${ZDOTDIR:-$HOME}/.zshrc"
+alias zshrc="${EDITOR} ${ZDOTDIR:-$HOME}/.zshrc"                                        # Edit dotfiles in EDITOR
+alias edot='code $HOME/Projects/dotfiles'                                               # Edit dotfiles in code
+alias vdot='tmux new-window -c /opt/DotFiles lvim'                                      # Edit dotfiles in lvim
 
 # Command line head / tail shortcuts
+# Some taken from: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
 alias -g H='| head'
 alias -g T='| tail'
 alias -g G='| grep'
@@ -54,6 +54,7 @@ alias -g A-2="|awk -F- '{print \$2}'"
 alias -g A-3="|awk -F- '{print \$3}'"
 alias -g A-4="|awk -F- '{print \$4}'"
 alias -g A-5="|awk -F- '{print \$5}'"
+alias -g IP_REGEX="|rg '(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}'"
 
 # Interactive, verbose file-system operations
 alias rm='rm -iv'
@@ -72,49 +73,53 @@ alias edit='v'
 alias gedit='subl'
 
 # Package manager
-alias updt='yay -Syu'
-alias u='updt'
-alias rem='sudo pacman -R'
-alias rpac='sudo rm /var/lib/pacman/db.lck'
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias updt='pamac update'                                                           # System Update
+alias u='updt'                                                                  # System Update shortened
+alias rem='sudo pacman -R'                                                      # Remove a Package
+alias rpac='sudo rm /var/lib/pacman/db.lck'                                     # Remove pacman db lock, in case some update has failed/crashed 
 
-alias t='tail -f'                                                               # Read file in realtime
-alias w='watch -n 0.5 '                                                         # Run command every 0.5 seconds
-alias cf='copyfile'                                                             # Copy file content to clipboard
+# Search and Filter
+alias ag='ag --hidden'                                                          # Grep for developers, default to hidden
+alias f='locate'                                                                # Locate shortened
+alias grep='rg -i'                                                              # Better grep
+alias locate='plocate'                                                          # Better locate
+alias sortnr='sort -n -r'                                                       # Sort shortened
+alias udb='sudo updatedb'                                                       # Update locate database shortened
+
+# System Administration and Monitoring
+alias core='sudo i7z'                                                           # CPU info
+alias ctl='sudo systemctl'                                                      # Systemctl shortened
+alias du='ncdu'                                                                 # Disk Usage seems way better than 'dust -r'
+alias ex='chmod +x'                                                             # Set executable shortened
+alias ips="ip -4 addr |awk '{print \$2}' | grep '\.'"                           # Get list of ipv4 addresses
+alias j='sudo journalctl -b -p3'                                                # View logs since last boot
+alias mp='sudo modprobe '                                                       # Modprobe shortened
+alias p='procs --sortd=cpu --watch-interval=1'                                  # Process monitor shortened
+alias sens='watch -d -n.5 sensors'                                              # Sensors
 alias st='sudo touch'                                                           # Create a file as root
-alias e='echo'                                                                  # Echo shortened
-alias en='echo -n'                                                              # Echo without trailing new-line
+alias t='tail -f'                                                               # Read file in realtime
+alias top='bpytop'                                                              # Better top - process manager
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'                   # Update GRUB Configuration
+alias w='watch -n 0.5 '                                                         # Run command every 0.5 seconds
+
+# Misc
+alias ':q'='exit'                                                               # Force of a habit..
 alias c='cat'                                                                   # Cat shortened
 alias cc='ccat'                                                                 # Cat with colors
-alias j='sudo journalctl -b -p3'                                                # View logs since last boot
-alias less='cless'                                                              # Better less
-alias edot='code $HOME/Projects/dotfiles'                                       # Edit dotfiles in code
-alias vdot='tmux new-window -c /opt/DotFiles nvim'                              # Edit dotfiles in nvim
-alias locate='plocate'                                                          # Better locate
-alias f='locate'                                                                # Locate shortened
-alias r='ranger'                                                                # Ranger shortened
-alias sens='watch -d -n.5 sensors'                                              # Sensors
-alias core='sudo i7z'                                                           # CPU info
-alias ag='ag --hidden'                                                          # Grep for developers, default to hidden
-alias vifm='vifmrun'                                                            # Vifm with images preview
-alias mp='sudo modprobe '                                                       # Modprobe shortened
-alias serv='sudo python -m http.server'                                         # Python http file-server.
-alias ex='chmod +x'                                                             # Set executable shortened
-alias ctl='sudo systemctl'                                                      # Systemctl shortened
-alias top='bpytop'                                                              # Better top - process manager
+alias cf='copyfile'                                                             # Copy file content to clipboard
 alias clip='xargs echo -n | xclip -selection clipboard'                         # Copy to clipboard shortened
-alias msgbox='kdialog --msgbox '                                                # Spawn a message-box
-alias grep='rg -i'                                                              # Better grep
-alias m='math'                                                                  # Math shortened
-alias fz='z `z| fzf`'                                                           # List z-directory in fzf
-alias lfp='fd -d 1 -a -H'                                                       # Show full path of files in directory.
-alias udb='sudo updatedb'                                                       # Update locate database shortened
-alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
 alias comp='compdef _gnu_generic '                                              # Generate completions for command
-alias ':q'='exit'                                                               # Force of a habit..
-alias du='ncdu'                                                                 # Seems way better than 'dust -r'
-alias p='procs --sortd=cpu --watch-interval=1'                                  # Process monitor shortened
-alias sortnr='sort -n -r'                                                       # Sort shortened
+alias e='echo'                                                                  # Echo shortened
+alias en='echo -n'                                                              # Echo without trailing new-line
+alias fz='z `z| fzf`'                                                           # List z-directory in fzf
+alias less='cless'                                                              # Better less
+alias lfp='fd -d 1 -a -H'                                                       # Show full path of files in directory
+alias m='math'                                                                  # Math with bc 
+alias msgbox='kdialog --msgbox '                                                # Spawn a message-box
+alias r='ranger'                                                                # Ranger File-Manager
+alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
+alias serv='sudo python -m http.server'                                         # Python http file-server
+alias vifm='vifmrun'                                                            # Vifm with images preview
 
 # CPU performance profiles 
 alias performance='sudo sh -c "echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'

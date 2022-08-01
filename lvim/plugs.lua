@@ -12,6 +12,7 @@ return {
 "tpope/vim-repeat", -- Repeat
 -- "tpope/vim-surround", -- Surround
 "tpope/vim-unimpaired", -- Unimpaired - shortcuts
+"hrsh7th/cmp-nvim-lua", -- CMP lua completion
 { -- Tmux integration
     "aserowy/tmux.nvim",
     config = function()

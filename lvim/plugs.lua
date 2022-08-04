@@ -1,29 +1,20 @@
-return {
+return {"itchyny/vim-cursorword", -- Highlight word under cursor
 "RRethy/nvim-align", -- Align
-"arcticicestudio/nord-vim", -- Nord Color-Scheme
 "junegunn/vim-easy-align", -- EasyAlign
 "kevinhwang91/nvim-bqf", -- bqf - better quickfix window
 "machakann/vim-sandwich", -- vim-sandwitch - surronding
 "mg979/vim-visual-multi", -- visual-multi
--- "mhinz/vim-startify", -- Startify
 "AndrewRadev/sideways.vim", -- sideways - shift parameters
--- 'AndrewRadev/splitjoin.vim', -- splitjoin - needs ruby
+'AndrewRadev/splitjoin.vim', -- splitjoin - needs ruby
 "tpope/vim-eunuch", -- Unix command like 'Delete' and 'Mkdir'
 "tpope/vim-repeat", -- Repeat
--- "tpope/vim-surround", -- Surround
+"tpope/vim-surround", -- Surround
 "tpope/vim-unimpaired", -- Unimpaired - shortcuts
 "hrsh7th/cmp-nvim-lua", -- CMP lua completion
 { -- Tmux integration
     "aserowy/tmux.nvim",
     config = function()
         require("tmux").setup({
-            -- overwrite default configuration
-            -- here, e.g. to enable default bindings
-            copy_sync = {
-                -- enables copy sync and overwrites all register actions to
-                -- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
-                enable = false
-            },
             navigation = {
                 -- cycles to opposite pane while navigating into the border
                 cycle_navigation = false,
@@ -123,8 +114,8 @@ return {
         vim.g.indent_blankline_char = "▏"
         vim.g.indent_blankline_filetype_exclude = {"help", "terminal", "dashboard"}
         vim.g.indent_blankline_buftype_exclude = {"terminal"}
-        vim.g.indent_blankline_show_trailing_blankline_indent = false
-        vim.g.indent_blankline_show_first_indent_level = true
+        vim.g.indent_blankline_show_trailing_blankline_indent = true
+        vim.g.indent_blankline_show_first_indent_level = false
     end
 }, {
     "karb94/neoscroll.nvim",
@@ -141,10 +132,10 @@ return {
             easing_function = nil -- Default easing function
         })
     end
-} -- { -- Orgmode - organizer
---     "kristijanhusak/orgmode.nvim",
---     config = function()
---         require("orgmode").setup({})
---     end,
--- },
-}
+}, {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+        require("todo-comments").setup()
+    end
+}}

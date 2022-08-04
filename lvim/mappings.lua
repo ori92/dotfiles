@@ -60,12 +60,12 @@ ki["<C-a>"] = "<C-o>0"
 ki["<C-e>"] = "<C-o>$"
 
 -- Move lines Up/Down using Alt+Arrows
-kn["<m-Up>"] = ":m .-2<CR>=="
-kn["<m-Down>"] = ":m .+1<CR>=="
-ki["<m-Up>"] = ":m .-2<CR>=="
-ki["<m-Down>"] = ":m .+1<CR>=="
-kv["<m-Up>"] = ":m '<-2<CR>gv=gv"
-kv["<m-Down>"] = ":m '>+1<CR>gv=gv"
+kn["<c-m-Up>"] = ":m .-2<CR>=="
+kn["<c-m-Down>"] = ":m .+1<CR>=="
+ki["<c-m-Up>"] = ":m .-2<CR>=="
+ki["<c-m-Down>"] = ":m .+1<CR>=="
+kv["<c-m-Up>"] = ":m '<-2<CR>gv=gv"
+kv["<c-m-Down>"] = ":m '>+1<CR>gv=gv"
 
 -- In addition to C-w: delete word around/after the cursor
 ki["<C-d>"] = "<C-o>daw"

@@ -1,17 +1,21 @@
 return {
+	"sindrets/winshift.nvim", -- WinShift - Rearrange your windows with ease TODO: Needs Mappings
+	"ThePrimeagen/harpoon", -- Harpoon - Quick file access  TODO: Needs Mappings
+	"Shatur/neovim-ayu", -- Ayu theme
 	"itchyny/vim-cursorword", -- Highlight word under cursor
 	"RRethy/nvim-align", -- Align
 	"junegunn/vim-easy-align", -- EasyAlign
-	"kevinhwang91/nvim-bqf", -- bqf - better quickfix window
-	"machakann/vim-sandwich", -- vim-sandwitch - surronding
-	"mg979/vim-visual-multi", -- visual-multi
-	"AndrewRadev/sideways.vim", -- sideways - shift parameters
-	"AndrewRadev/splitjoin.vim", -- splitjoin - needs ruby
+	"kevinhwang91/nvim-bqf", -- BQF - Better quickfix window
+	"machakann/vim-sandwich", -- Vim-sandwitch - Surronding
+	"mg979/vim-visual-multi", -- Visual-multi
+	"AndrewRadev/sideways.vim", -- Sideways - Shift parameters
+	"AndrewRadev/splitjoin.vim", -- SplitJoin - Needs ruby
 	"tpope/vim-eunuch", -- Unix command like 'Delete' and 'Mkdir'
 	"tpope/vim-repeat", -- Repeat
 	"tpope/vim-surround", -- Surround
-	"tpope/vim-unimpaired", -- Unimpaired - shortcuts
-	"hrsh7th/cmp-nvim-lua", -- CMP lua completion
+	"tpope/vim-unimpaired", -- Unimpaired - Shortcuts
+	"hrsh7th/cmp-nvim-lua", -- CMP - Lua completion
+	"windwp/nvim-spectre", -- Spectre - Regex Find and Replace
 	{ -- Tmux integration
 		"aserowy/tmux.nvim",
 		config = function()
@@ -78,9 +82,6 @@ return {
 			})
 		end,
 	},
-	{ -- spectre - find and replace
-		"windwp/nvim-spectre",
-	},
 	{
 		"kevinhwang91/rnvimr",
 		cmd = "RnvimrToggle",
@@ -135,26 +136,16 @@ return {
 		end,
 	},
 	{
-		"karb94/neoscroll.nvim",
-		event = "BufRead",
-		config = function()
-			require("neoscroll").setup({
-				-- All these keys will be mapped to their corresponding default scrolling animation
-				mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
-				hide_cursor = true, -- Hide cursor while scrolling
-				stop_eof = true, -- Stop at <EOF> when scrolling downwards
-				use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
-				respect_scrolloff = false, -- Stop scrolling when the cursor reaches the scrolloff margin of the file
-				cursor_scrolls_alone = false, -- The cursor will keep on scrolling even if the window cannot scroll further
-				easing_function = nil, -- Default easing function
-			})
-		end,
-	},
-	{
 		"folke/todo-comments.nvim",
 		event = "BufRead",
 		config = function()
 			require("todo-comments").setup()
+		end,
+	},
+	{
+		"terrortylor/nvim-comment",
+		config = function()
+			require("nvim_comment").setup()
 		end,
 	},
 }

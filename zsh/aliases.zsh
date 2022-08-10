@@ -14,8 +14,8 @@ alias lS='lsd --total-size -l --sort=size'                                      
 
 # Quick access to the .zshrc file
 alias zshrc="${EDITOR} ${ZDOTDIR:-$HOME}/.zshrc"                                        # Edit dotfiles in EDITOR
-alias edot='code $HOME/Projects/dotfiles'                                               # Edit dotfiles in code
-alias vdot='tmux new-window -c /opt/DotFiles lvim'                                      # Edit dotfiles in lvim
+alias edot='code /opt/dotfiles'                                                         # Edit dotfiles in code
+alias vdot='tmux new-window -c /opt/dotfiles lvim'                                      # Edit dotfiles in lvim
 
 # Command line head / tail shortcuts
 # Some taken from: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
@@ -73,7 +73,7 @@ alias edit='v'
 alias gedit='subl'
 
 # Package manager
-alias updt='pamac update'                                                           # System Update
+alias updt='pamac update'                                                       # System Update
 alias u='updt'                                                                  # System Update shortened
 alias rem='sudo pacman -R'                                                      # Remove a Package
 alias rpac='sudo rm /var/lib/pacman/db.lck'                                     # Remove pacman db lock, in case some update has failed/crashed 
@@ -91,6 +91,7 @@ alias core='sudo i7z'                                                           
 alias ctl='sudo systemctl'                                                      # Systemctl shortened
 alias du='ncdu'                                                                 # Disk Usage seems way better than 'dust -r'
 alias ex='chmod +x'                                                             # Set executable shortened
+alias own='sudo chown $USER:$USER '                                             # Own a File
 alias ips="ip -4 addr |awk '{print \$2}' | grep '\.'"                           # Get list of ipv4 addresses
 alias j='sudo journalctl -b -p3'                                                # View logs since last boot
 alias mp='sudo modprobe '                                                       # Modprobe shortened

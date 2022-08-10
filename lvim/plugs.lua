@@ -1,7 +1,7 @@
 return {
-	"sindrets/winshift.nvim", -- WinShift - Rearrange your windows with ease TODO: Needs Mappings
+	"KabbAmine/vCoolor.vim", -- vCoolor - Cool Color Selector
+	"sindrets/winshift.nvim", -- WinShift - Rearrange your windows with ease  TODO: Needs Mappings
 	"ThePrimeagen/harpoon", -- Harpoon - Quick file access  TODO: Needs Mappings
-	"Shatur/neovim-ayu", -- Ayu theme
 	"itchyny/vim-cursorword", -- Highlight word under cursor
 	"RRethy/nvim-align", -- Align
 	"junegunn/vim-easy-align", -- EasyAlign

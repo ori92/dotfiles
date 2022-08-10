@@ -10,11 +10,6 @@ kn["<esc><esc>"] = "<cmd>nohlsearch<cr>"
 kn["Y"] = "y$"
 kv["p"] = [["_dP]]
 
--- kn["<Up>"] = "<nop>"
--- kn["<Down>"] = "<nop>"
--- kn["<Left>"] = "<nop>"
--- kn["<Right>"] = "<nop>"
-
 -- Move Cursor in insert mode
 ki["<C-l>"] = "<Right>"
 ki["<C-h>"] = "<Left>"
@@ -56,7 +51,7 @@ kv["<"] = "<gv"
 kv[">"] = ">gv"
 
 -- Move to beginning/end of line while in insert mode
-ki["<C-a>"] = "<C-o>0"
+ki["<C-a>"] = "<C-o>^"
 ki["<C-e>"] = "<C-o>$"
 
 -- Move lines Up/Down using Alt+Arrows
@@ -82,13 +77,19 @@ kv["<C-c>"] = ":CommentToggle<CR>gv"
 
 -- Add quick map('n', 'pings', 'for sideways.vim that allow shifting of arguments', opts)
 wk["S"] = {
-	name = "Sideways",
+	name = "+Sideways",
 	h = { ":SidewaysLeft<CR>", "Left" },
 	l = { ":SidewaysRight<CR>", "Right" },
 }
 
+wk["h"] = {
+	name = "+Harpoon",
+	a = { ":lua require('harpoon.mark').add_file()<CR>", "Add" },
+	n = { ":lua require('harpoon.ui').toggle_quick_menu()<CR>", "Show Menu" },
+	t = { ":lua require('telescope').load_extension('harpoon')<CR>:Telescope harpoon marks<CR>", "Telescope" },
+}
 -- Insert current date
-wk["i"] = { '"=strftime("%b %d, %Y")<CR>p', "insert date " }
+wk["i"] = { '"=strftime("%b %d, %Y")<CR>p', "insert date" }
 
 -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
 kn["ga"] = "<Plug>(EasyAlign)"
@@ -121,8 +122,8 @@ wk["Q"] = {
 }
 
 --- Resize windows
-wk["+"] = { "<cmd>resize +5<cr>", "VResize +5" }
-wk["-"] = { "<cmd>resize -5<cr>", "VResize -5" }
+wk["+"] = { "<cmd>resize +5<cr>", "which_key_ignore" }
+wk["-"] = { "<cmd>resize -5<cr>", "which_key_ignore" }
 
 -- Abbreviations
 local abbreviations = {

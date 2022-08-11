@@ -32,10 +32,10 @@ kn["<C-z>"] = "<Cmd>undo<CR>"
 ki["<C-z>"] = "<ESC>ui"
 
 -- Switch windows quicker
-wk["<Left>"]  = { "<cmd>lua require('tmux').move_left()<cr>", "which_key_ignore" }
+wk["<Left>"] = { "<cmd>lua require('tmux').move_left()<cr>", "which_key_ignore" }
 wk["<Right>"] = { "<cmd>lua require('tmux').move_right()<cr>", "which_key_ignore" }
-wk["<Up>"]    = { "<cmd>lua require('tmux').move_top()<cr>", "which_key_ignore" }
-wk["<Down>"]  = { "<cmd>lua require('tmux').move_bottom()<cr>", "which_key_ignore" }
+wk["<Up>"] = { "<cmd>lua require('tmux').move_top()<cr>", "which_key_ignore" }
+wk["<Down>"] = { "<cmd>lua require('tmux').move_bottom()<cr>", "which_key_ignore" }
 
 -- Use Ctrl-s for saving
 kn["<C-S>"] = ":write<CR>"
@@ -77,18 +77,20 @@ kn["<C-c>"] = ":CommentToggle<CR>"
 ki["<C-c>"] = "<cmd>CommentToggle<CR>"
 kv["<C-c>"] = ":CommentToggle<CR>gv"
 
+wk["w"] = { ":WinShift<cr>", "WinShift" }
+
 -- Add quick map('n', 'pings', 'for sideways.vim that allow shifting of arguments', opts)
-wk["S"] = {
-  name = "+Sideways",
-  h = { ":SidewaysLeft<CR>", "Left" },
-  l = { ":SidewaysRight<CR>", "Right" },
+wk["s"] = {
+    name = "+Sideways",
+    h = { ":sidewaysleft<cr>", "left" },
+    l = { ":sidewaysright<cr>", "right" },
 }
 
 wk["h"] = {
-  name = "+Harpoon",
-  a = { ":lua require('harpoon.mark').add_file()<CR>", "Add" },
-  n = { ":lua require('harpoon.ui').toggle_quick_menu()<CR>", "Show Menu" },
-  t = { ":lua require('telescope').load_extension('harpoon')<CR>:Telescope harpoon marks<CR>", "Telescope" },
+    name = "+Harpoon",
+    a = { ":lua require('harpoon.mark').add_file()<CR>", "Add" },
+    n = { ":lua require('harpoon.ui').toggle_quick_menu()<CR>", "Show Menu" },
+    h = { ":lua require('telescope').load_extension('harpoon')<CR>:Telescope harpoon marks<CR>", "Telescope" },
 }
 -- Insert current date
 wk["i"] = { '"=strftime("%b %d, %Y")<CR>p', "insert date" }
@@ -96,31 +98,32 @@ wk["i"] = { '"=strftime("%b %d, %Y")<CR>p', "insert date" }
 -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
 kn["ga"] = "<Plug>(EasyAlign)"
 
--- wk["j"] = { ":HopChar2<CR>", "Hop to char" } TODO: Fix HOP Keymaps from being overriden by sandwitch
+wk["j"] = { ":HopChar2<CR>", "Hop to Char" }
+wk["J"] = { ":HopWord<CR>", "Hop to Word" }
 
 -- Trouble
 wk["t"] = {
-  name = "+Trouble",
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
-  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
+    name = "+Trouble",
+    r = { "<cmd>Trouble lsp_references<cr>", "References" },
+    f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+    d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
+    q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+    l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+    w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
 }
 
 wk["r"] = {
-  name = "+Replace",
-  r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
-  w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-  f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+    name = "+Replace",
+    r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
+    w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
+    f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
 }
 
 wk["Q"] = {
-  name = "+Quit",
-  s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
-  l = { "<cmd>lua require('persistence').load({last=true})<cr>", "Restore last session" },
-  d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
+    name = "+Quit",
+    s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
+    l = { "<cmd>lua require('persistence').load({last=true})<cr>", "Restore last session" },
+    d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
 }
 
 --- Resize windows
@@ -129,16 +132,16 @@ wk["-"] = { "<cmd>resize -5<cr>", "which_key_ignore" }
 
 -- Abbreviations
 local abbreviations = {
-  Wq = "wq",
-  WQ = "wq",
-  Wqa = "wqa",
-  W = "w",
-  Q = "q",
-  Qa = "qa",
-  wrap = "set wrap",
-  nowrap = "set nowrap",
+    Wq = "wq",
+    WQ = "wq",
+    Wqa = "wqa",
+    W = "w",
+    Q = "q",
+    Qa = "qa",
+    wrap = "set wrap",
+    nowrap = "set nowrap",
 }
 
 for left, right in pairs(abbreviations) do
-  vim.cmd(string.format("cnoreabbrev %s %s", left, right))
+    vim.cmd(string.format("cnoreabbrev %s %s", left, right))
 end

@@ -11,8 +11,9 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.treesitter.matchup.enable = true
 lvim.builtin.treesitter.ensure_installed =
-{ "bash", "c", "javascript", "json", "lua", "python", "rust", "java", "yaml" }
+    { "bash", "c", "javascript", "json", "lua", "python", "rust", "java", "yaml" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.telescope.defaults.file_ignore_patterns = { ".git", "node_modules" }
-lvim.builtin.alpha.startify.section.top_buttons.entries = { { "e", "  New File", "<CMD>ene!<CR>" },
-  { "q", "  Quit", "<CMD>q!<CR>" } }
+lvim.builtin.alpha.startify.section.top_buttons.entries =
+    { { "e", "  New File", "<CMD>ene!<CR>" }, { "q", "  Quit", "<CMD>q!<CR>" } }
+lvim.builtin.dap.active = false

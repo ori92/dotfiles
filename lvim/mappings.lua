@@ -80,7 +80,7 @@ kv["<C-c>"] = ":CommentToggle<CR>gv"
 wk["w"] = { ":WinShift<cr>", "WinShift" }
 
 -- Add quick map('n', 'pings', 'for sideways.vim that allow shifting of arguments', opts)
-wk["s"] = {
+wk["S"] = {
     name = "+Sideways",
     h = { ":sidewaysleft<cr>", "left" },
     l = { ":sidewaysright<cr>", "right" },

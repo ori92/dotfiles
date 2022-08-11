@@ -3,7 +3,7 @@
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "startify"
 lvim.builtin.notify.active = true
-lvim.builtin.terminal.active = false
+lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 lvim.builtin.nvimtree.setup.filters.custom = { "^.git$", "^.vscode$" }

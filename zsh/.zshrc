@@ -18,7 +18,7 @@ setopt dotglob
 plugins=(
     zsh-autosuggestions you-should-use
     copyfile colorize extract copybuffer
-    sudo fzf fzf-tab colored-man-pages
+    sudo fzf fzf-tab colored-man-pages git
     autoupdate zsh-autopair zsh-syntax-highlighting
 )
 

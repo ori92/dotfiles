@@ -126,12 +126,6 @@ alias vifm='vifmrun'                                                            
 alias performance='sudo sh -c "echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
 alias powersave='sudo sh -c "echo powersave | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
 
-# Git
-alias gc='git clone'
-alias gp='git pull'
-alias gs='git status'
-alias gd='git diff'
-
 # systemd
 alias s='systemctl status '
 alias us='systemctl --user status '

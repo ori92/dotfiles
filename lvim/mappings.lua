@@ -18,6 +18,10 @@ ki["<C-h>"] = "<Left>"
 ki["<C-k>"] = "<Up>"
 ki["<C-j>"] = "<Down>"
 
+-- Next/Prev Buffer
+kn["L"] = "<Cmd>BufferLineCycleNext<CR>"
+kn["H"] = "<Cmd>BufferLineCyclePrev<CR>"
+
 -- Move to the end of yanked text after yank and paste
 kn["p"] = "p`]"
 kv["y"] = "y`]"
@@ -110,6 +114,7 @@ wk["t"] = {
     q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
     w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
+    t = { "<cmd>TodoTrouble<CR>", "Todo's" },
 }
 
 wk["r"] = {
@@ -130,6 +135,7 @@ wk["Q"] = {
 wk["+"] = { "<cmd>resize +5<cr>", "which_key_ignore" }
 wk["-"] = { "<cmd>resize -5<cr>", "which_key_ignore" }
 
+wk["?"] = {"<cmd>Cheatsheet<cr>", "Cheatsheet"}
 -- Abbreviations
 local abbreviations = {
     Wq = "wq",

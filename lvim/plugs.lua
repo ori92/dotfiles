@@ -1,6 +1,7 @@
 return {
+    "marko-cerovac/material.nvim", -- Material colorscheme
     "KabbAmine/vCoolor.vim", -- vCoolor - Cool Color Selector
-    "sindrets/winshift.nvim", -- WinShift - Rearrange your windows with ease  TODO: Needs Mappings
+    "sindrets/winshift.nvim", -- WinShift - Rearrange your windows with ease
     "ThePrimeagen/harpoon", -- Harpoon - Quick file access  TODO: Needs Mappings
     "itchyny/vim-cursorword", -- Highlight word under cursor
     "RRethy/nvim-align", -- Align
@@ -33,7 +34,14 @@ return {
         end,
     },
 
-    { "phaazon/hop.nvim", event = "BufRead", config = require("hop").setup() },
+    {
+        "phaazon/hop.nvim",
+        event = "BufRead",
+        config = function()
+            require("hop").setup()
+        end,
+    },
+
     {
         "sudormrfbin/cheatsheet.nvim",
         requires = {

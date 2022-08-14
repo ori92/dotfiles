@@ -6,12 +6,16 @@ local wk = lvim.builtin.which_key.mappings
 
 lvim.leader = "space"
 
+-- TODO: set captions for which-key in visual mode after <Leader>.
+
 kn["<esc><esc>"] = "<cmd>nohlsearch<cr>"
 kn["Y"] = "y$"
 kv["p"] = [["_dP]]
 
 -- Execute Current Line in Shell
 kn["<A-x>"] = "V:w !bash<CR>"
+
+kn["cw"] = "ciw"
 
 ki["<C-l>"] = "<Right>"
 ki["<C-h>"] = "<Left>"
@@ -81,6 +85,10 @@ kn["<C-c>"] = ":CommentToggle<CR>"
 ki["<C-c>"] = "<cmd>CommentToggle<CR>"
 kv["<C-c>"] = ":CommentToggle<CR>gv"
 
+-- Align in visual-mode
+kv["<Leader>A"] = "<Plug>(EasyAlign)"
+
+-- WinShift
 wk["w"] = { ":WinShift<cr>", "WinShift" }
 
 -- Add quick map('n', 'pings', 'for sideways.vim that allow shifting of arguments', opts)
@@ -135,7 +143,7 @@ wk["Q"] = {
 wk["+"] = { "<cmd>resize +5<cr>", "which_key_ignore" }
 wk["-"] = { "<cmd>resize -5<cr>", "which_key_ignore" }
 
-wk["?"] = {"<cmd>Cheatsheet<cr>", "Cheatsheet"}
+wk["?"] = { "<cmd>Cheatsheet<cr>", "Cheatsheet" }
 -- Abbreviations
 local abbreviations = {
     Wq = "wq",

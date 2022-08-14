@@ -1,5 +1,6 @@
 return {
     -- "stevearc/dressing.nvim",         -- Prettier UI  TODO: figure out why vim.ui.input returns empty string
+    "lukas-reineke/cmp-rg",              -- cmp completion from grep in current directory
     "folke/tokyonight.nvim",             -- colorscheme
     "marko-cerovac/material.nvim",       -- Material colorscheme
     "KabbAmine/vCoolor.vim",             -- vCoolor - Cool Color Selector
@@ -11,14 +12,14 @@ return {
     "kevinhwang91/nvim-bqf",             -- BQF - Better quickfix window
     "mg979/vim-visual-multi",            -- Visual-multi
     "AndrewRadev/sideways.vim",          -- Sideways - Shift parameters
-    "AndrewRadev/splitjoin.vim",         -- SplitJoin - Needs ruby
+    "AndrewRadev/splitjoin.vim",         -- SplitJoin - Needs ruby  TODO: Add solitjoin key-bindings
     "tpope/vim-eunuch",                  -- Unix command like 'Delete' and 'Mkdir'
     "tpope/vim-repeat",                  -- Repeat
     "tpope/vim-surround",                -- Surround
     "tpope/vim-unimpaired",              -- Unimpaired - Shortcuts
     "hrsh7th/cmp-nvim-lua",              -- CMP - Lua completion
-    "windwp/nvim-spectre",               -- Spectre - Regex Find and Replace
-    "liuchengxu/vista.vim",              -- Vista
+    "windwp/nvim-spectre",               -- Spectre - Regex Find and Replace  TODO: Add spectre Key-bindings
+    "liuchengxu/vista.vim",              -- Vista  TODO: Add Vista Key-bindings
     require("plugins/bookmarks"),        -- Bookmark-manager
     require("plugins/nvim-colorizer"),   -- Colorizer - highlight colors/hex
     require("plugins/tmux"),             -- Tmux integration
@@ -30,7 +31,7 @@ return {
     require("plugins/trouble"),          -- Trouble A pretty list for showing diagnostics, references, telescope results, quickfix and location lists
     require("plugins/vim-mundo"),        -- mundo - undo tree
     require("plugins/nvim-ts-rainbow"),  -- Rainbow parenthesis
-    require("plugins/rnvimr"),           -- Ranger File-Manager
+    require("plugins/rnvimr"),           -- Ranger File-Manager  TODO: Aad rnvimr key-bindings
     require("plugins/nvim-lastplace"),   -- Restore cursor last place on the file
     require("plugins/persistence"),      -- Session Manager
     require("plugins/numb"),             -- peeks lines of the buffer in non-obtrusive way.
@@ -38,3 +39,4 @@ return {
     require("plugins/todo-comments"),    -- Highlight TODO comments
     require("plugins/nvim-comments"),    -- Comment toggle
 }
+

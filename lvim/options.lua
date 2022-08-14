@@ -1,7 +1,7 @@
 -- Options
 
 
--- vim.g.material_style = "darker"
+table.insert(lvim.builtin.cmp.sources, { name = 'rg' })
 
 vim.g.tokyonight_style = "night"
 lvim.colorscheme = "tokyonight"

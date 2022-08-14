@@ -28,3 +28,6 @@ alias -s zip='unzip -l'
 alias -s rar='unrar l'
 alias -s tar='tar tf'
 alias -s gz='gunzip -l'
+
+# torrent files
+alias -s torrent='xdg-open'

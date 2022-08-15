@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# edit tmux output with vim
+# Edit tmux output with vim
 vim-edit-output() {
     file=$(mktemp).sh
     tmux capture-pane -pS -32768 >$file
@@ -48,7 +48,7 @@ repl() {
     sed -i "s/$2/$3/g" $1
 }
 
-# expand alias on prompt
+# Expand alias on prompt
 expand-alias() {
     zle _expand_alias
     zle autosuggest-clear
@@ -56,7 +56,7 @@ expand-alias() {
 zle -N expand-alias
 bindkey '^x' expand-alias
 
-# install package with pamac
+# Install package with pamac
 inst() {
     if [[ -z "$1" ]]; then
         pacseek
@@ -65,7 +65,7 @@ inst() {
     fi
 }
 
-# reinstall package with pamac
+# Reinstall package with pamac
 reinst() {
     pamac reinstall $1
 }
@@ -73,15 +73,7 @@ reinst() {
 # Fix paste being slow because of the highlight plugin
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
-# set fan speed manually
-fan1() {
-    echo $1 | sudo tee /sys/devices/virtual/hwmon/hwmon1/pwm1
-}
-fan2() {
-    echo $1 | sudo tee /sys/devices/virtual/hwmon/hwmon1/pwm3
-}
-
-# get random number
+# Get a random number
 rand() {
     echo $((1 + ($RANDOM % $1)))
 }

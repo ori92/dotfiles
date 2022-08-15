@@ -14,8 +14,8 @@ alias lS='lsd --total-size -l --sort=size'                                      
 
 # Quick access to the .zshrc file
 alias zshrc="${EDITOR} ${ZDOTDIR:-$HOME}/.zshrc"                                        # Edit dotfiles in EDITOR
-alias edot='code /opt/dotfiles'                                                         # Edit dotfiles in code
-alias vdot='tmux new-window -c /opt/dotfiles lvim'                                      # Edit dotfiles in lvim
+alias ed='code /opt/dotfiles'                                                           # Edit dotfiles in code
+alias vd='tmux new-window -c /opt/dotfiles lvim'                                        # Edit dotfiles in lvim
 
 # Command line head / tail shortcuts
 # Some taken from: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases

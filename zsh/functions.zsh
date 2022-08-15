@@ -1,14 +1,5 @@
 #!/bin/zsh
 
-_fzf_compgen_path() {
-    fd --hidden --follow --color=always -H -E ".git" -E ".cache" -E "cache" -E ".nuget" -E "Brave-Browser" -E "CachedData" -E "Cache" -E "site-packages" -E "icons" -E ".cargo" -E "node_modules" -E ".npm" -E ".vscode" -E ".rustup" -E ".icons" -E ".dotnet" --absolute-path / "$1"
-}
-
-# Use fd to generate the list for directory completion
-_fzf_compgen_dir() {
-    fd --type d --hidden --follow --color=always -H -E ".git" -E ".cache" -E "cache" -E ".nuget" -E "Brave-Browser" -E "CachedData" -E "Cache" -E "site-packages" -E "icons" -E ".cargo" -E "node_modules" -E ".npm" -E ".vscode" -E ".rustup" -E ".icons" -E ".dotnet" --absolute-path / "$1"
-}
-
 # edit tmux output with vim
 vim-edit-output() {
     file=$(mktemp).sh
@@ -63,6 +54,7 @@ expand-alias() {
     zle autosuggest-clear
 }
 zle -N expand-alias
+bindkey '^x' expand-alias
 
 # install package with pamac
 inst() {

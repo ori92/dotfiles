@@ -24,7 +24,7 @@ plugins=(
 
 # Loading, order does matters.
 source $ZDOTDIR/profile.zsh
-source /usr/share/fzf/key-bindings.zsh
+source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/functions.zsh
 source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/aliases.zsh
@@ -33,8 +33,6 @@ source $ZDOTDIR/filetype.zsh
 source $ZDOTDIR/colors.zsh
 source $ZDOTDIR/mf.zsh
 
-bindkey '^s' fzf-file-widget
-bindkey '^x' expand-alias
 
 eval "$(zoxide init zsh)"   # start zoxide
 eval "$(starship init zsh)" # start starship-prompt

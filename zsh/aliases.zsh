@@ -19,20 +19,23 @@ alias vd='tmux new-window -c /opt/dotfiles lvim'                                
 
 # Command line head / tail shortcuts
 # Some taken from: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
-alias -g H='| head'
-alias -g T='| tail'
+alias -g C='|tee >( clip )'
+alias -g CA="2>&1 | cat -A"
 alias -g G='| grep'
+alias -g GV='|rg -v'
+alias -g H='| head'
+alias -g IP_REGEX="|rg '(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}'"
+alias -g J='|jq'
 alias -g L="| less"
 alias -g LL="2>&1 | less"
-alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
-alias -g W='|wc -l'
 alias -g S='|sed'
-alias -g C='|tee >( clip )'
-alias -g J='|jq'
-alias -g GV='|rg -v'
+alias -g T='| tail'
+alias -g W='|wc -l'
+
+# AWK
 alias -g A='|awk'
 alias -g A1="|awk '{print \$1}'"
 alias -g A2="|awk '{print \$2}'"
@@ -54,7 +57,6 @@ alias -g A-2="|awk -F- '{print \$2}'"
 alias -g A-3="|awk -F- '{print \$3}'"
 alias -g A-4="|awk -F- '{print \$4}'"
 alias -g A-5="|awk -F- '{print \$5}'"
-alias -g IP_REGEX="|rg '(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}'"
 
 # Interactive, verbose file-system operations
 alias rm='rm -iv'

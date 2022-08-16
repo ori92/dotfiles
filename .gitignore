@@ -1,3 +1,11 @@
 astronvim
 .vscode/settings.json
 zsh/mf.zsh
+
+ranger/colorschemes/__pycache__
+tmux/plugins
+zsh/.zsh_history
+zsh/.zcompdump*
+lvim/plugin
+lvim/session
+ranger/colorschemes/__init__.py

@@ -144,6 +144,8 @@ wk["+"] = { "<cmd>resize +5<cr>", "which_key_ignore" }
 wk["-"] = { "<cmd>resize -5<cr>", "which_key_ignore" }
 
 wk["?"] = { "<cmd>Cheatsheet<cr>", "Cheatsheet" }
+
+wk["lt"] = {":lua vim.diagnostic.config({virtual_text=not vim.diagnostic.config().virtual_text})<CR>", "Toggle Text"}
 -- Abbreviations
 local abbreviations = {
     Wq = "wq",

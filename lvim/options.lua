@@ -1,11 +1,7 @@
 -- Options
 
-
-table.insert(lvim.builtin.cmp.sources, { name = 'rg' })
-
-vim.g.tokyonight_style = "night"
-lvim.colorscheme = "tokyonight"
--- lvim.builtin.lualine
+-- lvim.lsp.diagnostics.virtual_text = false
+table.insert(lvim.builtin.cmp.sources, { name = "rg" })
 lvim.format_on_save = false
 lvim.log.level = "warn"
 vim.opt.scrolloff = 10

@@ -1,5 +1,7 @@
 My dot-files.
 
+![image](https://user-images.githubusercontent.com/35110056/184905468-dec77542-98fc-4386-8179-00bf037449fe.png)
+![image](https://user-images.githubusercontent.com/35110056/184906157-60c8f6f4-6a0e-4f9d-b7a0-4a4a82658210.png)
 ![Pasted image 20211101171210](https://user-images.githubusercontent.com/35110056/179995707-721bf567-5871-4fce-b01a-f85c86a93811.png)
 
 Installation:

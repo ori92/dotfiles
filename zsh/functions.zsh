@@ -78,6 +78,7 @@ rand() {
     echo $((1 + ($RANDOM % $1)))
 }
 
+# Fuzzy find text in files 
 rga-fzf() {
     RG_PREFIX="rga --files-with-matches"
     local file

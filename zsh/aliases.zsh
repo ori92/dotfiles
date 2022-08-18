@@ -114,7 +114,6 @@ alias clip='xargs echo -n | xclip -selection clipboard'                         
 alias comp='compdef _gnu_generic '                                              # Generate completions for command
 alias e='echo'                                                                  # Echo shortened
 alias en='echo -n'                                                              # Echo without trailing new-line
-alias fz='z `z| fzf`'                                                           # List z-directory in fzf
 alias less='cless'                                                              # Better less
 alias lfp='fd -d 1 -a -H'                                                       # Show full path of files in directory
 alias lg='lazygit'

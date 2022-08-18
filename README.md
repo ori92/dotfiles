@@ -28,6 +28,7 @@ Installation:
   
 # Optional dependencies:
 
+* ripgrep-all (livegrep text in files) 
 * lsd (fancy ls)
 * kdialog (textbox notifications)
 * paplay  (sound notifications)

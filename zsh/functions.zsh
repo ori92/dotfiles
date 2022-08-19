@@ -54,7 +54,6 @@ expand-alias() {
     zle autosuggest-clear
 }
 zle -N expand-alias
-bindkey '^x' expand-alias
 
 # Install package with pamac
 inst() {

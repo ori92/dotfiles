@@ -34,6 +34,7 @@ source $ZDOTDIR/filetype.zsh
 source $ZDOTDIR/mf.zsh
 
 bindkey '^s' fzf-file-widget
+bindkey '^x' expand-alias
 
 eval "$(zoxide init zsh)"   # start zoxide
 eval "$(starship init zsh)" # start starship-prompt

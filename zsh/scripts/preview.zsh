@@ -7,7 +7,7 @@ kind=${mime##*/}
 [ -z "$1" ] && exit
 
 if [ -d "$1" ]; then
-    exa --git -hl --color=always --icons "$1"
+   lsd --color=always -l --total-size --blocks=name,size "$1"
 elif [ "$category" = image ]; then
     viu -h 30 -w 30 "$1"
     exiftool "$1"

@@ -16,10 +16,10 @@ setopt dotglob
     tmux new-session -A -s SSH
 
 plugins=(
-    zsh-autosuggestions you-should-use
-    copyfile colorize extract copybuffer
-    sudo fzf fzf-tab colored-man-pages git
-    autoupdate zsh-autopair zsh-syntax-highlighting
+    autoupdate copybuffer copyfile extract 
+    fzf fzf-tab git sudo you-should-use
+    zsh-autopair zsh-autosuggestions 
+    zsh-syntax-highlighting
 )
 
 # Loading, order does matters.

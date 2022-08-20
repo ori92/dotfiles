@@ -108,13 +108,14 @@ alias w='watch -n 0.5 '                                                         
 # Misc
 alias ':q'='exit'                                                               # Force of a habit..
 alias c='cat'                                                                   # Cat shortened
-alias cc='ccat'                                                                 # Cat with colors
+alias cc='bat'                                                                 # Cat with colors
 alias cf='copyfile'                                                             # Copy file content to clipboard
 alias clip='xargs echo -n | xclip -selection clipboard'                         # Copy to clipboard shortened
 alias comp='compdef _gnu_generic '                                              # Generate completions for command
 alias e='echo'                                                                  # Echo shortened
 alias en='echo -n'                                                              # Echo without trailing new-line
-alias less='cless'                                                              # Better less
+alias gs="echo It\'s \'gst\' for \'git status\'"
+alias less='bat'                                                              # Better less
 alias lfp='fd -d 1 -a -H'                                                       # Show full path of files in directory
 alias lg='lazygit'
 alias m='math'                                                                  # Math with bc 

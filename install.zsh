@@ -17,7 +17,6 @@ g='\033[0;32m' # green
 echo "${g}-->Installing dependencies..${n}"
 sudo pacman -S tmux git neovim starship xclip fzf exa zoxide lsd ncdu procs ranger bpytop fd plocate ripgrep macchina
 
-
 #          ╭──────────────────────────────────────────────────────────╮
 #          │                         Backups                          │
 #          ╰──────────────────────────────────────────────────────────╯
@@ -29,7 +28,6 @@ for f in $files; do
 done
 echo "${g}-->Creating directories...${n}"
 mkdir -p "$X/zsh" "$X/tmux" "$X/astronvim/lua/user"
-
 
 #          ╭──────────────────────────────────────────────────────────╮
 #          │                        Oh-My-ZSH                         │
@@ -53,7 +51,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting $P/zsh-syntax-hig
 # remove the newly created .zshrc
 rm $HOME/.zshrc
 
-
 #          ╭──────────────────────────────────────────────────────────╮
 #          │                           ZSH                            │
 #          ╰──────────────────────────────────────────────────────────╯
@@ -61,7 +58,6 @@ rm $HOME/.zshrc
 echo "${g}-->Installing zsh rc files..${n}"
 ln zsh/.zlogin zsh/profile.zsh zsh/.zshrc zsh/functions.zsh zsh/pentest.zsh zsh/aliases.zsh zsh/filetype.zsh zsh/colors.zsh "$X/zsh/"
 ln zsh/.zshenv $HOME/
-
 
 #          ╭──────────────────────────────────────────────────────────╮
 #          │                           TMUX                           │
@@ -74,14 +70,12 @@ echo "${g}-->Installing tmux-plugin manager..${n}"
 echo "${r}Remember to press prefix(C-b)+I to install plugins after you first run tmux.${n}"
 git clone https://github.com/tmux-plugins/tpm "$X/tmux/plugins/tpm"
 
-
 #          ╭──────────────────────────────────────────────────────────╮
 #          │                         Starship                         │
 #          ╰──────────────────────────────────────────────────────────╯
 
 echo "${g}-->Installing starship rc files..${n}"
 ln starship/starship.toml "$X/"
-
 
 #          ╭──────────────────────────────────────────────────────────╮
 #          │                        LunarVim                          │

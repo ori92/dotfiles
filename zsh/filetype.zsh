@@ -13,7 +13,7 @@ _image_fts=(jpg jpeg png gif mng tiff tif xpm)
 for ft in $_image_fts; do alias -s $ft="$XIVIEWER"; done
 
 # open video on smplayer
-_media_fts=(ape avi flv m4a mkv mov mp3 mpeg mpg ogg ogm rm wav webm)
+_media_fts=(ape avi flv m4a mkv mov mp3 mpeg mpg ogg ogm rm wav webm flac)
 for ft in $_media_fts; do alias -s $ft=smplayer; done
 
 # read documents

@@ -13,4 +13,7 @@ class DevIconsLinemode(LinemodeBase):
     return devicon(file) + ' ' + file.relative_path
 
   def infostring(self, file, metadata):
-    return human_readable(file.size).ljust(5, ' ') + ' ' + file.get_permission_string()
+    try:
+      return human_readable(file.size).ljust(5, ' ') + ' ' + file.get_permission_string()
+    except:
+      return ""

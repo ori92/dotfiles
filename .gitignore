@@ -11,3 +11,4 @@ tmux/plugins
 zsh/.zcompdump*
 zsh/.zsh_history
 zsh/mf.zsh
+ranger/plugins/ranger_tmux.py

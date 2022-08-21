@@ -14,7 +14,7 @@ require("builtin")
 require("mappings")
 
 -- Additional Plugins
-lvim.plugins = require("plugs")
+lvim.plugins = require("plugins")
 
 -- LSP config
 require("lsp")

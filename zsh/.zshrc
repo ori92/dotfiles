@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-macchina -t ori # For pretty startup :)
+macchina --theme ori # For pretty startup :)
 
 setopt noclobber
 setopt appendcreate
@@ -16,10 +16,9 @@ setopt dotglob
     tmux new-session -A -s SSH
 
 plugins=(
-    autoupdate copybuffer copyfile extract 
-    fzf fzf-tab git sudo you-should-use
-    zsh-autopair zsh-autosuggestions 
-    zsh-syntax-highlighting
+    autoupdate copybuffer copyfile copypath
+    extract fzf fzf-tab git sudo you-should-use
+    zsh-autopair zsh-autosuggestions zsh-syntax-highlighting
 )
 
 # Loading, order does matters.

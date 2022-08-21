@@ -1,7 +1,6 @@
-local k = lvim.keys
-local ki = k.insert_mode
-local kn = k.normal_mode
-local kv = k.visual_mode
+local ki = lvim.keys.insert_mode
+local kn = lvim.keys.normal_mode
+local kv = lvim.keys.visual_mode
 local wk = lvim.builtin.which_key.mappings
 
 lvim.leader = "space"
@@ -10,12 +9,12 @@ lvim.leader = "space"
 
 kn["<esc><esc>"] = "<cmd>nohlsearch<cr>"
 kn["Y"] = "y$"
-kv["p"] = [["_dP]]
+kv["p"] = '"_dP'
+kn["cw"] = '"_ciw'
+kn["ci"] = '"_ci'
 
 -- Execute Current Line in Shell
 kn["<A-x>"] = "V:w !bash<CR>"
-
-kn["cw"] = "ciw"
 
 ki["<C-l>"] = "<Right>"
 ki["<C-h>"] = "<Left>"
@@ -44,6 +43,12 @@ wk["<Left>"] = { "<cmd>lua require('tmux').move_left()<cr>", "which_key_ignore" 
 wk["<Right>"] = { "<cmd>lua require('tmux').move_right()<cr>", "which_key_ignore" }
 wk["<Up>"] = { "<cmd>lua require('tmux').move_top()<cr>", "which_key_ignore" }
 wk["<Down>"] = { "<cmd>lua require('tmux').move_bottom()<cr>", "which_key_ignore" }
+
+-- Resize windows
+kn["<C-Left>"] =  "<cmd>lua require('tmux').resize_left()<cr>"
+kn["<C-Right>"] =  "<cmd>lua require('tmux').resize_right()<cr>"
+kn["+"] = "<cmd>lua require('tmux').resize_top()<cr>"
+kn["-"] = "<cmd>lua require('tmux').resize_bottom()<cr>"
 
 -- Use Ctrl-s for saving
 kn["<C-S>"] = ":write<CR>"
@@ -139,13 +144,12 @@ wk["Q"] = {
     d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
 }
 
---- Resize windows
-wk["+"] = { "<cmd>resize +5<cr>", "which_key_ignore" }
-wk["-"] = { "<cmd>resize -5<cr>", "which_key_ignore" }
-
+-- Cheatsheet
 wk["?"] = { "<cmd>Cheatsheet<cr>", "Cheatsheet" }
 
-wk["lt"] = {":lua vim.diagnostic.config({virtual_text=not vim.diagnostic.config().virtual_text})<CR>", "Toggle Text"}
+-- Toggle lsp virtual_text
+wk["lt"] = { ":lua vim.diagnostic.config({virtual_text=not vim.diagnostic.config().virtual_text})<CR>", "Toggle Text" }
+
 -- Abbreviations
 local abbreviations = {
     Wq = "wq",

@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# TODO: Better annotate.
+
 export FZF_HEADER="
 c-a     : toggle all
 c-d     : dolphin
@@ -19,7 +21,7 @@ export FZF_KEY_BINDS="\
     --bind 'ctrl-d:execute-silent(dolphin \$(dirname {}) &)'
     --bind 'ctrl-e:execute-silent(tmux new-window lvim -f {})'
     --bind 'ctrl-k:execute-silent(echo -n \" \" |xclip -sel clip)'
-    --bind 'ctrl-p:execute-silent(tmux popup bat {})'
+    --bind 'ctrl-p:execute-silent(tmux popup -h 90% -w 90% bat {})'
     --bind 'ctrl-s:execute-silent(echo \$(xclip -sel clip -o) \\\\n {} |xclip -sel clip)+preview(echo Added to clipboard)'
     --bind 'ctrl-v:execute-silent(code {})'
     --bind 'ctrl-x:execute-silent(cat \$realpath | xclip -sel clip)+preview(echo Copied content of {} to clipboard)'
@@ -34,7 +36,7 @@ export FZF_KEY_BINDS="\
     "
 
 # Fzf Defaults
-export FZF_DEFAULT_COMMAND="fd -I --color=always --hidden --strip-cwd-prefix"
+export FZF_DEFAULT_COMMAND="fd --no-ignore --color=always --hidden --strip-cwd-prefix"
 export FZF_DEFAULT_OPTS="--border=rounded $FZF_KEY_BINDS --ansi --multi --layout=reverse --height 40%               
                          --select-1 --exit-0"
 
@@ -44,7 +46,7 @@ export FZF_COMPLETION_OPTS="--preview '$ZDOTDIR/scripts/preview.zsh {}'
                             --preview-window hidden --select-1 --exit-0"
 
 # Fast cd
-export FZF_ALT_C_COMMAND="fd -I --color=always --hidden --type d --strip-cwd-prefix" 
+export FZF_ALT_C_COMMAND="fd --no-ignore --color=always --hidden --type d --strip-cwd-prefix" 
 export FZF_ALT_C_OPTS="--preview 'lsd --color=always -l --total-size --blocks=name,size {}'
                        --preview-window default --select-1 --exit-0"
 
@@ -58,10 +60,10 @@ export FZF_CTRL_R_OPTS='--sort --exact'
 
 # Use fd to generate the list for files/di>rectory completion
 _fzf_compgen_path() {
-    fd -I --hidden --follow --color=always --strip-cwd-prefix "$1"
+    fd --no-ignore --hidden --follow --color=always --strip-cwd-prefix "$1"
 }
 _fzf_compgen_dir() {
-    fd -I --type d --hidden --follow --color=always --strip-cwd-prefix "$1"
+    fd --no-ignore --type d --hidden --follow --color=always --strip-cwd-prefix "$1"
 }
 
 #=================================

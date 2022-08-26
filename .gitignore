@@ -5,10 +5,14 @@ lvim/plugin
 lvim/session
 ranger/colorschemes/__init__.py
 ranger/plugins/__init__.py
+ranger/plugins/fzf-marks/
 ranger/plugins/ranger_devicons/
+ranger/plugins/ranger_fzf_filter/
+ranger/plugins/ranger_tmux.py
+ranger/plugins/ranger-archives/
+ranger/plugins/ranger-cmus/
 ranger/plugins/zoxide/
 tmux/plugins
 zsh/.zcompdump*
 zsh/.zsh_history
 zsh/mf.zsh
-ranger/plugins/ranger_tmux.py

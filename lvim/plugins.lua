@@ -1,5 +1,6 @@
 return {
-    -- "stevearc/dressing.nvim",           -- Prettier UI  TODO: figure out why vim.ui.input returns empty string
+    -- TODO: look at https://github.com/liuchengxu/vim-clap (which is something like Telescope)
+    -- "stevearc/dressing.nvim",           -- Prettier UI  -- TODO: figure out why vim.ui.input returns empty string
     "lukas-reineke/cmp-rg",                -- cmp completion from grep in current directory
     "folke/tokyonight.nvim",               -- colorscheme
     "marko-cerovac/material.nvim",         -- Material colorscheme
@@ -21,6 +22,7 @@ return {
     "windwp/nvim-spectre",                 -- Spectre - Regex Find and Replace  TODO: Add spectre Key-bindings
     "liuchengxu/vista.vim",                -- Vista  TODO: Add Vista Key-bindings
     "felipec/vim-sanegx",                  -- Open URLs using `gx`
+    "Rasukarusan/nvim-select-multi-line",  -- Select multiple lines
     require("plugins/bookmarks"),          -- Bookmark-manager
     require("plugins/nvim-colorizer"),     -- Colorizer - highlight colors/hex
     require("plugins/tmux"),               -- Tmux integration

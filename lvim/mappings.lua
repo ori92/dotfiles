@@ -150,6 +150,9 @@ wk["?"] = { "<cmd>Cheatsheet<cr>", "Cheatsheet" }
 -- Toggle lsp virtual_text
 wk["lt"] = { ":lua vim.diagnostic.config({virtual_text=not vim.diagnostic.config().virtual_text})<CR>", "Toggle Text" }
 
+-- Select multiple lines
+wk["v"] = { ":call sml#mode_on()<cr>" , "Select multiple lines" }
+
 -- Abbreviations
 local abbreviations = {
     Wq = "wq",

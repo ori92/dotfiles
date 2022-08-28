@@ -22,8 +22,8 @@ export LESSHISTFILE=-                                       # Disable less histo
 export NODE_REPL_HISTORY="$HOME/.config/.node_repl_history" # node repl history location.
 export RANGER_LOAD_DEFAULT_RC='FALSE'                       # stop ranger from loading both the default and your custom rc.conf
 export SYSTEMD_EDITOR="lvim"                                # EDITOR for systemd
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'                   # Word characters - usefull when ^W or alt-bs to backwards kill a word
 export XIVIEWER="gwenview"                                  # Image-viewer
-export ZSH="$XDG_CONFIG_HOME/.oh-my-zsh"                    # oh-my-zsh location
 
 # Use nvim as manpager `:h Man`
 export MANPAGER='lvim +Man!'

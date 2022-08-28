@@ -20,7 +20,7 @@ $ruby\
 $rust\
 $nix_shell\
 $env_var\
-<♟️>
+<♟️> 
 [└─$time==>](bold 4)$jobs """
 
 right_format = "[<-](bold 33)"

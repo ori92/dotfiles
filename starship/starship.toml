@@ -18,41 +18,13 @@ $php\
 $python\
 $ruby\
 $rust\
-$nix_shell\
-$env_var\
 <♟️> 
 [└─$time==>](bold 4)$jobs """
 
 right_format = "[<-](bold 33)"
 scan_timeout = 30
 
-# [battery]
-# full_symbol = "🔋"
-# charging_symbol = "⚡️"
-# discharging_symbol = "💀"
-
-# [[battery.display]]
-# threshold = 10
-# style = "bold 1"
-
-# [[battery.display]]
-# threshold = 60
-# style = "bold 3"
-
-# [[battery.display]]
-# threshold = 100
-# style = "bold 2"
-
-# [character]
-# success_symbol = "✅"
-# error_symbol = ""
-# #vicmd_symbol = "[❮](bold 2)"
-# #use_symbol_for_status = true
-# format = "$symbol"
-
 [cmd_duration]
-# $duration – The command duration (e.g. "15s")
-# $style – The default style of the module (e.g. "bold 3")
 show_notifications = true
 format = "[🔔$duration⌛](bold 1)"
 
@@ -61,20 +33,13 @@ truncation_length = 6
 truncate_to_repo = true
 format = "📂[$path]($style)[$read_only]($read_only_style)"
 style = "bold underline 4"
-disabled = false
 
-# [env_var]
-# variable = "STARSHIP_SHELL"
-# default = "Zsh"
-# format = "<[$env_value]($style)>"
-# style = "bold cyan"
 
 [git_branch]
 symbol = " 🌱 "
 truncation_length = 12
 truncation_symbol = "..."
 style = "bold 4"
-disabled = false
 format = "[\\($branch\\)]($style) "
 
 [git_state]
@@ -87,7 +52,6 @@ am = "AM"
 am_or_rebase = "AM/REBASE"
 #progress_divider = " of "
 style = "bold 3"
-disabled = false
 
 [git_status]
 conflicted = "🏳"
@@ -106,14 +70,10 @@ ssh_only = false
 format = "@[$hostname](bold 3)\\] "
 # suffix = "⟫"
 trim_at = "."
-disabled = false
 
 [jobs]
 symbol = "🔷"
 threshold = 1
-
-[line_break]
-disabled = false
 
 [memory_usage]
 disabled = true
@@ -127,15 +87,12 @@ format = "$symbol[${ram}( | )]($style) "
 
 [nodejs]
 symbol = "⬢"
-#symbol = ""
 style = "bold 2"
-disabled = false
 format = " \\[$symbol $version\\]"
 
 [package]
 symbol = "📦 "
 style = "bold 1"
-disabled = false
 format = " [\\[🎁 $version\\]](208 bold) "
 
 [python]
@@ -143,7 +100,6 @@ symbol = "🐍 "
 pyenv_version_name = false
 pyenv_prefix = "pyenv"
 style = "bold 3"
-disabled = false
 format = " [\\[$symbol$version\\]](120 bold) "
 
 [time]
@@ -161,11 +117,9 @@ sigint_symbol = "🧱"
 signal_symbol = "⚡"
 format = '[$symbol$common_meaning$signal_name$maybe_int]($style) '
 #map_symbol = true
-disabled = false
 
 [username]
 style_root = "bold 1"
 style_user = "bold 33"
 show_always = true
-disabled = false
 format = "\\[👽[$user]($style)"

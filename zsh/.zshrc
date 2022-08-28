@@ -21,10 +21,9 @@ plugins=(
     zsh-autopair zsh-autosuggestions zsh-syntax-highlighting
 )
 
-# Loading, order does matters.
+source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/profile.zsh
 source $ZDOTDIR/functions.zsh
-source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/colors.zsh
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/aliases.zsh

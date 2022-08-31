@@ -18,36 +18,29 @@ Installation:
 * zsh
 * oh-my-zsh (zsh plugins)
 * tmux
-* starship (prompt)
+* starship (pretty prompt)
 * exa (fancy ls)
 * git
 * neovim
-* xclip (clipboard)
+* xclip (clipboard interaction)
 * ripgrep
-* fd (fast finder)
+* fd (fast file-search)
 * macchina
 * fzf
   
 # Optional dependencies:
 
 * ripgrep-all (livegrep text in files) 
-* lsd (fancy ls)
+* lsd (yet another fancy ls)
 * kdialog (textbox notifications)
 * paplay  (sound notifications)
 * notify-send (notifications)
 * ncdu (fancy disk usage)
 * procs (fancy ps)
 * ranger (cli file-manager)
-* bpytop (fancy top)
+* bpytop (fancy proccess monitor)
 * plocate
 * jq
 * okular (pdf viewer)
 * zoxide (fast cd with z)
 
-
-# Penetration testing tools being used:
-
-* nmap
-* gdb
-* pwndbg
-* dirb

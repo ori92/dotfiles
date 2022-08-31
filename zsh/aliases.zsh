@@ -19,6 +19,8 @@ alias vd='tmux new-window -c /opt/dotfiles lvim'                                
 
 # Command line head / tail shortcuts
 # Some taken from: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
+alias -g BD='|base64 -d'
+alias -g BE='|base64'
 alias -g C='|tee >( clip )'
 alias -g CA="2>&1 | cat -A"
 alias -g G='| grep'

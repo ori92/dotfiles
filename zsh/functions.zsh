@@ -91,3 +91,7 @@ rga-fzf() {
         echo "opening $file" &&
         xdg-open "$file"
 }
+
+pp() {
+    python -c "print ($*)"
+}

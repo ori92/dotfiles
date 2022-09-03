@@ -35,6 +35,8 @@ alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
 alias -g S='|sed'
 alias -g T='| tail'
+alias -g U='|urlencode'
+alias -g UD='|urlencode -d'
 alias -g W='|wc -l'
 
 # AWK
@@ -110,14 +112,14 @@ alias w='watch -n 0.5 '                                                         
 # Misc
 alias ':q'='exit'                                                               # Force of a habit..
 alias c='cat'                                                                   # Cat shortened
-alias cc='bat'                                                                 # Cat with colors
+alias cc='bat'                                                                  # Cat with colors
 alias cf='copyfile'                                                             # Copy file content to clipboard
 alias clip='xargs echo -n | xclip -selection clipboard'                         # Copy to clipboard shortened
 alias comp='compdef _gnu_generic '                                              # Generate completions for command
 alias e='echo'                                                                  # Echo shortened
 alias en='echo -n'                                                              # Echo without trailing new-line
 alias gs="echo It\'s \'gst\' for \'git status\'"
-alias less='bat'                                                              # Better less
+alias less='bat'                                                                # Better less
 alias lfp='fd -d 1 -a -H'                                                       # Show full path of files in directory
 alias lg='lazygit'
 alias m='math'                                                                  # Math with bc 
@@ -147,23 +149,16 @@ alias urestart='systemctl --user restart '
 
 alias enable='sudo systemctl enable '
 alias disable='sudo systemctl disable '
-
-alias nuenable='systemctl --user enable --now '
-alias nudisable='systemctl --user disable --now '
-alias uenable='systemctl --user enable '
-alias udisable='systemctl --user disable '
-
 alias nenable='sudo systemctl enable --now '
 alias ndisable='sudo systemctl disable --now '
 
-alias mask='sudo systemctl mask '
-alias umask='sudo systemctl unmask '
+alias uenable='systemctl --user enable '
+alias udisable='systemctl --user disable '
+alias nuenable='systemctl --user enable --now '
+alias nudisable='systemctl --user disable --now '
 
-alias U='start '
-alias D='stop '
-alias R='restart '
-alias E='enable '
-alias DI='disable '
+alias mask='sudo systemctl mask '
+alias unmask='sudo systemctl unmask '
 
 alias reboot='systemctl reboot'
 alias poweroff='systemctl poweroff'

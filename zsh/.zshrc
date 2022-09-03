@@ -27,7 +27,6 @@ source $ZDOTDIR/functions.zsh
 source $ZDOTDIR/colors.zsh
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/aliases.zsh
-source $ZDOTDIR/pentest.zsh
 source $ZDOTDIR/filetype.zsh
 source $ZDOTDIR/mf.zsh
 

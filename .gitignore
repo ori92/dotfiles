@@ -15,4 +15,5 @@ ranger/plugins/zoxide/
 tmux/plugins
 zsh/.zcompdump*
 zsh/.zsh_history
+zsh/*.zwc
 zsh/mf.zsh

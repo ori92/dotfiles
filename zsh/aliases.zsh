@@ -19,6 +19,7 @@ alias vd='tmux new-window -c /opt/dotfiles lvim'                                
 
 # Command line head / tail shortcuts
 # Some taken from: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
+alias -g B='|bat'
 alias -g BD='|base64 -d'
 alias -g BE='|base64'
 alias -g C='|tee >( clip )'
@@ -128,6 +129,7 @@ alias myip='curl http://ipecho.net/plain; echo'                                 
 alias r='ranger'                                                                # Ranger File-Manager
 alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
 alias serv='sudo python -m http.server'                                         # Python http file-server
+alias tmp='take /tmp/$RANDOM'                                                   # Create temporary directory with random name
 alias vifm='vifmrun'                                                            # Vifm with images preview
 
 # CPU performance profiles 

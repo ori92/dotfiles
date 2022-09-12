@@ -33,5 +33,6 @@ source $ZDOTDIR/mf.zsh
 bindkey '^s' fzf-file-widget
 bindkey '^x' expand-alias
 
-eval "$(zoxide init zsh)"   # start zoxide
-eval "$(starship init zsh)" # start starship-prompt
+eval "$(navi widget zsh)"   # navi
+eval "$(zoxide init zsh)"   # zoxide
+eval "$(starship init zsh)" # starship-prompt

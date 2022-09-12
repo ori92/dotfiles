@@ -28,7 +28,7 @@ Installation:
 * macchina
 * fzf
   
-# Optional dependencies:
+# Optional:
 
 * ripgrep-all (livegrep text in files) 
 * lsd (yet another fancy ls)
@@ -43,4 +43,3 @@ Installation:
 * jq
 * okular (pdf viewer)
 * zoxide (fast cd with z)
-

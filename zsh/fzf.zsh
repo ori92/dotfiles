@@ -60,10 +60,10 @@ export FZF_CTRL_R_OPTS='--sort --exact'
 
 # Use fd to generate the list for files/di>rectory completion
 _fzf_compgen_path() {
-    fd --no-ignore --hidden --follow --color=always --strip-cwd-prefix "$1"
+    fd --no-ignore --hidden --follow --color=always . "$1"
 }
 _fzf_compgen_dir() {
-    fd --no-ignore --type d --hidden --follow --color=always --strip-cwd-prefix "$1"
+    fd --no-ignore --type d --hidden --follow --color=always . "$1"
 }
 
 #=================================
@@ -119,7 +119,7 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
         "recent commit object name") git show --color=always $word | delta ;;
         *) git log --color=always $word ;;
     esac'
-    
+
 
 zstyle ':completion:*:git-checkout:*' sort false # disable sort when completing `git checkout`
 zstyle ':completion:*' special-dirs false # remove '.' and '..' from completion (so annoying!)

@@ -86,7 +86,7 @@ alias rem='sudo pacman -R'                                                      
 alias rpac='sudo rm /var/lib/pacman/db.lck'                                     # Remove pacman db lock, in case some update has failed/crashed 
 
 # Search and Filter
-alias ag='ag --hidden'                                                          # Grep for developers, default to hidden
+alias rg='rg --hidden -i'                                                       # Search for text in files, default to hidden
 alias f='locate'                                                                # Locate shortened
 alias grep='rg -i'                                                              # Better grep
 alias locate='plocate'                                                          # Better locate

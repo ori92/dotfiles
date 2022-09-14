@@ -1,6 +1,7 @@
 local ki = lvim.keys.insert_mode
 local kn = lvim.keys.normal_mode
 local kv = lvim.keys.visual_mode
+local kt = lvim.keys.term_mode
 local wk = lvim.builtin.which_key.mappings
 
 lvim.leader = "space"
@@ -152,6 +153,10 @@ wk["lt"] = { ":lua vim.diagnostic.config({virtual_text=not vim.diagnostic.config
 
 -- Select multiple lines
 wk["v"] = { ":call sml#mode_on()<cr>" , "Select multiple lines" }
+
+-- Toggle Terminal
+kn['<M-t>'] = "<cmd>ToggleTerm<CR>"
+kt['<M-t>'] = "<cmd>ToggleTerm<CR>"
 
 -- Abbreviations
 local abbreviations = {

@@ -80,7 +80,7 @@ alias edit='v'
 alias gedit='subl'
 
 # Package manager
-alias updt='pamac update'                                                       # System Update
+alias updt='yay'                                                                # System Update
 alias u='updt'                                                                  # System Update shortened
 alias rem='sudo pacman -R'                                                      # Remove a Package
 alias rpac='sudo rm /var/lib/pacman/db.lck'                                     # Remove pacman db lock, in case some update has failed/crashed 

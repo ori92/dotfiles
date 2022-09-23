@@ -13,7 +13,9 @@ setopt dotglob
 
 # Auto start tmux over SSH
 [ -n "$PS1" ] && [ -z "$TMUX" ] && [ -n "$SSH_CONNECTION" ] &&
-    tmux new-session -A -s SSH
+    tmux new-session -d -A -s SSH &&
+    tmux source $XDG_CONFIG_HOME/tmux/tmux.conf && # workaround to enable remote theme
+    tmux attach -t SSH
 
 plugins=(
     autoupdate copybuffer copyfile copypath

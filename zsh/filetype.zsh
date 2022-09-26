@@ -14,14 +14,12 @@ for ft in $_image_fts; do alias -s $ft="$XIVIEWER"; done
 
 # open video on smplayer
 _media_fts=(ape avi flv m4a mkv mov mp3 mpeg mpg ogg ogm rm wav webm flac)
-for ft in $_media_fts; do alias -s $ft=smplayer; done
+for ft in $_media_fts; do alias -s $ft=vlc; done
 
 # read documents
 alias -s pdf='okular'
-alias -s ps='gv'
-alias -s dvi='xdvi'
-alias -s chm='xchm'
-alias -s djvu='djview'
+alias -s docx='libreoffice'
+alias -s pptx='libreoffice'
 
 # list whats inside packed file
 alias -s zip='unzip -l'

@@ -55,18 +55,18 @@ expand-alias() {
 }
 zle -N expand-alias
 
-# Install package with pamac
+# Install package with yay
 inst() {
     if [[ -z "$1" ]]; then
         pacseek
     else
-        pamac install $@ || echo "Failed."
+        yay $@ || echo "Failed."
     fi
 }
 
-# Reinstall package with pamac
+# Reinstall package with yay
 reinst() {
-    pamac reinstall $1
+    inst $1
 }
 
 # Fix paste being slow because of the highlight plugin

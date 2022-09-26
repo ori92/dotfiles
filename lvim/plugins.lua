@@ -2,7 +2,6 @@ return {
     -- TODO: look at https://github.com/liuchengxu/vim-clap (which is something like Telescope)
     -- "stevearc/dressing.nvim",           -- Prettier UI  -- TODO: figure out why vim.ui.input returns empty string
     "lukas-reineke/cmp-rg",                -- cmp completion from grep in current directory
-    "folke/tokyonight.nvim",               -- colorscheme
     "marko-cerovac/material.nvim",         -- Material colorscheme
     "KabbAmine/vCoolor.vim",               -- vCoolor - Cool Color Selector
     "sindrets/winshift.nvim",              -- WinShift - Rearrange your windows with ease
@@ -38,7 +37,6 @@ return {
     require("plugins/nvim-lastplace"),     -- Restore cursor last place on the file
     require("plugins/persistence"),        -- Session Manager
     require("plugins/numb"),               -- peeks lines of the buffer in non-obtrusive way.
-    require("plugins/indent-blankline"),   -- Indent blank lines
     require("plugins/todo-comments"),      -- Highlight TODO comments
     require("plugins/nvim-comments"),      -- Comment toggle
     require("plugins/nvim-window-picker"), -- Windows Picker with ',w' 

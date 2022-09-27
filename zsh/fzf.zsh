@@ -14,7 +14,8 @@ c-x     : yank content
 c-y     : yank
 c-z     : show keys
 /       : Eenter dir
-alt-⬆️/⬇ : scroll preview"
+alt-⬆️/⬇ : scroll preview
+PgUp/Dn : scroll preview"
 
 export FZF_KEY_BINDS="\
     --bind 'ctrl-a:toggle-all'
@@ -31,7 +32,9 @@ export FZF_KEY_BINDS="\
     --bind 'tab:down'
     --bind 'btab:up'
     --bind 'alt-up:preview-up'
+    --bind 'page-up:preview-up'
     --bind 'alt-down:preview-down'
+    --bind 'page-down:preview-down'
     --bind '/:accept-non-empty'
     "
 
@@ -85,7 +88,9 @@ zstyle ':fzf-tab:*' fzf-bindings \
     'ctrl-y:execute-silent({_FTB_INIT_}echo -n "$word" | xclip -sel clip)' \
     'ctrl-z:preview(echo $FZF_HEADER)' \
     'alt-up:preview-up' \
+    'page-up:preview-up' \
     'alt-down:preview-down' \
+    'page-down:preview-down' \
     '/:accept-non-empty'
 
 
@@ -99,7 +104,7 @@ zstyle ':fzf-tab:complete:pacman:*' fzf-preview 'pacman -Si $word | rg --no-line
 zstyle ':fzf-tab:complete:tldr:argument-1' fzf-preview 'tldr --color always $word'                                                                             # completions for tldr
 zstyle ':completion:complete:*:options' sort false                                                                                                             # disable sort when completing options of any command
 
-# give a preview of commandline arguments when completing `kill` # TODO: better preview of ps 
+# give a preview of commandline arguments when completing `kill` or `ps` # TODO: better preview of ps 
 zstyle ':completion:*:*:*:*:processes' command "procs --no-header"
 zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview 'ps --pid=$word -o pid,cmd --no-headers -w -w'
 zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
@@ -119,7 +124,6 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
         "recent commit object name") git show --color=always $word | delta ;;
         *) git log --color=always $word ;;
     esac'
-
 
 zstyle ':completion:*:git-checkout:*' sort false # disable sort when completing `git checkout`
 zstyle ':completion:*' special-dirs false # remove '.' and '..' from completion (so annoying!)

@@ -13,7 +13,7 @@ alias ldot='exa -la --icons .* --links --group-directories-first'               
 alias lS='lsd --total-size -l --sort=size'                                              # show folder total size
 
 # Quick access to the .zshrc file
-alias zshrc="${EDITOR} ${ZDOTDIR:-$HOME}/.zshrc"                                        # Edit dotfiles in EDITOR
+alias zshrc="${EDITOR} ${ZDOTDIR:-$HOME}/.zshrc"                                        # Edit dotfiles in $EDITOR
 alias ed='code /opt/dotfiles'                                                           # Edit dotfiles in code
 alias vd='tmux new-window -c /opt/dotfiles lvim'                                        # Edit dotfiles in lvim
 
@@ -128,7 +128,7 @@ alias msgbox='kdialog --msgbox '                                                
 alias myip='curl http://ipecho.net/plain; echo'                                 # Get Public IP Address 
 alias r='ranger'                                                                # Ranger File-Manager
 alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
-alias serv='sudo python -m http.server'                                         # Python http file-server
+alias serv='sudo python -m http.server 80'                                      # Python http file-server
 alias tmp='take /tmp/$RANDOM'                                                   # Create temporary directory with random name
 alias vifm='vifmrun'                                                            # Vifm with images preview
 

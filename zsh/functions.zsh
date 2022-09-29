@@ -25,7 +25,7 @@ stimer() (
 )
 
 timer() (
-    [[ "$#" -ne 2 ]] && echo "timer 'minutes' 'message'" && exit
+    [[ "$#" -ne 2 ]] && echo "Usage: timer [minutes] [message]" && exit
     stimer $((60 * $1)) $2
 )
 

@@ -20,12 +20,13 @@ export LC_ALL="en_US.UTF-8"                                 # Locale
 export LC_MESSAGES="C"                                      # Locale
 export LESSHISTFILE="-"                                     # Disable less history file
 export NODE_REPL_HISTORY="$HOME/.config/.node_repl_history" # node repl history location.
+export PAGER="bat"                                          # pager with syntax highlight
 export RANGER_LOAD_DEFAULT_RC="FALSE"                       # stop ranger from loading both the default and your custom rc.conf
 export SYSTEMD_EDITOR="/usr/bin/lvim"                       # EDITOR for systemd
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'                   # Word characters - usefull when ^W or alt-bs to backwards kill a word
 export XIVIEWER="gwenview"                                  # Image-viewer
 
-# Use neovim as manpager `:h Man`
+# Use neovim as pager for man-pages `:h Man`
 export MANPAGER="/usr/bin/lvim +Man!"
 export MANWIDTH=999
 

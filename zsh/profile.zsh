@@ -24,6 +24,7 @@ export PAGER="bat"                                          # pager with syntax 
 export RANGER_LOAD_DEFAULT_RC="FALSE"                       # stop ranger from loading both the default and your custom rc.conf
 export SYSTEMD_EDITOR="/usr/bin/lvim"                       # EDITOR for systemd
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'                   # Word characters - usefull when ^W or alt-bs to backwards kill a word
+export XDG_CACHE_HOME="$HOME/.cache/"                       # Default cache directory
 export XIVIEWER="gwenview"                                  # Image-viewer
 
 # Use neovim as pager for man-pages `:h Man`

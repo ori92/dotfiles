@@ -56,7 +56,7 @@ rm $HOME/.zshrc
 # ==============================================
 
 echo "${g}-->Installing zsh rc files..${n}"
-ln -s $(pwd)/zsh "$X/zsh/"
+ln -s $(pwd)/zsh "$X/"
 ln -s $(pwd)/zsh/.zshenv $HOME/
 
 # ==============================================
@@ -64,7 +64,7 @@ ln -s $(pwd)/zsh/.zshenv $HOME/
 # ==============================================
 
 echo "${g}-->Installing tmux rc files..${n}"
-ln -s $(pwd)/tmux "$X/tmux/"
+ln -s $(pwd)/tmux "$X/"
 echo "${g}-->Installing tmux-plugin manager..${n}"
 echo "${r}Remember to press prefix(C-b)+I to install plugins after you first run tmux.${n}"
 git clone https://github.com/tmux-plugins/tpm "$X/tmux/plugins/tpm"
@@ -74,7 +74,7 @@ git clone https://github.com/tmux-plugins/tpm "$X/tmux/plugins/tpm"
 # ==============================================
 
 echo "${g}-->Installing starship rc files..${n}"
-ln -s starship/starship.toml "$X/"
+ln -s $(pwd)/starship/starship.toml "$X/"
 
 # ==============================================
 # ===               LunarVim                 ===
@@ -84,7 +84,7 @@ echo "${g}-->Installing LunarVim..${n}"
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 echo "-->Installing LunarVim rc files..${n}"
 mkdir -p "$X/lvim"
-ln -s $(pwd)/lvim "$X/lvim/"
+ln -s $(pwd)/lvim "$X/"
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 echo "${g}-->Done. Have fun!!${n}"

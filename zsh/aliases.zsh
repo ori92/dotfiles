@@ -80,7 +80,7 @@ alias edit='v'
 alias gedit='subl'
 
 # Package manager
-alias updt='yay'                                                                # System Update
+alias updt='pamac upgrade'                                                                # System Update
 alias u='updt'                                                                  # System Update shortened
 alias rem='sudo pacman -R'                                                      # Remove a Package
 alias rpac='sudo rm /var/lib/pacman/db.lck'                                     # Remove pacman db lock, in case some update has failed/crashed 
@@ -163,5 +163,5 @@ alias nudisable='systemctl --user disable --now '
 alias mask='sudo systemctl mask '
 alias unmask='sudo systemctl unmask '
 
-alias reboot='systemctl reboot'
-alias poweroff='systemctl poweroff'
+alias reboot='sudo reboot -f'
+alias poweroff='sudo poweroff -f'

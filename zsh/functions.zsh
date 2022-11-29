@@ -55,16 +55,16 @@ expand-alias() {
 }
 zle -N expand-alias
 
-# Install package with yay
+# Install package with pamac
 inst() {
     if [[ -z "$1" ]]; then
         pacseek
     else
-        yay $@ || echo "Failed."
+        pamac install $@ || echo "Failed."
     fi
 }
 
-# Reinstall package with yay
+# Reinstall package with pamac
 reinst() {
     inst $1
 }

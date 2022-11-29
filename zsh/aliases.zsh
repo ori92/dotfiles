@@ -119,6 +119,7 @@ alias clip='xargs echo -n | xclip -selection clipboard'                         
 alias comp='compdef _gnu_generic '                                              # Generate completions for command
 alias e='echo'                                                                  # Echo shortened
 alias en='echo -n'                                                              # Echo without trailing new-line
+alias efi='efibootmgr'                                                          # efiboormgr shortened
 alias gs="echo It\'s \'gst\' for \'git status\'"
 alias less='bat'                                                                # Better less
 alias lfp='fd -d 1 -a -H'                                                       # Show full path of files in directory

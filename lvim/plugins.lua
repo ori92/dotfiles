@@ -40,5 +40,4 @@ return {
     require("plugins/todo-comments"),      -- Highlight TODO comments
     require("plugins/nvim-comments"),      -- Comment toggle
     require("plugins/nvim-window-picker"), -- Windows Picker with ',w' 
-    require("plugins/cmp-tabnine"),        -- AI Completions
 }

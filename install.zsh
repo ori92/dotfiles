@@ -15,14 +15,14 @@ g='\033[0;32m' # green
 # ==============================================
 
 echo "${g}-->Installing dependencies..${n}"
-sudo pacman -S tmux git neovim starship xclip fzf exa zoxide lsd ncdu procs ranger bpytop fd plocate ripgrep macchina
+sudo pacman -S tmux git neovim starship xclip fzf exa zoxide lsd ncdu procs ranger bpytop fd plocate ripgrep macchina python python-pip
 
 # ==============================================
 # ===                Backups                 ===
 # ==============================================
 
 echo "${g}-->Creating backups...${n}"
-files=("$HOME/.zshrc" "$HOME/.zshenv" "$X/zsh" "$X/tmux" "$X/starship.toml" "$X/lvim/" "$X/nvim")
+files=("$HOME/.zshrc" "$HOME/.zshenv" "$X/zsh" "$X/tmux" "$X/starship.toml" "$X/lvim/" "$X/nvim" "$X/ranger")
 for f in $files; do
     [ -d "$f" ] && mv $f{,.bak} && echo "${g}${f}-->${f}.bak${n}"
 done
@@ -75,6 +75,17 @@ git clone https://github.com/tmux-plugins/tpm "$X/tmux/plugins/tpm"
 
 echo "${g}-->Installing starship rc files..${n}"
 ln -s $(pwd)/starship/starship.toml "$X/"
+
+# ==============================================
+# ===                 Ranger                 ===
+# ==============================================
+
+ln -s $(pwd)/ranger "$X/"
+git clone https://github.com/alexanderjeurissen/ranger_devicons $X/ranger/plugins/ranger_devicons
+git clone git@github.com:MuXiu1997/ranger-fzf-filter.git ~/.config/ranger/plugins/ranger_fzf_filter
+pip install ranger-tmux
+python -m ranger_tmux install
+
 
 # ==============================================
 # ===               LunarVim                 ===

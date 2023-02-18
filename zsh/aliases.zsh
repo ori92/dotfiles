@@ -24,8 +24,7 @@ alias -g BD='|base64 -d'
 alias -g BE='|base64'
 alias -g C='|tee >( clip )'
 alias -g CA="2>&1 | cat -A"
-alias -g G='| grep'
-alias -g GV='|rg -v'
+alias -g CH="| choose"
 alias -g H='| head'
 alias -g IP_REGEX="|rg '(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}'"
 alias -g J='|jq'
@@ -40,28 +39,6 @@ alias -g U='|urlencode'
 alias -g UD='|urlencode -d'
 alias -g W='|wc -l'
 
-# AWK
-alias -g A='|awk'
-alias -g A1="|awk '{print \$1}'"
-alias -g A2="|awk '{print \$2}'"
-alias -g A3="|awk '{print \$3}'"
-alias -g A4="|awk '{print \$4}'"
-alias -g A5="|awk '{print \$5}'"
-alias -g A.1="|awk -F. '{print \$1}'"
-alias -g A.2="|awk -F. '{print \$2}'"
-alias -g A.3="|awk -F. '{print \$3}'"
-alias -g A.4="|awk -F. '{print \$4}'"
-alias -g A.5="|awk -F. '{print \$5}'"
-alias -g A,1="|awk -F, '{print \$1}'"
-alias -g A,2="|awk -F, '{print \$2}'"
-alias -g A,3="|awk -F, '{print \$3}'"
-alias -g A,4="|awk -F, '{print \$4}'"
-alias -g A,5="|awk -F, '{print \$5}'"
-alias -g A-1="|awk -F- '{print \$1}'"
-alias -g A-2="|awk -F- '{print \$2}'"
-alias -g A-3="|awk -F- '{print \$3}'"
-alias -g A-4="|awk -F- '{print \$4}'"
-alias -g A-5="|awk -F- '{print \$5}'"
 
 # Interactive, verbose file-system operations
 alias rm='rm -iv'

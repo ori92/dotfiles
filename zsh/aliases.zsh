@@ -32,7 +32,6 @@ alias -g L="| less"
 alias -g LL="2>&1 | less"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
-alias -g P="2>&1| pygmentize -l pytb"
 alias -g S='|sed'
 alias -g T='| tail'
 alias -g U='|urlencode'
@@ -45,10 +44,6 @@ alias rm='rm -iv'
 alias cp='cp -iv'
 alias mv='mv -v'
 
-# Copy and Move via rsync with progress
-alias rcp='rsync -aP'
-alias rmv='rsync -aP --remove-source-files'
-
 # $EDITOR (usually nvim)
 alias v="$EDITOR"
 alias vi='v'
@@ -57,8 +52,7 @@ alias edit='v'
 alias gedit='subl'
 
 # Package manager
-alias updt='pamac upgrade'                                                                # System Update
-alias u='updt'                                                                  # System Update shortened
+alias u='pamac upgrade'                                                         # System Update
 alias rem='sudo pacman -R'                                                      # Remove a Package
 alias rpac='sudo rm /var/lib/pacman/db.lck'                                     # Remove pacman db lock, in case some update has failed/crashed 
 
@@ -129,13 +123,9 @@ alias urestart='systemctl --user restart '
 
 alias enable='sudo systemctl enable '
 alias disable='sudo systemctl disable '
-alias nenable='sudo systemctl enable --now '
-alias ndisable='sudo systemctl disable --now '
 
 alias uenable='systemctl --user enable '
 alias udisable='systemctl --user disable '
-alias nuenable='systemctl --user enable --now '
-alias nudisable='systemctl --user disable --now '
 
 alias mask='sudo systemctl mask '
 alias unmask='sudo systemctl unmask '

@@ -15,7 +15,7 @@ g='\033[0;32m' # green
 # ==============================================
 
 echo "${g}-->Installing dependencies..${n}"
-sudo pacman -S tmux git neovim starship xclip fzf exa zoxide lsd ncdu procs ranger bpytop fd plocate ripgrep macchina python python-pip
+sudo pacman -S tmux git neovim starship xclip fzf exa zoxide lsd ncdu procs ranger bottom fd plocate ripgrep macchina python python-pip
 
 # ==============================================
 # ===                Backups                 ===

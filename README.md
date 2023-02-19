@@ -38,7 +38,7 @@ My dot-files.
 * ncdu (fancy disk usage)
 * procs (fancy ps)
 * ranger (cli file-manager)
-* bpytop (fancy proccess monitor)
+* bottom (fancy proccess monitor)
 * plocate
 * jq
 * okular (pdf viewer)

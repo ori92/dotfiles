@@ -22,17 +22,17 @@ return {
     "liuchengxu/vista.vim",                -- Vista  TODO: Add Vista Key-bindings
     "felipec/vim-sanegx",                  -- Open URLs using `gx`
     "Rasukarusan/nvim-select-multi-line",  -- Select multiple lines
+    "sudormrfbin/cheatsheet.nvim",         -- Cheatsheet
+    -- "mrjones2014/nvim-ts-rainbow",         -- Rainbow parenthesis TODO: currently not working
     require("plugins/bookmarks"),          -- Bookmark-manager
     require("plugins/nvim-colorizer"),     -- Colorizer - highlight colors/hex
     require("plugins/tmux"),               -- Tmux integration
     require("plugins/hop"),                -- Hop - Jump to locations
-    require("plugins/cheatsheet"),         -- Cheatsheet
     require("plugins/surround"),           -- Surround
     require("plugins/suda"),               -- Suda - Edit file as root
     require("plugins/lsp_signature"),      -- Lsp Signature
     require("plugins/trouble"),            -- Trouble A pretty list for showing diagnostics, references, telescope results, quickfix and location lists
     require("plugins/vim-mundo"),          -- mundo - undo tree
-    require("plugins/nvim-ts-rainbow"),    -- Rainbow parenthesis
     require("plugins/rnvimr"),             -- Ranger File-Manager  TODO: Aad rnvimr key-bindings
     require("plugins/nvim-lastplace"),     -- Restore cursor last place on the file
     require("plugins/persistence"),        -- Session Manager
@@ -40,4 +40,5 @@ return {
     require("plugins/todo-comments"),      -- Highlight TODO comments
     require("plugins/nvim-comments"),      -- Comment toggle
     require("plugins/nvim-window-picker"), -- Windows Picker with ',w' 
+
 }

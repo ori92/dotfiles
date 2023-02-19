@@ -2,7 +2,6 @@
 
 return {
   "s1n7ax/nvim-window-picker",
-  tag = "1.*",
   config = function()
     local picker = require("window-picker")
     picker.setup({

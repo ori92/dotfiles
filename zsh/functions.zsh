@@ -8,7 +8,7 @@ vim-edit-output() {
 }
 
 math() {
-    printf "%'.f\n" $(echo "$1" | bc)
+    printf "%'.f\n" $(echo "$1" | eva)
 }
 
 # Timer
@@ -20,7 +20,7 @@ stimer() (
         sleep .5
     done
     notify-send "$2"
-    paplay ~/bin/notification.wav
+    paplay ~/Documents/notification.wav
     kdialog --msgbox "$2"
 )
 
@@ -64,15 +64,10 @@ inst() {
     fi
 }
 
-# Reinstall package with pamac
-reinst() {
-    inst $1
-}
-
 # Fix paste being slow because of the highlight plugin
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
-# Get a random number
+# Random number
 rand() {
     echo $((1 + ($RANDOM % $1)))
 }

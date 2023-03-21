@@ -52,8 +52,8 @@ alias edit='v'
 alias gedit='subl'
 
 # Package manager
-alias u='pamac upgrade'                                                         # System Update
-alias rem='sudo pacman -R'                                                      # Remove a Package
+alias u='paru'                                                                  # System Update
+alias rem='paru -R'                                                             # Remove a Package
 alias rpac='sudo rm /var/lib/pacman/db.lck'                                     # Remove pacman db lock, in case some update has failed/crashed 
 
 # Search and Filter

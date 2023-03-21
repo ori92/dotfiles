@@ -55,12 +55,12 @@ expand-alias() {
 }
 zle -N expand-alias
 
-# Install package with pamac
+# Install package with paru
 inst() {
     if [[ -z "$1" ]]; then
         pacseek
     else
-        pamac install $@ || echo "Failed."
+         paru $@ || echo "Failed."
     fi
 }
 

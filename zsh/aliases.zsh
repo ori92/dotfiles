@@ -19,29 +19,31 @@ alias vd='tmux new-window -c /opt/dotfiles lvim'                                
 
 # Command line head / tail shortcuts
 # Some taken from: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
-alias -g B='|bat'
-alias -g BD='|base64 -d'
-alias -g BE='|base64'
-alias -g C='|tee >( clip )'
+alias -g B='| bat'
+alias -g BD='| base64 -d'
+alias -g BE='| base64'
+alias -g C='| tee >( clip )'
 alias -g CA="2>&1 | cat -A"
 alias -g CH="| choose"
+alias -g G='| rg'
+alias -g GV='| rg -v'
 alias -g H='| head'
 alias -g IP_REGEX="|rg '(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}'"
-alias -g J='|jq'
+alias -g J='| jq'
 alias -g L="| less"
 alias -g LL="2>&1 | less"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
-alias -g S='|sed'
+alias -g S='| sd'
 alias -g T='| tail'
-alias -g U='|urlencode'
-alias -g UD='|urlencode -d'
-alias -g W='|wc -l'
+alias -g U='| urlencode'
+alias -g UD='| urlencode -d'
+alias -g W='| wc -l'
 
 
 # Interactive, verbose file-system operations
-alias rm='rm -iv'
-alias cp='cp -iv'
+alias rm='rip -i'                                                               # Remove to trash with rip (rm improved)
+alias cp='xcp -v'                                                              # Copy with progress with xcp
 alias mv='mv -v'
 
 # $EDITOR (usually nvim)
@@ -68,25 +70,31 @@ alias udb='sudo updatedb'                                                       
 alias core='sudo i7z'                                                           # CPU info
 alias ctl='sudo systemctl'                                                      # Systemctl shortened
 alias du='ncdu'                                                                 # Disk Usage seems way better than 'dust -r'
+alias df='lfs'                                                                  # Disk Free Space
 alias ex='chmod +x'                                                             # Set executable shortened
 alias own='sudo chown $USER:$USER '                                             # Own a File
-alias ips="ip -4 addr |awk '{print \$2}' | grep '\.'"                           # Get list of ipv4 addresses
+alias ips="ip -4 addr |awk '{print \$2}' | rg '\.'"                             # Get list of ipv4 addresses
 alias j='sudo journalctl -b -p3'                                                # View logs since last boot
 alias mp='sudo modprobe '                                                       # Modprobe shortened
-alias p='procs --sortd=cpu --watch-interval=1'                                  # Process monitor shortened
+alias ps='procs --sortd=cpu --watch-interval=1'                                 # Process monitor shortened
 alias sens='watch -d -n.5 sensors'                                              # Sensors
 alias st='sudo touch'                                                           # Create a file as root
 alias t='tail -f'                                                               # Read file in realtime
-alias top='bpytop'                                                              # Better top - process manager
+alias top='btm'                                                                 # Better top - process manager
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'                   # Update GRUB Configuration
 alias w='watch -n 0.5 '                                                         # Run command every 0.5 seconds
 
+# Clipboard
+alias cf='copyfile'                                                             # Copy file content to clipboard
+alias clip='xargs echo -n | clipboard'                                          # Copy to clipboard shortened
+alias copy='clipboard copy'                                                     # Copy using clipboard 
+alias paste='clipboard paste'                                                   # Paste using clipboard
+
 # Misc
 alias ':q'='exit'                                                               # Force of a habit..
+alias bc='eva'                                                                  # Better calculator than bc
 alias c='cat'                                                                   # Cat shortened
 alias cc='bat'                                                                  # Cat with colors
-alias cf='copyfile'                                                             # Copy file content to clipboard
-alias clip='xargs echo -n | xclip -selection clipboard'                         # Copy to clipboard shortened
 alias comp='compdef _gnu_generic '                                              # Generate completions for command
 alias e='echo'                                                                  # Echo shortened
 alias en='echo -n'                                                              # Echo without trailing new-line
@@ -100,16 +108,15 @@ alias msgbox='kdialog --msgbox '                                                
 alias myip='curl http://ipecho.net/plain; echo'                                 # Get Public IP Address 
 alias r='ranger'                                                                # Ranger File-Manager
 alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
-alias serv='sudo python -m http.server 80'                                      # Python http file-server
+alias serv='miniserve'                                                          # HTTP file-server
 alias tmp='take /tmp/$RANDOM'                                                   # Create temporary directory with random name
-alias vifm='vifmrun'                                                            # Vifm with images preview
 
 # CPU performance profiles 
 alias performance='sudo sh -c "echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
 alias powersave='sudo sh -c "echo powersave | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'
 
 # systemd
-alias s='systemctl status '
+alias s='sudo systemctl status '
 alias us='systemctl --user status '
 alias status='sudo systemctl status'
 

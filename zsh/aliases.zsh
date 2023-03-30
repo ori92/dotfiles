@@ -108,6 +108,7 @@ alias msgbox='kdialog --msgbox '                                                
 alias myip='curl http://ipecho.net/plain; echo'                                 # Get Public IP Address 
 alias r='ranger'                                                                # Ranger File-Manager
 alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
+alias screen_off='xset dpms force off'
 alias serv='miniserve'                                                          # HTTP file-server
 alias tmp='take /tmp/$RANDOM'                                                   # Create temporary directory with random name
 
@@ -139,3 +140,4 @@ alias unmask='sudo systemctl unmask '
 
 alias reboot='sudo reboot -f'
 alias poweroff='sudo poweroff -f'
+

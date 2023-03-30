@@ -7,18 +7,8 @@ setopt appendcreate
 setopt extendedglob
 setopt dotglob
 
-# Auto start tmux on TTY
-[ "$TERM" = "linux" ] &&
-    tmux new-session -A -s $(basename $(tty))
-
-# Auto start tmux over SSH
-[ -n "$PS1" ] && [ -z "$TMUX" ] && [ -n "$SSH_CONNECTION" ] &&
-    tmux new-session -d -A -s SSH &&
-    tmux source $XDG_CONFIG_HOME/tmux/tmux.conf && # workaround to enable remote theme
-    tmux attach -t SSH
-
 plugins=(
-    autoupdate copybuffer copyfile copypath
+    autoupdate copybuffer copyfile copypath tmux
     extract fzf fzf-tab git sudo you-should-use
     zsh-autopair zsh-autosuggestions fast-syntax-highlighting
 )

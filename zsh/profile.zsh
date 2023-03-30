@@ -36,3 +36,6 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#49a8de,bg=#d0d7db,bold,underline"
 export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
+
+# Auto start tmux on login
+export ZSH_TMUX_AUTOSTART=true

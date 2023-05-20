@@ -92,7 +92,7 @@ alias paste='cb paste'                                                          
 
 # Misc
 alias ':q'='exit'                                                               # Force of a habit..
-alias bc='eva'                                                                  # Better calculator than bc
+alias bc='qalc'                                                                 # Better calculator than bc
 alias c='cat'                                                                   # Cat shortened
 alias cc='bat'                                                                  # Cat with colors
 alias comp='compdef _gnu_generic '                                              # Generate completions for command
@@ -103,7 +103,6 @@ alias gs="echo It\'s \'gst\' for \'git status\'"
 alias less='bat'                                                                # Better less
 alias lfp='fd -d 1 -a -H'                                                       # Show full path of files in directory
 alias lg='lazygit'
-alias m='math'                                                                  # Math with bc 
 alias msgbox='kdialog --msgbox '                                                # Spawn a message-box
 alias myip='curl http://ipecho.net/plain; echo'                                 # Get Public IP Address 
 alias r='ranger'                                                                # Ranger File-Manager

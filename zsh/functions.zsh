@@ -7,10 +7,6 @@ vim-edit-output() {
     tmux new-window -n:mywindow "lvim '+ normal G $' $file"
 }
 
-math() {
-    printf "%'.f\n" $(echo "$1" | eva)
-}
-
 # Timer
 stimer() (
     seconds=$(($1))

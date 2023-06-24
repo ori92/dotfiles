@@ -43,7 +43,7 @@ alias -g W='| wc -l'
 
 # Interactive, verbose file-system operations
 alias rm='rip -i'                                                               # Remove to trash with rip (rm improved)
-alias cp='xcp -v'                                                              # Copy with progress with xcp
+alias cp='xcp -v'                                                               # Copy with progress with xcp
 alias mv='mv -v'
 
 # $EDITOR (usually nvim)

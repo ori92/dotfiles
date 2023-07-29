@@ -8,7 +8,7 @@ setopt extendedglob
 setopt dotglob
 
 plugins=(
-    autoupdate copybuffer copyfile copypath tmux
+    autoupdate copybuffer copyfile copypath
     extract fzf fzf-tab git sudo you-should-use
     zsh-autopair zsh-autosuggestions fast-syntax-highlighting
 )

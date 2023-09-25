@@ -4,12 +4,12 @@
 alias sudo='sudo '
 
 # ls - the common ones I use a lot, shortened for rapid fire
-alias ls='exa'
-alias l='exa -a --icons --group-directories-first'                                      # size,show type,human readable
-alias lr='exa -laR --icons --links --sort=date --color-scale --group-directories-first' # sorted by date,recursive,show type,human readable
-alias lt='exa -la --icons --links --sort=date --color-scale --group-directories-first'  # long list,sorted by date,show type,human readable
-alias ll='exa -la --icons --links --group-directories-first'                            # long list
-alias ldot='exa -la --icons .* --links --group-directories-first'                       # show only dot files
+alias ls='eza'
+alias l='eza -a --icons --group-directories-first'                                      # size,show type,human readable
+alias lr='eza -laR --icons --links --sort=date --color-scale --group-directories-first' # sorted by date,recursive,show type,human readable
+alias lt='eza -la --icons --links --sort=date --color-scale --group-directories-first'  # long list,sorted by date,show type,human readable
+alias ll='eza -la --icons --links --group-directories-first'                            # long list
+alias ldot='eza -la --icons .* --links --group-directories-first'                       # show only dot files
 alias lS='lsd --total-size -l --sort=size'                                              # show folder total size
 
 # Quick access to the .zshrc file
@@ -99,11 +99,13 @@ alias e='echo'                                                                  
 alias en='echo -n'                                                              # Echo without trailing new-line
 alias efi='efibootmgr'                                                          # efiboormgr shortened
 alias gs="echo It\'s \'gst\' for \'git status\'"
+alias h="head"
 alias less='bat'                                                                # Better less
 alias lfp='fd -d 1 -a -H'                                                       # Show full path of files in directory
 alias lg='lazygit'
 alias msgbox='kdialog --msgbox '                                                # Spawn a message-box
 alias myip='curl http://ipecho.net/plain; echo'                                 # Get Public IP Address 
+alias n='netstat -nlput'
 alias r='ranger'                                                                # Ranger File-Manager
 alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
 alias screen_off='xset dpms force off'

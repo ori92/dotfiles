@@ -19,7 +19,7 @@ My dot-files.
 * oh-my-zsh (zsh plugins)
 * tmux
 * starship (pretty prompt)
-* exa (fancy ls)
+* eza (fancy ls)
 * git
 * neovim
 * xclip (clipboard interaction)

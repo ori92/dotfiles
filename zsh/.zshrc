@@ -20,7 +20,7 @@ source $ZDOTDIR/colors.zsh
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/filetype.zsh
-source $ZDOTDIR/mf.zsh
+source $ZDOTDIR/pentest.zsh          # For penetration testing 
 
 bindkey '^s' fzf-file-widget
 bindkey '^x' expand-alias

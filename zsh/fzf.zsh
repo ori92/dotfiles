@@ -125,8 +125,8 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
         *) git log --color=always $word ;;
     esac'
 
-zstyle ':completion:*:git-checkout:*' sort false # disable sort when completing `git checkout`
-zstyle ':completion:*' special-dirs false # remove '.' and '..' from completion (so annoying!)
-zstyle ':completion:*:descriptions' format '[%d]' # set descriptions format to enable group support
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # set list-colors to enable filename colorizing
-zstyle ':fzf-tab:*' switch-group ',' '.' # switch group using `,` and `.`
+zstyle ':completion:*:git-checkout:*' sort false        # disable sort when completing `git checkout`
+zstyle ':completion:*' special-dirs false               # remove '.' and '..' from completion (so annoying!)
+zstyle ':completion:*:descriptions' format '[%d]'       # set descriptions format to enable group support
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}   # set list-colors to enable filename colorizing
+zstyle ':fzf-tab:*' switch-group ',' '.'                # switch group using `,` and `.`

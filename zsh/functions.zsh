@@ -7,8 +7,8 @@ vim-edit-output() {
     tmux new-window -n:mywindow "lvim '+ normal G $' $file"
 }
 
-# Timer
-stimer() (
+# Timer (count seconds)
+stimer() {
     seconds=$(($1))
     date1=$(($(date +%s) + $seconds))
     while [ "$date1" -ge $(date +%s) ]; do
@@ -17,22 +17,23 @@ stimer() (
     done
     notify-send "$2"
     paplay ~/Documents/notification.wav
-    kdialog --msgbox "$2"
-)
+    kdialog --title "Timer Ran Out!" --msgbox "$2"
+}
 
-timer() (
+# Timer wrapper for counting minutes  
+timer() {
     [[ "$#" -ne 2 ]] && echo "Usage: timer [minutes] [message]" && exit
     stimer $((60 * $1)) $2
-)
+}
 
 # Counter
-count() (
+count() {
     SECONDS=0
     while [ true ]; do
         echo -ne "$(date -d@"$SECONDS" -u +%H:%M:%S) \r"
         sleep 1
     done
-)
+}
 
 # Create backup of a file
 bak() {
@@ -83,6 +84,18 @@ rga-fzf() {
         xdg-open "$file"
 }
 
+# Print With Python
 pp() {
     python -c "print ($*)"
+}
+
+# Define global tmux variable
+glob() {
+    if [[ "$#" -ne 2 ]]
+    then
+        echo "Define global tmux variable. Usage: glob [var_name] [value]"
+    else
+        tmux set-environment $1 $2
+        export $1=$2
+    fi
 }

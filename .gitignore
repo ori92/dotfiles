@@ -17,3 +17,4 @@ zsh/.zcompdump*
 zsh/.zsh_history
 zsh/*.zwc
 lvim/lazy-lock.json
+tmux/location.txt

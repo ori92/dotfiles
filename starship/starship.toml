@@ -18,7 +18,7 @@ $php\
 $python\
 $ruby\
 $rust\
-<♟️> 
+ <♟️>
 [└─$time==>](bold 4)$jobs """
 
 right_format = "[<-](bold 33)"
@@ -100,7 +100,7 @@ symbol = "🐍 "
 pyenv_version_name = false
 pyenv_prefix = "pyenv"
 style = "bold 3"
-format = " [\\[$symbol$version\\]](120 bold) "
+format = " [\\[$symbol$version $virtualenv\\]](120 bold)"
 
 [time]
 format = "🕙[$time](209 bold)"

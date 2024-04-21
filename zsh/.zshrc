@@ -11,6 +11,7 @@ plugins=(
     autoupdate copybuffer copyfile copypath
     extract fzf fzf-tab git sudo you-should-use
     zsh-autopair zsh-autosuggestions fast-syntax-highlighting
+    docker kubectl ufw
 )
 
 source $ZSH/oh-my-zsh.sh

@@ -8,7 +8,7 @@ alias ls='eza'
 alias l='eza -a --icons --group-directories-first'                                      # size,show type,human readable
 alias lr='eza -laR --icons --links --sort=date --color-scale --group-directories-first' # sorted by date,recursive,show type,human readable
 alias lt='eza -la --icons --links --sort=date --color-scale --group-directories-first'  # long list,sorted by date,show type,human readable
-alias ll='eza -la --icons --links --group-directories-first'                            # long list
+alias ll='eza -lag --icons --links --group-directories-first'                           # long list with group
 alias ldot='eza -la --icons .* --links --group-directories-first'                       # show only dot files
 alias lS='lsd --total-size -l --sort=size'                                              # show folder total size
 
@@ -76,12 +76,12 @@ alias ips="ip -4 addr |awk '{print \$2}' | rg '\.'"                             
 alias j='sudo journalctl -b -p3'                                                # View logs since last boot
 alias mp='sudo modprobe '                                                       # Modprobe shortened
 alias ps='procs --sortd=cpu --watch-interval=1'                                 # Process monitor shortened
-alias sens='watch -d -n.5 sensors'                                              # Sensors
+alias sens='hwatch -d -n 1 sensors'                                              # Sensors
 alias st='sudo touch'                                                           # Create a file as root
 alias t='tail -f'                                                               # Read file in realtime
 alias top='btm'                                                                 # Better top - process manager
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'                   # Update GRUB Configuration
-alias w='watch -n 0.5 '                                                         # Run command every 0.5 seconds
+alias w='hwatch -n 1 '                                                         # Run command every 0.5 seconds
 
 # Clipboard
 alias cf='copyfile'                                                             # Copy file content to clipboard
@@ -107,10 +107,13 @@ alias msgbox='kdialog --msgbox '                                                
 alias myip='curl http://ipecho.net/plain; echo'                                 # Get Public IP Address 
 alias n='netstat -nlput'
 alias r='ranger'                                                                # Ranger File-Manager
+alias sendspace='xdotool key KP_Space'                                          # Send Space key on X11
 alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
 alias screen_off='xset dpms force off'
 alias serv='miniserve'                                                          # HTTP file-server
 alias tmp='take /tmp/$RANDOM'                                                   # Create temporary directory with random name
+alias venv='python -m venv .'                                                   # Create a python virtual environment
+alias venva='python -m venv . ; . ./bin/activate'                                  # Create a python virtual environment and activtes it
 
 # CPU performance profiles 
 alias performance='sudo sh -c "echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'

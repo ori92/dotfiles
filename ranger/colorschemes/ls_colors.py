@@ -74,8 +74,8 @@ class ls_colors(ColorScheme):
         """Returns the default value for LS_COLORS
         as parsed from the `dircolors` command
         """
-        ls_colors = check_output('dircolors')
-        ls_colors = ls_colors.splitlines()[0].decode('UTF-8').split("'")[1]
+        ls_colors = check_output('dircolors').decode('UTF-8')
+        ls_colors = ls_colors.splitlines()[0].split("'")[1]
         return ls_colors
 
     def get_attr_from_lscolors(self, attribute_list):
@@ -155,10 +155,7 @@ class ls_colors(ColorScheme):
                         colour16_fg = colour_val - 82
 
                     # Basic colours for background
-                    elif (colour_val >= 40 and colour_val <= 47):
-                        colour16_bg = colour_val
-                    # eight more basic colours
-                    elif (colour_val >= 100 and colour_val <= 107):
+                    elif (colour_val >= 40 and colour_val <= 47) or (colour_val >= 100 and colour_val <= 107):
                         colour16_bg = colour_val
 
                 if colour256_fg is not None:

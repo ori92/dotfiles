@@ -69,19 +69,18 @@ alias udb='sudo updatedb'                                                       
 alias core='sudo i7z'                                                           # CPU info
 alias ctl='sudo systemctl'                                                      # Systemctl shortened
 alias du='ncdu'                                                                 # Disk Usage seems way better than 'dust -r'
-alias df='lfs'                                                                  # Disk Free Space
+alias df='dysk'                                                                  # Disk Free Space
 alias ex='chmod +x'                                                             # Set executable shortened
 alias own='sudo chown $USER:$USER '                                             # Own a File
 alias ips="ip -4 addr |awk '{print \$2}' | rg '\.'"                             # Get list of ipv4 addresses
 alias j='sudo journalctl -b -p3'                                                # View logs since last boot
 alias mp='sudo modprobe '                                                       # Modprobe shortened
-alias ps='procs --sortd=cpu --watch-interval=1'                                 # Process monitor shortened
-alias sens='hwatch -d -n 1 sensors'                                              # Sensors
+alias sens='hwatch -d -n 1 sensors'                                             # Sensors
 alias st='sudo touch'                                                           # Create a file as root
 alias t='tail -f'                                                               # Read file in realtime
 alias top='btm'                                                                 # Better top - process manager
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'                   # Update GRUB Configuration
-alias w='hwatch -n 1 '                                                         # Run command every 0.5 seconds
+alias w='hwatch -n 1 '                                                          # Run command every 0.5 seconds
 
 # Clipboard
 alias cf='copyfile'                                                             # Copy file content to clipboard
@@ -113,7 +112,7 @@ alias screen_off='xset dpms force off'
 alias serv='miniserve'                                                          # HTTP file-server
 alias tmp='take /tmp/$RANDOM'                                                   # Create temporary directory with random name
 alias venv='python -m venv .'                                                   # Create a python virtual environment
-alias venva='python -m venv . ; . ./bin/activate'                                  # Create a python virtual environment and activtes it
+alias venva='python -m venv . ; . ./bin/activate'                               # Create a python virtual environment and activtes it
 
 # CPU performance profiles 
 alias performance='sudo sh -c "echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"'

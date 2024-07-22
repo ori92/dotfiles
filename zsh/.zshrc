@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-macchina --theme ori # For pretty startup :)
+macchina --theme ori # Pretty startup :)
 
 setopt noclobber
 setopt appendcreate
@@ -21,7 +21,7 @@ source $ZDOTDIR/colors.zsh
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/filetype.zsh
-source $ZDOTDIR/pentest.zsh          # For penetration testing 
+source $ZDOTDIR/pentest.zsh          # Penetration testing 
 
 bindkey '^s' fzf-file-widget
 bindkey '^x' expand-alias
@@ -29,3 +29,5 @@ bindkey '^x' expand-alias
 eval "$(/usr/bin/navi widget zsh)"   # navi
 eval "$(/usr/bin/zoxide init zsh)"   # zoxide
 eval "$(/usr/bin/starship init zsh)" # starship-prompt
+
+$HOME/.config/tmux/scripts/tmux-global-logging.sh # Log all tmux output

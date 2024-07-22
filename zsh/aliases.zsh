@@ -69,9 +69,10 @@ alias udb='sudo updatedb'                                                       
 alias core='sudo i7z'                                                           # CPU info
 alias ctl='sudo systemctl'                                                      # Systemctl shortened
 alias du='ncdu'                                                                 # Disk Usage seems way better than 'dust -r'
-alias df='dysk'                                                                  # Disk Free Space
+alias df='dysk'                                                                 # Disk Free Space
 alias ex='chmod +x'                                                             # Set executable shortened
 alias own='sudo chown $USER:$USER '                                             # Own a File
+alias ifc='ifconfig'                                                            # ifconfig shortened
 alias ips="ip -4 addr |awk '{print \$2}' | rg '\.'"                             # Get list of ipv4 addresses
 alias j='sudo journalctl -b -p3'                                                # View logs since last boot
 alias mp='sudo modprobe '                                                       # Modprobe shortened
@@ -142,4 +143,27 @@ alias unmask='sudo systemctl unmask '
 
 alias reboot='sudo reboot -f'
 alias poweroff='sudo poweroff -f'
+
+# AWK
+alias -g A='|awk'
+alias -g A1="|awk '{print \$1}'"
+alias -g A2="|awk '{print \$2}'"
+alias -g A3="|awk '{print \$3}'"
+alias -g A4="|awk '{print \$4}'"
+alias -g A5="|awk '{print \$5}'"
+alias -g A.1="|awk -F. '{print \$1}'"
+alias -g A.2="|awk -F. '{print \$2}'"
+alias -g A.3="|awk -F. '{print \$3}'"
+alias -g A.4="|awk -F. '{print \$4}'"
+alias -g A.5="|awk -F. '{print \$5}'"
+alias -g A,1="|awk -F, '{print \$1}'"
+alias -g A,2="|awk -F, '{print \$2}'"
+alias -g A,3="|awk -F, '{print \$3}'"
+alias -g A,4="|awk -F, '{print \$4}'"
+alias -g A,5="|awk -F, '{print \$5}'"
+alias -g A-1="|awk -F- '{print \$1}'"
+alias -g A-2="|awk -F- '{print \$2}'"
+alias -g A-3="|awk -F- '{print \$3}'"
+alias -g A-4="|awk -F- '{print \$4}'"
+alias -g A-5="|awk -F- '{print \$5}'"
 

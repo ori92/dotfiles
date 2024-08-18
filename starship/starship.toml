@@ -2,7 +2,7 @@ add_newline = false
 
 format = """
 [┌─────────────────────────────────>](bold fg:4)$cmd_duration $status
-[|](bold 4)$username\
+[|](bold 4)$custom$username\
 $hostname\
 {$directory} \
 $rust\
@@ -124,3 +124,8 @@ style_root = "bold 1"
 style_user = "bold 33"
 show_always = true
 format = "\\[👽[$user]($style)"
+
+[custom.ssh]
+description = "Display username, if on a ssh session"
+when = '([[ -n "$SSH_CONNECTION" ]])'
+format = "[](bg:#ff2d00 fg:#464347)[SSH](bg:#ff2d00 fg:#EEEEEE)[](bg:#464347 fg:#ff2d00)"

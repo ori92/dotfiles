@@ -67,7 +67,8 @@ deleted = "🗑  "
 
 [hostname]
 ssh_only = false
-format = "@[$hostname](bold 3)\\] "
+ssh_symbol = " 🌐"
+format = "@[$hostname$ssh_symbol](bold 3)\\]"
 # suffix = "⟫"
 trim_at = "."
 

@@ -107,6 +107,7 @@ alias msgbox='kdialog --msgbox '                                                
 alias myip='curl http://ipecho.net/plain; echo'                                 # Get Public IP Address 
 alias n='netstat -nlput'
 alias r='ranger'                                                                # Ranger File-Manager
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"                                        # ROT13
 alias sendspace='xdotool key KP_Space'                                          # Send Space key on X11
 alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
 alias screen_off='xset dpms force off'

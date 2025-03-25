@@ -22,6 +22,7 @@ source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/filetype.zsh
 source $ZDOTDIR/pentest.zsh          # Penetration testing 
+source $ZDOTDIR/analysis.bash        # Analysis functions: github.com/bahamas10/bash-analysis
 
 bindkey '^s' fzf-file-widget
 bindkey '^x' expand-alias

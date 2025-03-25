@@ -148,26 +148,3 @@ alias unmask='sudo systemctl unmask '
 alias reboot='sudo reboot -f'
 alias poweroff='sudo poweroff -f'
 
-# AWK
-alias -g A='|awk'
-alias -g A1="|awk '{print \$1}'"
-alias -g A2="|awk '{print \$2}'"
-alias -g A3="|awk '{print \$3}'"
-alias -g A4="|awk '{print \$4}'"
-alias -g A5="|awk '{print \$5}'"
-alias -g A.1="|awk -F. '{print \$1}'"
-alias -g A.2="|awk -F. '{print \$2}'"
-alias -g A.3="|awk -F. '{print \$3}'"
-alias -g A.4="|awk -F. '{print \$4}'"
-alias -g A.5="|awk -F. '{print \$5}'"
-alias -g A,1="|awk -F, '{print \$1}'"
-alias -g A,2="|awk -F, '{print \$2}'"
-alias -g A,3="|awk -F, '{print \$3}'"
-alias -g A,4="|awk -F, '{print \$4}'"
-alias -g A,5="|awk -F, '{print \$5}'"
-alias -g A-1="|awk -F- '{print \$1}'"
-alias -g A-2="|awk -F- '{print \$2}'"
-alias -g A-3="|awk -F- '{print \$3}'"
-alias -g A-4="|awk -F- '{print \$4}'"
-alias -g A-5="|awk -F- '{print \$5}'"
-

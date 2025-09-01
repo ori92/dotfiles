@@ -108,6 +108,7 @@ alias myip='curl http://ipecho.net/plain; echo'                                 
 alias n='netstat -nlput'                                                        # Netstat
 alias open="xdg-open"                                                           # Open a file
 alias r='ranger'                                                                # Ranger File-Manager
+alias rm='rip'                                                                  # Safer rm command
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"                                        # ROT13
 alias sendclick='xdotool click 1'                                               # Send LMB click
 alias sendspace='xdotool key KP_Space'                                          # Send Space key

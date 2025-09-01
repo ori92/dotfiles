@@ -57,7 +57,7 @@ inst() {
     if [[ -z "$1" ]]; then
         pacseek
     else
-         paru $@ || echo "Failed."
+         paru -S $@ || echo "Failed."
     fi
 }
 
@@ -99,3 +99,16 @@ glob() {
         export $1=$2
     fi
 }
+
+# Wrapper for rip ('rm' alternative) to skip -r and -f which are invalid
+rip() {
+  local args=()
+  for arg in "$@"; do
+    case "$arg" in
+      -r|-f|-rf|-fr) ;;     # skip these
+      *) args+=("$arg") ;;  # keep everything else
+    esac
+  done
+  command rip "${args[@]}"
+}
+

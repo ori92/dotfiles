@@ -29,6 +29,7 @@ export SYSTEMD_EDITOR="/usr/bin/lvim"                       # EDITOR for systemd
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'                   # Word characters - usefull when ^W or alt-bs to backwards kill a word
 export XDG_CACHE_HOME="$HOME/.cache/"                       # Default cache directory
 export XIVIEWER="gwenview"                                  # Image-viewer
+export HWATCH="--interval 3"
 
 # Use neovim as pager for man-pages `:h Man`
 export MANPAGER="/usr/bin/lvim +Man!"

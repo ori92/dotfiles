@@ -15,7 +15,7 @@ alias lS='lsd --total-size -l --sort=size'                                      
 # Quick access to the .zshrc file
 alias zshrc="${EDITOR} ${ZDOTDIR:-$HOME}/.zshrc"                                        # Edit dotfiles in $EDITOR
 alias ed='code /opt/dotfiles'                                                           # Edit dotfiles in code
-alias vd='tmux new-window -c /opt/dotfiles lvim'                                        # Edit dotfiles in lvim
+alias vd='tmux new-window -c /opt/dotfiles nvim'                                        # Edit dotfiles in neovim
 
 # Command line head / tail shortcuts
 # Some taken from: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
@@ -38,6 +38,7 @@ alias -g S='| sd'
 alias -g T='| tail'
 alias -g U='| urlencode'
 alias -g UD='| urlencode -d'
+alias -g V="| vim"
 alias -g W='| wc -l'
 
 
@@ -107,13 +108,13 @@ alias msgbox='kdialog --msgbox '                                                
 alias myip='curl http://ipecho.net/plain; echo'                                 # Get Public IP Address
 alias n='netstat -nlput'                                                        # Netstat
 alias open="xdg-open"                                                           # Open a file
-alias r='ranger'                                                                # Ranger File-Manager
+alias r='yazi'                                                                  # Yazi File-Manager
 alias rm='rip'                                                                  # Safer rm command
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"                                        # ROT13
-alias sendclick='xdotool click 1'                                               # Send LMB click
-alias sendspace='xdotool key KP_Space'                                          # Send Space key
+alias sendclick='ydotool click C0'                                              # Send LMB click
+alias sendspace='ydotool key 57:1 57:0'                                         # Send Space key
 alias send2phone='kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --ping-msg ' # Send to phone with kde connect
-alias screen_off='xset dpms force off'
+alias screen_off='xset dpms force off'                                          # Turn off the screens TODO: Does not work on wayland
 alias serv='miniserve'                                                          # HTTP file-server
 alias tmp='take /tmp/$RANDOM'                                                   # Create temporary directory with random name
 alias venv='python -m venv .'                                                   # Create a python virtual environment

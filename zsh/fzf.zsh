@@ -5,7 +5,7 @@
 export FZF_HEADER="
 c-a     : toggle all
 c-d     : dolphin
-c-e     : lvim
+c-e     : nvim
 c-k     : clear clip
 c-p     : preview
 c-s     : append clip
@@ -20,7 +20,7 @@ PgUp/Dn : scroll preview"
 export FZF_KEY_BINDS="\
     --bind 'ctrl-a:toggle-all'
     --bind 'ctrl-d:execute-silent(dolphin \$(dirname {}) &)'
-    --bind 'ctrl-e:execute-silent(tmux new-window lvim -f {})'
+    --bind 'ctrl-e:execute-silent(tmux new-window nvim -f {})'
     --bind 'ctrl-k:execute-silent(echo -n \" \" |xclip -sel clip)'
     --bind 'ctrl-p:execute-silent(tmux popup -h 90% -w 90% bat {})'
     --bind 'ctrl-s:execute-silent(echo \$(xclip -sel clip -o) \\\\n {} |xclip -sel clip)+preview(echo Added to clipboard)'
@@ -79,7 +79,7 @@ zstyle ':fzf-tab:*' fzf-flags --height 40% --preview-window 50% --layout=reverse
 zstyle ':fzf-tab:*' fzf-bindings \
     'ctrl-a:toggle-all' \
     'ctrl-d:execute-silent({_FTB_INIT_}dolphin $(dirname "$realpath"))' \
-    'ctrl-e:execute-silent({_FTB_INIT_}tmux new-window lvim "$realpath")' \
+    'ctrl-e:execute-silent({_FTB_INIT_}tmux new-window nvim "$realpath")' \
     'ctrl-k:execute-silent({_FTB_INIT_}echo -n " " |xclip -sel clip)' \
     'ctrl-p:execute-silent({_FTB_INIT_}tmux popup -h 90% -w 90% bat "$realpath")' \
     'ctrl-s:execute-silent({_FTB_INIT_}echo "$(xclip -sel clip -o) \\n $word" |xclip -sel clip)' \

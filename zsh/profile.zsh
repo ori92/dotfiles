@@ -11,7 +11,7 @@ export PATH
 export BROWSER="brave"                                      # Browser
 export COMPLETION_WAITING_DOTS="true"                       # Display dots while waiting for completion
 export DISABLE_UNTRACKED_FILES_DIRTY="true"                 # oh-my-zsh: Use this setting if you want to disable marking untracked files under VCS as dirty. This makes repository status checks for large repositories much, much faster.
-export EDITOR="/usr/bin/lvim"                               # Text-editor
+export EDITOR="/usr/bin/nvim"                               # Text-editor
 export GTK_RC_FILES="/etc/gtk/gtkrc:$HOME/.config/gtkrc"    # gtk config files location
 export HIST_STAMPS="%d/%m/%y %T"                            # Timestamps in history
 export HISTFILE="$HOME/.config/zsh/.zsh_history"            # History-file location
@@ -25,14 +25,14 @@ export LESSHISTFILE="-"                                     # Disable less histo
 export NODE_REPL_HISTORY="$HOME/.config/.node_repl_history" # node repl history location.
 export PAGER="bat"                                          # pager with syntax highlight
 export RANGER_LOAD_DEFAULT_RC="FALSE"                       # stop ranger from loading both the default and your custom rc.conf
-export SYSTEMD_EDITOR="/usr/bin/lvim"                       # EDITOR for systemd
+export SYSTEMD_EDITOR="/usr/bin/nvim"                       # EDITOR for systemd
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'                   # Word characters - usefull when ^W or alt-bs to backwards kill a word
 export XDG_CACHE_HOME="$HOME/.cache/"                       # Default cache directory
 export XIVIEWER="gwenview"                                  # Image-viewer
 export HWATCH="--interval 3"
 
 # Use neovim as pager for man-pages `:h Man`
-export MANPAGER="/usr/bin/lvim +Man!"
+export MANPAGER="/usr/bin/nvim +Man!"
 export MANWIDTH=999
 
 # Auto-Suggest

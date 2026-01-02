@@ -9,9 +9,9 @@ setopt dotglob
 
 plugins=(
     autoupdate copybuffer copyfile copypath
-    extract fzf fzf-tab git sudo you-should-use
-    zsh-autopair zsh-autosuggestions fast-syntax-highlighting
-    docker kubectl web-search
+    docker extract fast-syntax-highlighting fzf fzf-tab
+    git kubectl sudo web-search you-should-use
+    zsh-autopair zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -34,5 +34,9 @@ eval "$(/usr/bin/starship init zsh)" # starship-prompt
 $HOME/.config/tmux/scripts/tmux-global-logging.sh # Log all tmux output
 
 # Start the sensors service for monitoring CPU/GPU/RAM usage and temperatures
-/usr/bin/pgrep -f $XDG_CONFIG_HOME/tmux/scripts/tmux_sensors.sh 2>&1 >/dev/null \
-|| /bin/zsh -c  "$XDG_CONFIG_HOME/tmux/scripts/tmux_sensors.sh 2>&1 >/dev/null &"
+ /usr/bin/pgrep -f "$XDG_CONFIG_HOME/tmux/scripts/tmux_sensors.sh" &> /dev/null \
+   || /bin/zsh -c  "$XDG_CONFIG_HOME/tmux/scripts/tmux_sensors.sh  &> /dev/null &"
+
+# Start the weather service for monitoring current weather
+/usr/bin/pgrep -f "$XDG_CONFIG_HOME/tmux/scripts/weather.sh" &>/dev/null \
+  || /bin/zsh -c  "$XDG_CONFIG_HOME/tmux/scripts/weather.sh  &>/dev/null &"

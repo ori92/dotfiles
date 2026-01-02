@@ -6,8 +6,8 @@ while true; do
     total1=$((user + nice + system + idle + iowait + irq + softirq + steal))
     idle1=$((idle + iowait))
     
-    # Wait 1 second without creating a subshell
-    sleep 1
+    # Wait 2 second without creating a subshell
+    sleep 2
     
     # Read second sample
     read cpu user nice system idle iowait irq softirq steal guest < /proc/stat
@@ -18,13 +18,10 @@ while true; do
     diff_total=$((total2 - total1))
     diff_idle=$((idle2 - idle1))
     
-    # Calculate percentage
+    # Calculate usage percentage and temperature
     cpu_usage=$(((diff_total - diff_idle) * 100 / diff_total))
-    tmux set -gq @cpu_load "$cpu_usage"
-    
-    # CPU Temperature
     cpu_temp=$(</sys/class/hwmon/hwmon2/temp1_input)
-    tmux set -gq @cpu_temp "$((cpu_temp / 1000))"
+    tmux set -gq @cpu_stats "${cpu_usage}%/$((cpu_temp / 1000))°C"
     
     # GPU Temperature (if available)
     edge_temp="$(($(</sys/class/hwmon/hwmon1/temp1_input)/1000))"

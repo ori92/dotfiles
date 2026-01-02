@@ -4,7 +4,6 @@
 typeset -U path
 path+=("$HOME/bin")
 path+=("$HOME/.local/bin")
-path+=("$HOME/.local/share/gem/ruby/3.0.0/bin")
 export PATH
 
 # Environment
@@ -33,12 +32,10 @@ export HWATCH="--interval 3"
 
 # Use neovim as pager for man-pages `:h Man`
 export MANPAGER="/usr/bin/nvim +Man!"
-export MANWIDTH=999
 
 # Auto-Suggest
-export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_STRATEGY=(history)
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#49a8de,bg=#d0d7db,bold,underline"
-export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
 
 # Auto start tmux on login

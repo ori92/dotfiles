@@ -19,3 +19,5 @@ zsh/*.zwc
 lvim/lazy-lock.json
 tmux/location.txt
 tmux/logs
+yazi/plugins/smart-enter.yazi/*
+yazi/package.toml

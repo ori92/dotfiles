@@ -86,9 +86,9 @@ alias w='hwatch -n 1 '                                                          
 
 # Clipboard
 alias cf='copyfile'                                                             # Copy file content to clipboard
-alias clip='xargs echo -n | cb'                                                 # Copy to clipboard shortened
-alias copy='cb copy'                                                            # Copy using clipboard 
-alias paste='cb paste'                                                          # Paste using clipboard
+alias clip='xargs echo -n | wl-copy'                                            # Copy to clipboard shortened
+alias copy='wl-copy'                                                            # Copy using clipboard 
+alias paste='wl-paste'                                                          # Paste using clipboard
 
 # Misc
 alias ':q'='exit'                                                               # Force of a habit..

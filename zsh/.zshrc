@@ -34,9 +34,9 @@ eval "$(/usr/bin/starship init zsh)" # starship-prompt
 $HOME/.config/tmux/scripts/tmux-global-logging.sh # Log all tmux output
 
 # Start the sensors service for monitoring CPU/GPU/RAM usage and temperatures
- /usr/bin/pgrep -f "$XDG_CONFIG_HOME/tmux/scripts/tmux_sensors.sh" &> /dev/null \
-   || /bin/zsh -c  "$XDG_CONFIG_HOME/tmux/scripts/tmux_sensors.sh  &> /dev/null &"
+  /usr/bin/pgrep -f "$XDG_CONFIG_HOME/tmux/scripts/tmux_sensors" &> /dev/null \
+    || /bin/zsh -c  "$XDG_CONFIG_HOME/tmux/scripts/tmux_sensors  &> /dev/null &"
 
 # Start the weather service for monitoring current weather
-/usr/bin/pgrep -f "$XDG_CONFIG_HOME/tmux/scripts/weather.sh" &>/dev/null \
-  || /bin/zsh -c  "$XDG_CONFIG_HOME/tmux/scripts/weather.sh  &>/dev/null &"
+/usr/bin/pgrep -f "$XDG_CONFIG_HOME/tmux/scripts/weather.sh" &> /dev/null \
+  || /bin/zsh -c  "$XDG_CONFIG_HOME/tmux/scripts/weather.sh  &> /dev/null &"

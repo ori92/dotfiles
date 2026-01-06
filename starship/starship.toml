@@ -117,6 +117,7 @@ not_found_symbol = "🔍"
 sigint_symbol = "🧱"
 signal_symbol = "⚡"
 format = '[$symbol$common_meaning$signal_name$maybe_int]($style) '
+disabled = false
 #map_symbol = true
 
 [username]
